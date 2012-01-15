@@ -1,6 +1,7 @@
 
 # ------  source .shrc2  -------------{{{
-if [ -f $HOME/.dotfiles/.sensitive/.shrc2 ]; then
+# source second shrc with sensitive data
+if [ -f $HOME/.dotfiles/.shrc2 ]; then
     source $HOME/.dotfiles/.shrc2
 else
     echo "Error: Couldn't find ~/.dotfiles/.shrc2"
