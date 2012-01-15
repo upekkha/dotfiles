@@ -1,0 +1,180 @@
+[submodule ".vim/bundle/bufexplorer"]
+	path = .vim/bundle/bufexplorer
+	url = https://github.com/corntrace/bufexplorer.git
+	ignore = dirty
+[submodule ".vim/bundle/Conque-Shell"]
+	path = .vim/bundle/Conque-Shell
+	url = https://github.com/vim-scripts/Conque-Shell.git
+	ignore = dirty
+[submodule ".vim/bundle/nerdcommenter"]
+	path = .vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/vcscommand"]
+	path = .vim/bundle/vcscommand
+	url = https://github.com/vim-scripts/vcscommand.vim.git
+	ignore = dirty
+[submodule ".vim/bundle/LaTeX-Box"]
+	path = .vim/bundle/LaTeX-Box
+	url = https://github.com/vim-scripts/LaTeX-Box.git
+	ignore = dirty
+[submodule ".vim/bundle/bash-support"]
+	path = .vim/bundle/bash-support
+	url = https://github.com/vim-scripts/bash-support.vim.git
+	ignore = dirty
+[submodule ".vim/bundle/gnuplot"]
+	path = .vim/bundle/gnuplot
+	url = https://github.com/vim-scripts/gnuplot.vim.git
+[submodule ".vim/bundle/Gundo"]
+	path = .vim/bundle/Gundo
+	url = https://github.com/vim-scripts/Gundo.git
+	ignore = dirty
+[submodule ".vim/bundle/List-File"]
+	path = .vim/bundle/List-File
+	url = https://github.com/vim-scripts/List-File.git
+[submodule ".vim/bundle/tagbar"]
+	path = .vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+	ignore = dirty
+[submodule ".vim/bundle/python"]
+	path = .vim/bundle/python
+	url = https://github.com/vim-scripts/python.vim--Vasiliev.git
+	ignore = dirty
+[submodule ".vim/bundle/python3.0"]
+	path = .vim/bundle/python3.0
+	url = https://github.com/vim-scripts/python.vim--Vasiliev.git
+	ignore = dirty
+[submodule ".vim/bundle/TeX-PDF"]
+	path = .vim/bundle/TeX-PDF
+	url = https://github.com/vim-scripts/TeX-PDF.git
+[submodule ".vim/bundle/foldsearch"]
+	path = .vim/bundle/foldsearch
+	url = https://github.com/vim-scripts/foldsearch.git
+[submodule ".vim/bundle/ScrollColors"]
+	path = .vim/bundle/ScrollColors
+	url = https://github.com/vim-scripts/ScrollColors.git
+[submodule ".vim/bundle/gnupg"]
+	path = .vim/bundle/gnupg
+	url = https://github.com/vim-scripts/gnupg.git
+[submodule ".vim/bundle/pydoc"]
+	path = .vim/bundle/pydoc
+	url = https://github.com/vim-scripts/pydoc.vim.git
+[submodule ".vim/bundle/file-line"]
+	path = .vim/bundle/file-line
+	url = https://github.com/vim-scripts/file-line.git
+[submodule ".vim/bundle/TaskList"]
+	path = .vim/bundle/TaskList
+	url = https://github.com/vim-scripts/TaskList.vim.git
+[submodule ".vim/bundle/compiler-python"]
+	path = .vim/bundle/compiler-python
+	url = https://github.com/vim-scripts/compilerpython.vim.git
+[submodule ".vim/bundle/undofile"]
+	path = .vim/bundle/undofile
+	url = https://github.com/vim-scripts/undofile.vim.git
+[submodule ".vim/bundle/fugitive"]
+	path = .vim/bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/fugitive-extradite"]
+	path = .vim/bundle/fugitive-extradite
+	url = https://github.com/int3/vim-extradite.git
+[submodule ".vim/bundle/hexHighlight"]
+	path = .vim/bundle/hexHighlight
+	url = https://github.com/yurifury/hexHighlight.git
+[submodule ".vim/bundle/snipmate"]
+	path = .vim/bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
+	ignore = dirty
+[submodule ".vim/bundle/pathogen"]
+	path = .vim/bundle/pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule ".vim/bundle/markdown"]
+	path = .vim/bundle/markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule ".vim/bundle/SudoEdit"]
+	path = .vim/bundle/SudoEdit
+	url = https://github.com/vim-scripts/SudoEdit.vim.git
+	ignore = dirty
+[submodule ".vim/bundle/css-color"]
+	path = .vim/bundle/css-color
+	url = https://github.com/skammer/vim-css-color.git
+[submodule ".vim/bundle/diffchanges"]
+	path = .vim/bundle/diffchanges
+	url = https://github.com/vim-scripts/diffchanges.vim.git
+	ignore = dirty
+[submodule ".vim/bundle/indent-guides"]
+	path = .vim/bundle/indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides.git
+	ignore = dirty
+[submodule ".vim/bundle/matchit"]
+	path = .vim/bundle/matchit
+	url = https://github.com/vim-scripts/matchit.zip.git
+	ignore = dirty
+[submodule ".vim/bundle/netrw"]
+	path = .vim/bundle/netrw
+	url = https://github.com/vim-scripts/netrw.vim.git
+	ignore = dirty
+[submodule ".vim/bundle/surround"]
+	path = .vim/bundle/surround
+	url = https://github.com/tpope/vim-surround.git
+	ignore = dirty
+[submodule ".vim/bundle/taglist"]
+	path = .vim/bundle/taglist
+	url = https://github.com/vim-scripts/taglist.vim.git
+	ignore = dirty
+[submodule ".vim/bundle/xterm-color-table"]
+	path = .vim/bundle/xterm-color-table
+	url = https://github.com/guns/xterm-color-table.vim.git
+	ignore = dirty
+[submodule ".vim/bundle/IndexedSearch"]
+	path = .vim/bundle/IndexedSearch
+	url = https://github.com/vim-scripts/IndexedSearch.git
+[submodule ".vim/bundle/BufOnly"]
+	path = .vim/bundle/BufOnly
+	url = https://github.com/vim-scripts/BufOnly.vim.git
+[submodule ".vim/bundle/vimwiki"]
+	path = .vim/bundle/vimwiki
+	url = https://github.com/vim-scripts/vimwiki
+	ignore = dirty
+[submodule ".vim/bundle/unimpaired"]
+	path = .vim/bundle/unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+	ignore = dirty
+[submodule ".vim/bundle/ack"]
+	path = .vim/bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
+	ignore = dirty
+[submodule ".vim/bundle/fugitive-gitv"]
+	path = .vim/bundle/fugitive-gitv
+	url = https://github.com/gregsexton/gitv.git
+	ignore = dirty
+[submodule ".vim/bundle/coffee-script"]
+	path = .vim/bundle/coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+	ignore = dirty
+[submodule ".vim/bundle/solarized"]
+	path = .vim/bundle/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+	ignore = dirty
+[submodule ".vim/bundle/rainbow-parentheses"]
+	path = .vim/bundle/rainbow-parentheses
+	url = https://github.com/kien/rainbow_parentheses.vim.git
+	ignore = dirty
+[submodule ".vim/bundle/vim-rails"]
+	path = .vim/bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+	ignore = dirty
+[submodule ".vim/bundle/cucumber"]
+	path = .vim/bundle/cucumber
+	url = https://github.com/tpope/vim-cucumber.git
+[submodule ".vim/bundle/tabular"]
+	path = .vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
+	ignore = dirty
+[submodule ".vim/bundle/haml"]
+	path = .vim/bundle/haml
+	url = https://github.com/tpope/vim-haml.git
+[submodule ".vim/bundle/ColorX"]
+	path = .vim/bundle/ColorX
+	url = https://github.com/vim-scripts/ColorX.git

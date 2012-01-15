@@ -1,0 +1,19 @@
+startup_message off        # disable startup message
+vbell off                  # disable visual bell
+term xterm-color           # define terminal style
+altscreen on               # show previous terminal when exiting htop or vim
+shell -bash                # define shell
+defscrollback 5000         # number of scrollback lines
+termcapinfo xterm* ti@:te@ # scroll with mouse
+#escape \\`                # redefine escape key (default: ctrl-a)
+## define statusline
+caption    always         "%{+b kr}%H%{bk} | %c %d/%m | %{yk}%72=Load: %l %{wk}"
+hardstatus alwayslastline "%{= kw}%-w%{= BW}%n %t%{-}%+w %-="
+## start window numbering at 1 not 0
+bind c screen 1
+bind ^c screen 1
+bind 0 screen 10
+screen 1
+## define screen windows to open
+#screen -t log 2
+#screen -t run 1

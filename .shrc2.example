@@ -1,0 +1,11 @@
+
+# git variables
+export GIT_EDITOR=vim
+export GIT_AUTHOR_NAME="Real Name"
+export GIT_AUTHOR_EMAIL="real.name@example.com"
+export GIT_COMMITTER_NAME="Real Name"
+export GIT_COMMITTER_EMAIL="real.name@example.com"
+
+# ------  Vim Modeline  --------------{{{
+# vim: set foldmethod=marker ft=sh:
+#}}}

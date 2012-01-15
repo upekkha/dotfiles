@@ -1,0 +1,21 @@
+# colored output
+--color
+--color-match=bold red
+--color-filename=bold green
+--color-lineno=bold yellow
+# scan all file types
+--all-types
+# sort files lexically
+--sort-files
+# show filename
+--with-filename
+# group matches per file
+--group
+# follow symlinks
+--follow
+# smartcase
+--smart-case
+# recursive
+--recurse
+## define custom filetype
+#--type-set=eiffel=.e,.eiffel

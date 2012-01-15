@@ -1,0 +1,59 @@
+[user]
+    name = Real Name
+    email = real.name@example.com
+
+[github]
+    user = githubusername
+    token = githubtoken
+
+[core]
+    editor = vim
+
+[color]
+    ui = auto
+
+[color "diff"]
+    meta = white                # metainformation
+    frag = cyan                 # line number in hunk header
+    func = white                # function name in hunk header
+    plain = white               # context text
+    new = green                 # added lines
+    old = red                   # removed lines
+    commit = yellow             # commit headers
+    whitespace = red reverse    # whitespace errors
+
+[color "status"]
+    added = green
+    changed = red
+    untracked = yellow
+
+[diff]
+    tool = vimdiff
+
+[difftool]
+    prompt = true
+
+[merge]
+    tool = vimdiff
+
+[instaweb]
+    httpd = webrick
+    port = 1234
+
+[alias]
+    co = checkout
+    st = status
+    # prettier log (limited to 10 commits)
+    logg = !git --no-pager log --pretty=tformat:'%Creset (%ar) - %Cred %an: %Cgreen %s %Creset' --graph -n 10
+    # prettier log (limited to 10 commits, showing hash)
+    loggh = !git --no-pager log --pretty=tformat:'%C(yellow) %H %Creset (%ar) - %Cred %an: %Cgreen %s %Creset' --graph -n 10
+    # prettier log (showing all commits)
+    logga = log --pretty=format:'%Creset (%ar) - %Cred %an: %Cgreen %s' --graph
+    # prettier log (showing all commits, showing hash)
+    loggha = log --pretty=format:'%C(yellow) %H %Creset (%ar) - %Cred %an: %Cgreen %s' --graph
+    loggah = log --pretty=format:'%C(yellow) %H %Creset (%ar) - %Cred %an: %Cgreen %s' --graph
+    # diff and show based on words instead of lines
+    diffw = diff --color-words
+    showw = show --color-words
+    # amend commit with same message
+    #amend = commit --amend -C head

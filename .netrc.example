@@ -1,0 +1,3 @@
+machine www.example.com
+	login MyUsername
+	password MyPassword

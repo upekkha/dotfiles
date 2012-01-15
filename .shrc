@@ -1,0 +1,311 @@
+
+# ------  source .shrc2  -------------{{{
+if [ -f $HOME/.dotfiles/.sensitive/.shrc2 ]; then
+    source $HOME/.dotfiles/.shrc2
+else
+    echo "Error: Couldn't find ~/.dotfiles/.shrc2"
+fi
+#}}}
+
+# ------  get host info  -------------{{{
+# Get hostname and OS
+HNAME=`hostname -s`
+UNAME=`uname`
+#}}}
+
+# ------  export variables  ----------{{{
+# Vim
+export EDITOR=vim
+# MacPorts
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export MANPATH=/opt/local/share/man:$MANPATH
+# MySQL
+export PATH=/usr/local/mysql/bin:$PATH
+# Munki
+export PATH=/usr/local/munki:$PATH
+# Developer Tools
+export PATH=/Developer/Tools:$PATH
+# Scripts
+export PATH=~/Scripts:$PATH
+# vimGPG plugin
+export GPG_TTY=`tty`
+# gnu screen sockets directory
+export SCREENDIR=$HOME/.sessions
+# path for cd commands
+#export CDPATH=.:$HOME
+# locale setting
+export LC_ALL=en_US.UTF-8
+# grep options
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;31'
+# ISG bin path on Linux
+if [[ "$UNAME" == "Linux" ]]; then
+    export PATH=/home/isg/bin:$PATH
+fi
+#}}}
+
+# ------  alias commands  ------------{{{
+alias ll='ls -hlF'
+alias la='ls -AF'
+alias lla='ls -hlAF'
+alias lld='ls -hltrF'
+alias rebash='source ~/.bash_profile'
+alias eps2pdf='epstopdf'
+alias ipython='ipython-2.6'
+alias gvimtab='gvim --remote-tab-silent'
+alias latexmkp='latexmk -pdf -pvc'
+alias packagemaker='/Developer/Applications/Utilities/PackageMaker.app/Contents/MacOS/PackageMaker'
+alias myrsync='rsync -rLptgoDvzuhX --rsync-path=/opt/local/bin/rsync --exclude ".DS_Store" --exclude ".*.swp" --delete'
+alias netip='/usr/bin/appletviewer http://velsheda.ethz.ch:7777/forms/frmservlet?config=netip > /dev/null 2>&1 &'
+
+if [[ "$UNAME" == "Linux" ]]; then
+    alias lock='gnome-screensaver-command --lock & xset dpms force suspend'
+fi
+#}}}
+
+# ------  history hacks  -------------{{{
+# Use common history file for bash and zsh
+export HISTFILE=$HOME/.bash_history
+# Let history ignore sequential duplicate commands
+export HISTCONTROL=ignoredups
+# Number of commands to keep in history
+export HISTFILESIZE=1000
+export SAVEHIST=$HISTFILESIZE
+# Number of commands to keep in history of current session
+export HISTSIZE=1000
+# Rem: history is read/written when logging in/out. To read manually:"history -n", to write "history -a". With the following, this is done for each command entered.
+#export PROMPT_COMMAND="history -n; history -a"
+#}}}
+
+# ------  colorful ls  ---------------{{{
+# Colors using dir_colors for gls (macports:coreutils)
+# add --hide=*~ to hide files ending in ~ (overriden by -a or -A)
+# alternatively use -B which always hides *~ files
+if [[ "$UNAME" == "Darwin" ]]; then
+    # use gnu ls if it exists
+    if [ -e /opt/local/bin/gls ]; then
+        eval `gdircolors ~/.dir_colors`
+        alias ls='gls --color'
+    else
+    # else use lscolors (cf man ls)
+        export CLICOLOR=true
+        export LSCOLORS=gxdxcxcxbxegedbxbxdxdx
+    fi
+fi
+if [[ "$UNAME" == "Linux" ]]; then
+    eval `dircolors -b ~/.dir_colors`
+    alias ls='ls --color'
+fi
+#}}}
+
+# ------  colorful manpages  ---------{{{
+# Attribute:    # 00=none 01=bold 04=underline 05=blink 07=reverse 08=concealed
+# Text:         # 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+# Background:   # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+export LESS_TERMCAP_mb=$'\E[01;31m'     # blinking begin
+export LESS_TERMCAP_md=$'\E[01;33m'     # bold begin
+export LESS_TERMCAP_me=$'\E[0m'         # blinking end
+export LESS_TERMCAP_se=$'\E[0m'         # standout end
+export LESS_TERMCAP_so=$'\E[01;44;33m'  # standout begin
+export LESS_TERMCAP_ue=$'\E[0m'         # underline end
+export LESS_TERMCAP_us=$'\E[04;32m'     # underline begin
+#}}}
+
+# ------  custom functions  ----------{{{
+
+# irssitail: multitail irc log {{{
+irssitail()
+{
+    if [[ $# -eq 0 ]]; then
+        # without parameter: tail most recent isgphys
+        cat ~/.irssi/log/isgphys/`/bin/ls -t ~/.irssi/log/isgphys/ | head -1` | grep -v "^..:.. -\!-" | multitail -cS irssi -n 5000 -j
+    else
+        # else tail file given as parameter
+        cat "$*" | grep -v "^..:.. -\!-" | multitail -cS irssi -n 5000 -j
+    fi
+}
+#}}}
+
+# manv, mangv, mans: manpages hacks {{{
+# Open manpage in vim/gvim
+manv()
+{
+    man $* | col -bx | vim -c ":set ft=man" -R -;
+}
+mangv()
+{
+    man $* | col -bx | gvim -c ":set ft=man" -R -;
+}
+
+# Convert man to ps and open in Skim
+mans()
+{
+    man -t "${1}"| open -f -a Skim
+}
+
+# Open all man pages in vim
+#export MANPAGER='col -bx | vim -c ":set ft=man" -R -'
+#}}}
+
+# tcol: set iTerm terminal color {{{
+set_term_color()
+{
+    local HEX_FG=$1
+    local HEX_BG=$2
+    local TRANSPARENCY=$3
+
+    local FG_R=`echo $HEX_FG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$1 * 257)}'`
+    local FG_G=`echo $HEX_FG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$2 * 257)}'`
+    local FG_B=`echo $HEX_FG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$3 * 257)}'`
+    local BG_R=`echo $HEX_BG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$1 * 257)}'`
+    local BG_G=`echo $HEX_BG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$2 * 257)}'`
+    local BG_B=`echo $HEX_BG | sed 's/../0x&,/g' | awk -F "," '{printf("%d",$3 * 257)}'`
+
+    /usr/bin/osascript <<EOF
+    tell application "iTerm"
+        tell current session of current terminal
+        set foreground color to {$FG_R, $FG_G, $FG_B}
+        set background color to {$BG_R, $BG_G, $BG_B}
+        set transparency to "$TRANSPARENCY"
+        end tell
+    end tell
+EOF
+}
+
+tcol()
+{
+    case $1 in
+        R | r)  set_term_color ffffff 1d0202 0.11   ;;
+        G | g)  set_term_color ffffff 001303 0.11   ;;
+        B | b)  set_term_color ffffff 0a0f24 0.11   ;;
+        K | k)  set_term_color ffffff 000000 0.11   ;;
+        *)  set_term_color ffffff 000000 0.11
+    esac
+}
+#}}}
+
+# extract: unpack various types of archives {{{
+extract()
+{
+    if [ -f $1 ] ; then
+        case $1 in
+            *.zip)  unzip $1    ;;
+            *.rar)  unrar e $1  ;;
+            *.tar)  tar xf $1   ;;
+            *.tar.bz2)  tar xjf $1  ;;
+            *.tar.gz)   tar xzf $1  ;;
+            *.tbz2) tar xjf $1  ;;
+            *.tgz)  tar xzf $1  ;;
+            *.bz2)  bunzip2 $1  ;;
+            *.gz)   gunzip $1   ;;
+            *.Z)    uncompress $1   ;;
+            *)  echo "Unrecognized archive type"
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+#}}}
+
+# cd: hack cd to allow more dots {{{
+cd () {
+  if   [[ "x$*" == "x..." ]]; then
+    cd ../..
+  elif [[ "x$*" == "x...." ]]; then
+    cd ../../..
+  elif [[ "x$*" == "x....." ]]; then
+    cd ../../..
+  elif [[ "x$*" == "x......" ]]; then
+    cd ../../../..
+  else
+    builtin cd "$@"
+  fi
+}
+#}}}
+
+# mkcd: mkdir and cd into it {{{
+mkcd()
+{
+    mkdir -p "$*"
+    cd "$*"
+}
+#}}}
+
+# cdf: change to folder opened in the frontmost Finder window {{{
+cdf ()
+{
+    currFolderPath=$( arch -i386 osascript <<"    EOT"
+        tell application "Finder"
+            try
+                set currFolder to (folder of the front window as alias)
+            on error
+                set currFolder to (path to desktop folder as alias)
+            end try
+            POSIX path of currFolder
+        end tell
+    EOT
+    )
+    echo "--> $currFolderPath"
+    cd "$currFolderPath"
+}
+#}}}
+
+# tab: open new tab in current path {{{
+# source: oh-my-zsh plugin osx
+tab()
+{
+  local command="cd \\\"$PWD\\\""
+  (( $# > 0 )) && command="${command}; $*"
+
+  the_app=$(
+    osascript 2>/dev/null <<EOF
+      tell application "System Events"
+        name of first item of (every process whose frontmost is true)
+      end tell
+EOF
+  )
+
+  [[ "$the_app" == 'Terminal' ]] && {
+    osascript 2>/dev/null <<EOF
+      tell application "System Events"
+        tell process "Terminal" to keystroke "t" using command down
+        tell application "Terminal" to do script "${command}" in front window
+      end tell
+EOF
+  }
+
+  [[ "$the_app" == 'iTerm' ]] && {
+    osascript 2>/dev/null <<EOF
+      tell application "iTerm"
+        set current_terminal to current terminal
+        tell current_terminal
+          launch session "Default Session"
+          set current_session to current session
+          tell current_session
+            write text "${command}"
+          end tell
+        end tell
+      end tell
+EOF
+  }
+}
+#}}}
+
+# settitle: set terminal title {{{
+settitle()
+{
+    if [[ $# -ne 0 ]]; then
+        echo -ne "\033]0;${*}\007"
+    else
+        echo -ne "\033]0;${USER}@`hostname -s`\007"
+    fi
+}
+
+# Set tab title to hostname (without domain) + command running (not compatible with NEW_PWD)
+#export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}:\007"'
+#}}}
+#}}}
+
+# ------  Vim Modeline  --------------{{{
+# vim: set foldmethod=marker ft=sh:
+#}}}

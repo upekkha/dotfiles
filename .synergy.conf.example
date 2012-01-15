@@ -1,0 +1,23 @@
+section: screens
+    hostname1:
+    hostname1:
+end
+
+section: links
+    hostname1:
+        left(36,100) = hostname2(0,67)
+    hostname2:
+        right(0,67) = hostname1(36,100)
+end
+
+section: aliases
+    hostname1:
+        host1.example.com
+    hostname2:
+        host2.example.com
+end
+
+section: options
+    screenSaverSync = false
+    switchDoubleTap = 400
+end

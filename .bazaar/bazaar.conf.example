@@ -1,0 +1,4 @@
+[DEFAULT]
+email = Real Name <real.name@example.com>
+launchpad_username = username
+editor = vim
