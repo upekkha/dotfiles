@@ -83,6 +83,9 @@ function git_status_prompt #{{{
     if [[ ${GITSTATUS} =~ "Not a git repository" ]]; then
         # No git repo
         GITSTAT=""
+    elif [[ ${GITSTATUS} =~ "must be run in a work tree" ]]; then
+        # Bare git repo
+        GITSTAT=""
     elif [[ ${GITSTATUS} =~ "working directory clean" ]]; then
         # Clean repo
         GITSTAT="[${GITBRANCH}]"
