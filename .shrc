@@ -65,6 +65,11 @@ if [[ "$UNAME" == "Linux" ]]; then
 fi
 #}}}
 
+# ------  rvm  -----------------------{{{
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#}}}
+
 # ------  history hacks  -------------{{{
 # Use common history file for bash and zsh
 export HISTFILE=$HOME/.bash_history
