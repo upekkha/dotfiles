@@ -54,6 +54,7 @@ call add(g:pathogen_disabled, 'undofile')
 call add(g:pathogen_disabled, 'vcscommand')
 call add(g:pathogen_disabled, 'vim-latex')
 "call add(g:pathogen_disabled, 'vim-rails')
+"call add(g:pathogen_disabled, 'vim-slime')
 "call add(g:pathogen_disabled, 'vimwiki')
 "call add(g:pathogen_disabled, 'xterm-color-table')
 
@@ -542,6 +543,11 @@ let g:snippets_dir="~/.vim/mysnippets/"
 
 " rails: show menu
 let g:rails_menu=1
+
+" vim-slime
+let g:slime_target = "screen"
+let g:slime_send_key = '<C-c><C-c>'
+let b:slime_config = {"sessionname": "vim-shell", "windowname": "1"}
 "}}}
 "}}}
 

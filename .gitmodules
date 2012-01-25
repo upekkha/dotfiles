@@ -178,3 +178,6 @@
 [submodule ".vim/bundle/ColorX"]
 	path = .vim/bundle/ColorX
 	url = https://github.com/vim-scripts/ColorX.git
+[submodule ".vim/bundle/vim-slime"]
+	path = .vim/bundle/vim-slime
+	url = https://github.com/jpalardy/vim-slime.git
