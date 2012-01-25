@@ -123,9 +123,6 @@ set wildignore+=*.o,*.pdf   " Let tab completion ignore certain file types
 " Define replacement for invisivble characters (set invlist)
 set listchars=eol:¬,tab:>-,trail:~
 
-" statusline with git branch (set laststatus=2 to make visible)
-set statusline=\ %<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
 " No error beeps/flash screens
 set noerrorbells
 set visualbell
@@ -141,6 +138,22 @@ let &keywordprg=':help'
 " Customize :TOhtml
 let html_number_lines=1
 let html_use_css=1
+"}}}
+
+" ------  Statusline  ----------------{{{
+set statusline =            "start with empty string
+"set statusline+=\ %02n     "buffer number
+set statusline+=\ %1*%<%f%* "filename with relative path
+set statusline+=\ %y        "filetype flag:
+"set statusline+=\ %h       "helpfile flag: [help]
+set statusline+=%r          "readonly flag: [RO]
+set statusline+=%{fugitive#statusline()}    "git branch
+set statusline+=%2*%m%*     "modified flag: [+] modified, [-] unmodifiable
+set statusline+=%=          "switch from left to right justification
+set statusline+=%-20.(%l/%L,%c%V%)  "add block with given offset containing
+                            " %l/%L current line number / total number of lines
+                            " %c%V  current column number and virtual column number
+set statusline+=\ %P\       "percentage through buffer
 "}}}
 
 " ------  Platform-dependent  --------{{{
