@@ -48,5 +48,5 @@ defaults write -app Skim SKEnableAppleRemote -boolean true
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool YES
 # TimeMachine : disable local backups
 hash tmutil &> /dev/null && sudo tmutil disablelocal
-# Kill Dock and Finder
-killall Dock; killall Finder
+# Restart applications
+killall Dock; killall Finder; killall SystemUIServer
