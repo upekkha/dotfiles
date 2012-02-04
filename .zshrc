@@ -46,7 +46,7 @@ DISABLE_AUTO_TITLE="false"       # toggle setting terminal title in termsupport 
 ZSH=$HOME/.dotfiles/.zshplugins  # folder containing zsh plugins
 
 # define plugins to activate
-plugins=(git termsupport gem)
+plugins=(termsupport gem)
 
 # add all defined plugins to fpath
 plugin=${plugin:=()}
@@ -116,19 +116,35 @@ fi
 #}}}
 
 # ------  command prompt  ------------{{{
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%} ("
-ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}±%{$fg[yellow]%}"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-
 # root prompt
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
 if [ $UID -eq 0 ]; then USER="root@"; else USER=""; fi
 
-PROMPT='%{$fg[$NCOLOR]%}$USER%m:%{$reset_color%}%{$fg[magenta]%}%30<..<%~%<</%{$reset_color%}$(git_prompt_info) '
+PROMPT='%{$fg[$NCOLOR]%}$USER%m:%{$reset_color%}%{$fg[magenta]%}%30<..<%~%<</%{$reset_color%}$(git_status_prompt) '
 
-# right-aligned prompt
-#RPROMPT='%{$fg[green]%}[%T]%{$reset_color%}'
+function git_status_prompt() {
+    # get current branch name or stop if no git repo
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+    branchname=${ref#refs/heads/}
+    # ignore bare repos
+    if [[ ! $(git status 2>&1) =~ "must be run in a work tree" ]]; then
+        if [[ -n $(git status -s --ignore-submodules=dirty 2> /dev/null) ]]; then
+            # dirty repo
+            if [[ $branchname == 'master' ]]; then
+                echo "%{$fg[yellow]%}[%{$fg[red]%}±%{$fg[yellow]%}]%{$reset_color%}"
+            else
+                echo "%{$fg[yellow]%}[$branchname %{$fg[red]%}±%{$fg[yellow]%}]%{$reset_color%}"
+            fi
+        else
+            # clean repo
+            if [[ $branchname == 'master' ]]; then
+                echo ""
+            else
+                echo "%{$fg[yellow]%}[$branchname]%{$reset_color%}"
+            fi
+        fi
+    fi
+}
 #}}}
 
 # ------  vi-mode plugin  ------------{{{
