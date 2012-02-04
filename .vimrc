@@ -154,6 +154,69 @@ set statusline+=%-20.(%l/%L,%c%V%)  "add block with given offset containing
                             " %l/%L current line number / total number of lines
                             " %c%V  current column number and virtual column number
 set statusline+=\ %P\       "percentage through buffer
+
+" display presence of wrong indenting{{{
+" source: vim-statline
+function! StatlineIndentWarning()
+    let b:statline_indent_warning = ''
+
+    " no error if buffer is not modifiable or readonly
+    if !&modifiable || &readonly
+        return b:statline_indent_warning
+    endif
+
+    let tabs = search('^\t', 'nw') != 0
+    let spaces = search('^ \{' . &ts . ',}[^\t]', 'nw') != 0
+    let spacesbeforetabs = search(' \+\ze\t', 'nw') != 0
+
+    " mixed indenting with tabs and spaces
+    if (tabs && spaces) || spacesbeforetabs
+        let b:statline_indent_warning .= ' mi'
+    " consistent indenting, but wrong expandtab setting
+    elseif (spaces && !&et) || (tabs && &et)
+        let b:statline_indent_warning .= ' et'
+    endif
+    " if non-empty string, add trailing space
+    if b:statline_indent_warning != ''
+        let b:statline_indent_warning .= ' '
+    endif
+
+    return b:statline_indent_warning
+endfunction
+
+set statusline+=%3*%{StatlineIndentWarning()}%*
+
+" recalculate when idle and after writing
+augroup statline_indent
+    autocmd!
+    autocmd cursorhold,bufwritepost * unlet! b:statline_indent_warning
+augroup END
+"}}}
+
+" display presence of trailing whitespaces{{{
+" source: vim-statline
+function! StatlineTrailingSpaceWarning()
+    let b:statline_trailing_space_warning = ''
+
+    " no error if buffer is not modifiable or readonly
+    if !&modifiable || &readonly
+        return b:statline_indent_warning
+    endif
+
+    if search('\s\+$', 'nw') != 0
+        let b:statline_trailing_space_warning = ' tw '
+    endif
+    return b:statline_trailing_space_warning
+endfunction
+
+set statusline+=%3*%{StatlineTrailingSpaceWarning()}%*
+
+" recalculate when idle, and after saving
+augroup statline_trail
+    autocmd!
+    autocmd cursorhold,bufwritepost * unlet! b:statline_trailing_space_warning
+augroup END
+"}}}
 "}}}
 
 " ------  Platform-dependent  --------{{{
