@@ -60,6 +60,11 @@ alias packagemaker='/Developer/Applications/Utilities/PackageMaker.app/Contents/
 alias myrsync='rsync -rLptgoDvzuhX --rsync-path=/opt/local/bin/rsync --exclude ".DS_Store" --exclude ".*.swp" --delete'
 alias netip='/usr/bin/appletviewer http://velsheda.ethz.ch:7777/forms/frmservlet?config=netip > /dev/null 2>&1 &'
 
+# use gnu sort if it exists
+if [ -e /opt/local/bin/gsort ]; then
+    alias sort='gsort'
+fi
+
 if [[ "$UNAME" == "Linux" ]]; then
     alias lock='gnome-screensaver-command --lock & xset dpms force suspend'
 fi
