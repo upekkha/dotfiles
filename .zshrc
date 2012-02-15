@@ -10,6 +10,10 @@ setopt extended_glob             # enable extended globbing features
 setopt nomatch                   # print warning if not matching file was found
 setopt multios                   # allow multiple file redirections
 setopt equals                    # allow use of = to expand command names
+setopt transient_rprompt         # hide right prompt after command execution
+setopt no_clobber                # warn when piping to (non-)existing file with (>>)>
+setopt hist_allow_clobber        # allow clobber from history by appending | to pipe
+setopt check_jobs                # check for running background jobs before exiting shell
 
 # directory options
 setopt auto_cd                   # entering the name of a directory automatically changes to it
@@ -25,6 +29,7 @@ setopt share_history             # also pull changes from file to all shells and
 setopt extended_history          # toggle saving timestamps to history file
 unsetopt hist_no_functions       # toggle saving functions to history file
 unsetopt hist_ignore_space       # toggle saving commands beginning with a blank
+unsetopt hist_no_store           # toggle saving history commands to history
 setopt hist_reduce_blanks        # remove superfluous blanks in history
 setopt hist_ignore_dups          # ignore sequential duplicate commands
 unsetopt hist_ignore_all_dups    # don't ignore any duplicate commands
