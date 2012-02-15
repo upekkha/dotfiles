@@ -158,29 +158,30 @@ set statusline+=\ %P\       "percentage through buffer
 " display presence of wrong indenting{{{
 " source: vim-statline
 function! StatlineIndentWarning()
-    let b:statline_indent_warning = ''
+    if !exists("b:statline_indent_warning")
+        let b:statline_indent_warning = ''
 
-    " no error if buffer is not modifiable or readonly
-    if !&modifiable || &readonly
-        return b:statline_indent_warning
+        " no error if buffer is not modifiable or readonly
+        if !&modifiable || &readonly
+            return b:statline_indent_warning
+        endif
+
+        let tabs = search('^\t', 'nw') != 0
+        let spaces = search('^ \{' . &ts . ',}[^\t]', 'nw') != 0
+        let spacesbeforetabs = search(' \+\ze\t', 'nw') != 0
+
+        " mixed indenting with tabs and spaces
+        if (tabs && spaces) || spacesbeforetabs
+            let b:statline_indent_warning .= ' mi'
+        " consistent indenting, but wrong expandtab setting
+        elseif (spaces && !&et) || (tabs && &et)
+            let b:statline_indent_warning .= ' et'
+        endif
+        " if non-empty string, add trailing space
+        if b:statline_indent_warning != ''
+            let b:statline_indent_warning .= ' '
+        endif
     endif
-
-    let tabs = search('^\t', 'nw') != 0
-    let spaces = search('^ \{' . &ts . ',}[^\t]', 'nw') != 0
-    let spacesbeforetabs = search(' \+\ze\t', 'nw') != 0
-
-    " mixed indenting with tabs and spaces
-    if (tabs && spaces) || spacesbeforetabs
-        let b:statline_indent_warning .= ' mi'
-    " consistent indenting, but wrong expandtab setting
-    elseif (spaces && !&et) || (tabs && &et)
-        let b:statline_indent_warning .= ' et'
-    endif
-    " if non-empty string, add trailing space
-    if b:statline_indent_warning != ''
-        let b:statline_indent_warning .= ' '
-    endif
-
     return b:statline_indent_warning
 endfunction
 
@@ -196,15 +197,17 @@ augroup END
 " display presence of trailing whitespaces{{{
 " source: vim-statline
 function! StatlineTrailingSpaceWarning()
-    let b:statline_trailing_space_warning = ''
+    if !exists("b:statline_trailing_space_warning")
+        let b:statline_trailing_space_warning = ''
 
-    " no error if buffer is not modifiable or readonly
-    if !&modifiable || &readonly
-        return b:statline_indent_warning
-    endif
+        " no error if buffer is not modifiable or readonly
+        if !&modifiable || &readonly
+            return b:statline_indent_warning
+        endif
 
-    if search('\s\+$', 'nw') != 0
-        let b:statline_trailing_space_warning = ' tw '
+        if search('\s\+$', 'nw') != 0
+            let b:statline_trailing_space_warning = ' tw '
+        endif
     endif
     return b:statline_trailing_space_warning
 endfunction
