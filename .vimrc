@@ -733,6 +733,10 @@ nmap <Leader>X :call MySetExecutableBit()<CR>
 imap <Leader>x <ESC>:w \| :!%:p<CR>a
 map <Leader>x :w \| :!%:p<CR>
 
+" remap Cmd-r to save and run current buffer in screen session
+imap <D-r> <ESC>:w \| call system("screen -S vim-shell -p 1 -X stuff $'./" . expand('%') . "\r'")<CR><CR>a
+map <D-r> :w \| call system("screen -S vim-shell -p 1 -X stuff $'./" . expand('%') . "\r'")<CR><CR>
+
 " remap \] \[ to change tabs
 map <Leader>] :tabnext<CR>
 map <Leader>[ :tabprev<CR>
