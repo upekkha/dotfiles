@@ -65,5 +65,8 @@ hi VimwikiHeader4       guifg=#FF00FF                              ctermfg=13
 hi VimwikiHeader5       guifg=#00FFFF                              ctermfg=14
 hi VimwikiHeader6       guifg=#FFFF00                              ctermfg=11
 
+hi IndentGuidesOdd                      guibg=#303030                           ctermbg=236
+hi IndentGuidesEven                     guibg=#1C1C1C                           ctermbg=234
+
 " ignore perlElseIfError
 hi link perlElseIfError Normal

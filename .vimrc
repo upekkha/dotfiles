@@ -627,6 +627,9 @@ let g:rails_menu=1
 let g:slime_target = "screen"
 let g:slime_send_key = '<C-c><C-c>'
 let b:slime_config = {"sessionname": "vim-shell", "windowname": "1"}
+
+" indent-guides: custom colors
+let g:indent_guides_auto_colors = 0
 "}}}
 "}}}
 
