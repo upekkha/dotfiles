@@ -468,7 +468,7 @@ function! MyFold()
   " titlewidth = textwd - 3*foldlevel - foldinfo
   let titlewd = textwd - 3*len(v:folddashes) - len(foldinfo)
   " titlestr = first line of fold without fold marker
-  let titlestr = substitute(getline(v:foldstart),'{{{','','g')
+  let titlestr = substitute(getline(v:foldstart),'{{{','','g') "}}}
   " remove • from titlestr because it gives a length of 3
   let titlestr = substitute(titlestr,'•','','g')
   " remove any leading or trailing whitespace from titlestr
@@ -524,7 +524,6 @@ function! MyVimfuModeline()
   endwhile
 endfunction
 au BufReadPost * :call MyVimfuModeline()
-"}}}
 "}}}
 "}}}
 
