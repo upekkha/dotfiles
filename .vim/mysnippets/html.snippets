@@ -1,0 +1,66 @@
+snippet	doc
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8"/>
+			<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		</head>
+
+		<body>
+
+		${2:Lorem Ipsum}
+
+		</body>
+	</html>
+snippet html
+	<html>
+		${1}
+	</html>
+snippet body
+	<body>
+		${1}
+	</body>
+snippet head
+	<head>
+		<meta charset=utf-8"/>
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
+	</head>
+snippet title
+	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
+snippet favicon
+	<link rel="icon" type="image/${1:png}" href="${2:img/favicon.png}" />${3}
+snippet css
+	<link rel="stylesheet" type="text/css" href="${1:name}.css">${2}
+snippet js
+	<script src="${1}.js" type="text/javascript"></script>${2}
+snippet script
+	<script type="text/javascript">
+		${1}
+	</script>
+snippet style
+	<style type="text/css">
+		${1:selector} {
+			${2:property}: ${3:value};
+		}
+	</style>
+snippet div
+	<div id="${1:name}">
+		${2:Lorem Ipsum}
+	</div>
+snippet href
+	<a href="${1:Link}">${2:Caption}</a>${3}
+snippet mailto
+	<a href="mailto:${1:mail@example.com}?subject=${2:topic}">${3:email me}</a>${4}
+snippet table
+	<table border="${1:0}">
+		<tr>
+			<th>${2:Header}</th>
+			<td>
+				${3:Data}
+			</td>
+		</tr>
+	</table>${4}
+snippet textarea
+	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
+snippet img
+	<img src="${1:img.png}" width=${2:300} alt="${3:description}" title="${4:tooltip}">${5}
