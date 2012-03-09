@@ -338,6 +338,7 @@ let perl_fold=1                         "needed for folds
 au filetype perl set foldmethod=syntax  "autofold all functions
 au filetype perl setf perl              "needed for folds
 au filetype perl match TODO /DEBUG/     "highlight debug as todo
+au BufRead *.epl set filetype=embperl   "syntax highlighting for embedded perl
 "}}}
 
 " ------  Python  --------------------{{{
@@ -550,6 +551,7 @@ map ,ca <plug>NERDCommenterAltDelims
 let g:NERDCustomDelimiters = {
     \ 'cpp': { 'left': '//', 'leftAlt': '/* ', 'rightAlt': ' */' },
     \ 'text': { 'left': '#' },
+    \ 'embperl': { 'left': '#' },
     \ 'wiki': { 'left': '%%' },
     \ 'snippet': { 'left': '#' }
 \ }
