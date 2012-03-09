@@ -10,6 +10,9 @@
 # Ignore vim views
 .vim/view
 
+# Ignore matplotlib's font cache
+.matplotlib/fontList.cache
+
 # Ignore Scripts folder
 Scripts/
 
