@@ -362,6 +362,11 @@ au filetype ruby,cucumber set ts=2 sw=2 sts=2    "tabs of 2 spaces
 au filetype cucumber compiler cucumber
 "}}}
 
+" ------  Markdown  ------------------{{{
+au filetype markdown set conceallevel=2     "conceal markdown commands
+au filetype markdown set wrap               "wrap lines
+"}}}
+
 " ------  Fortran  -------------------{{{
 " Don't show tabs as errors in fortran code
 let fortran_have_tabs=1
