@@ -1,0 +1,9 @@
+-l=80       # line width in characters
+-i=4        # indent level
+-ci=4       # continuation indent level
+-cti=0      # closing token indentation
+-nsfs       # no space before semicolons
+-nolc       # keep indentation of long comments
+-nolq       # keep indentation of long quotes
+-st         # output to stdout
+-se         # errors to stderr

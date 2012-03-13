@@ -26,6 +26,7 @@ $link ../.dotfiles/.irssi/startup .irssi/startup
 #$link .dotfiles/.matplotlib .matplotlib
 $link .dotfiles/.multitailrc .multitailrc
 $link .dotfiles/.netrc .netrc
+$link .dotfiles/.perltidyrc .perltidyrc
 $link .dotfiles/.screenrc .screenrc
 $link .dotfiles/Scripts Scripts
 $link .dotfiles/.ssh .ssh
