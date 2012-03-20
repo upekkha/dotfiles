@@ -466,6 +466,12 @@ function! MyToggleSpaces()
 endfunction
 "}}}
 
+" ------  Clean trailing spaces  -----{{{
+function! CleanSpaces()
+    %s/\s\+$//e
+endfunction
+"}}}
+
 " ------  Custom Folds  --------------{{{
 function! MyFold()
   " count number of folded lines
