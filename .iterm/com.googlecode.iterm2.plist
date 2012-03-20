@@ -10,6 +10,8 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>AutoHideTmuxClientSession</key>
+	<false/>
 	<key>CheckTestRelease</key>
 	<true/>
 	<key>ClosingHotkeySwitchesSpaces</key>
@@ -209,17 +211,19 @@
 		<dict/>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>435 358 924 485 0 0 1920 1178 </string>
+	<string>986 184 924 485 0 0 1920 1178 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 594 592 584 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>879 68 745 506 0 0 1920 1178 </string>
+	<string>782 145 745 506 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>879 101 976 1008 0 0 1920 1178 </string>
+	<string>1998 492 745 506 1920 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>865 197 745 506 0 0 1920 1178 </string>
+	<string>131 605 745 506 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>1141 50 745 506 0 0 1920 1178 </string>
+	<string>722 500 1032 677 0 0 1920 1178 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>860 52 975 1111 0 0 1920 1178 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -386,6 +390,8 @@
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
+			<key>Blend</key>
+			<real>0.30000001192092896</real>
 			<key>Blink Allowed</key>
 			<true/>
 			<key>Blinking Cursor</key>
@@ -456,6 +462,8 @@
 			</dict>
 			<key>Guid</key>
 			<string>F6DA3007-E216-4FA8-8823-130156550D2A</string>
+			<key>Hide After Opening</key>
+			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>Idle Code</key>
@@ -734,7 +742,7 @@
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
-			<real>0.0</real>
+			<real>0.19718749821186066</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1513,6 +1521,8 @@
 	<false/>
 	<key>OpenBookmark</key>
 	<false/>
+	<key>OpenTmuxWindowsIn</key>
+	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint</key>
 	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -1572,6 +1582,8 @@
 	<string>http://iterm2.googlecode.com/svn/trunk/appcasts/testing.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
+	<key>SULastCheckTime</key>
+	<date>2012-02-22T12:56:17Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1590,6 +1602,8 @@
 	<integer>0</integer>
 	<key>ThreeFingerEmulates</key>
 	<false/>
+	<key>TmuxDashboardLimit</key>
+	<integer>10</integer>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<true/>
 	<key>UKCrashReporterLastCrashReportDate</key>
@@ -2853,6 +2867,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20111219</string>
+	<string>1.0.0.20120203</string>
 </dict>
 </plist>
