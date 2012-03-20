@@ -566,11 +566,11 @@ let g:NERDCustomDelimiters = {
 " ------  Vim Wiki  ------------------{{{
 " wiki options
 let wiki_1 = {}
-let wiki_1.syntax = 'doku'
+let wiki_1.syntax = 'markdown'
 let wiki_1.ext = '.wiki'
 let wiki_1.index = 'index'
 let wiki_1.path = '~/Documents/Docs/Notes/wiki/'
-let wiki_1.path_html = '~/public_html/wiki/'
+let wiki_1.path_html = '~/Sites/wiki/'
 let wiki_1.auto_export = 1
 let wiki_1.template_path = '~/Documents/Docs/Notes/wiki/'
 let wiki_1.template_default = 'template'
