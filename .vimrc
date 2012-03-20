@@ -308,6 +308,11 @@ au filetype text syntax match RedTodo /TODO:/
 au filetype text syntax match RedTodo /*)/
 "}}}
 
+" ------  Gitcommit  -----------------{{{
+" Disable modeline when editing git commit messages
+au BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit nomodeline
+"}}}
+
 " ------  Irssi  ---------------------{{{
 au BufRead *.irs set syntax=irssi wrap
 "}}}
