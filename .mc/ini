@@ -82,7 +82,7 @@ reverse_files_only=1
 copymove_persistent_attr=1
 select_flags=6
 editor_backup_extension=~
-skin=ovidiu
+skin=ataraxia
 keymap=mc.keymap
 auto_save_setup_panels=1
 
