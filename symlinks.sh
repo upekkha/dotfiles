@@ -3,6 +3,7 @@
 link="ln -snfv"
 cd ~/
 mkdir -p ~/.irssi
+mkdir -p ~/.mc
 mkdir -p ~/.sessions
 chmod 700 ~/.sessions
 $link .dotfiles/.ackrc .ackrc
@@ -18,12 +19,15 @@ $link .dotfiles/.ctags .ctags
 $link .dotfiles/.dir_colors .dir_colors
 $link .dotfiles/.gitconfig .gitconfig
 $link .dotfiles/.hushlogin .hushlogin
-$link .dotfiles/.inputrc .inputrc
+$link ./.dotfiles/.inputrc .inputrc
 $link ../.dotfiles/.irssi/config .irssi/config
 $link ../.dotfiles/.irssi/startup .irssi/startup
 #$link .dotfiles/.latexmkrc .latexmkrc
 #$link .dotfiles/.latexmkrc_ns .latexmkrc_ns
 #$link .dotfiles/.matplotlib .matplotlib
+$link ../.dotfiles/.mc/ini .mc/ini
+$link ../.dotfiles/.mc/panels.ini .mc/panels.ini
+$link ../.dotfiles/.mc/skins .mc/skins
 $link .dotfiles/.multitailrc .multitailrc
 $link .dotfiles/.netrc .netrc
 $link .dotfiles/.perltidyrc .perltidyrc
