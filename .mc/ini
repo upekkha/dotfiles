@@ -80,7 +80,7 @@ mcview_remember_file_position=0
 auto_fill_mkdir_name=1
 reverse_files_only=1
 copymove_persistent_attr=1
-select_flags=6
+select_flags=7
 editor_backup_extension=~
 skin=ataraxia
 keymap=mc.keymap
@@ -97,9 +97,11 @@ permission_mode=0
 quick_search_case_sensitive=2
 ignore_ftp_chattr_errors=true
 
+editor_group_undo=0
+
 [Layout]
 equal_split=1
-first_panel_size=71
+first_panel_size=52
 message_visible=1
 keybar_visible=1
 xterm_title=1
@@ -142,13 +144,18 @@ fast_reload=false
 fast_reload_msg_shown=false
 mark_moves_down=true
 reverse_files_only=true
-auto_save_setup_panels=true
-navigate_with_arrows=false
+auto_save_setup_panels=false
+navigate_with_arrows=true
 panel_scroll_pages=true
 mouse_move_pages=true
 filetype_mode=true
 permission_mode=false
 quick_search_mode=2
+
+show_mini_info=true
+torben_fj_mode=false
+
+simple_swap=false
 
 [Panelize]
 Find *.orig after patching=find . -name \\*.orig -print
