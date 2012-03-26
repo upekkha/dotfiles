@@ -25,6 +25,7 @@ $link ../.dotfiles/.irssi/startup .irssi/startup
 #$link .dotfiles/.latexmkrc .latexmkrc
 #$link .dotfiles/.latexmkrc_ns .latexmkrc_ns
 #$link .dotfiles/.matplotlib .matplotlib
+$link ../.dotfiles/.mc/bindings .mc/bindings
 $link ../.dotfiles/.mc/ini .mc/ini
 $link ../.dotfiles/.mc/panels.ini .mc/panels.ini
 $link ../.dotfiles/.mc/skins .mc/skins
