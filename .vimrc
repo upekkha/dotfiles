@@ -319,10 +319,10 @@ au BufRead *.irs set syntax=irssi wrap
 
 " ------  Gnuplot  -------------------{{{
 " Gnuplot syntax highlighting
-au BufNewFile,BufRead *.gp,*.plt,*.gnuplot set filetype=gnuplot
+au BufNewFile,BufRead *.gp,*.plt,*.gnuplot,*.gplot set filetype=gnuplot
 " Generate Plot using F3
-au filetype gnuplot map <F3> <ESC>:w \| !gplot % <CR>
-au filetype gnuplot imap <F3> <ESC>:w \| !gplot % <CR>
+au filetype gnuplot map <F3> <ESC>:w \| !gnuplot % <CR>
+au filetype gnuplot imap <F3> <ESC>:w \| !gnuplot % <CR>
 "}}}
 
 " ------  C++  -----------------------{{{
