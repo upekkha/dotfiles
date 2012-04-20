@@ -719,6 +719,10 @@ vmap Y ^y$
 vmap . >gv
 vmap , <gv
 
+" use very magic regular expressions
+nnoremap / /\v
+vnoremap / /\v
+
 " remap space to fold/unfold
 map <space> za
 
