@@ -254,6 +254,9 @@ endif
 "}}}
 
 " ------  Autocommands  --------------{{{
+" Resize splits when the window is resized
+au VimResized * :wincmd =
+
 " Disable auto-comment after breaking lines with formatoptions
 au FileType * setl fo-=c fo-=r fo-=o
 
