@@ -184,3 +184,7 @@
 [submodule ".vim/bundle/markdown-xolox"]
 	path = .vim/bundle/markdown-xolox
 	url = https://github.com/xolox/vim-markdown.git
+[submodule ".vim/bundle/ctrlp"]
+	path = .vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
+	ignore = dirty

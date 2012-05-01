@@ -12,6 +12,7 @@ call add(g:pathogen_disabled, 'Conque-Shell')
 "call add(g:pathogen_disabled, 'css-color')
 "call add(g:pathogen_disabled, 'ColorX')
 "call add(g:pathogen_disabled, 'cucumber')
+"call add(g:pathogen_disabled, 'ctrlp')
 call add(g:pathogen_disabled, 'diffchanges')
 call add(g:pathogen_disabled, 'drawIt')
 "call add(g:pathogen_disabled, 'file-line')
@@ -621,6 +622,14 @@ let g:rbpt_colorpairs = [
     \ ['magenta',   'magenta'],
     \ ['cyan',      'cyan'],
     \ ]
+"}}}
+
+" ------  CtrlP  ---------------------{{{
+let g:ctrlp_map = '<c-p>'       " key mapping to invoke ctrlp
+let g:ctrlp_cmd = 'CtrlPMixed'  " use mixed mode by default
+let g:ctrlp_mruf_max = 25       " number of recently opened files to remember
+let g:ctrlp_open_new_file = 'r' " open new files in current window (t,h,v,r)
+let g:ctrlp_follow_symlinks = 1 " follow symlinks when listing files
 "}}}
 
 " ------  Other  ---------------------{{{
