@@ -1,0 +1,489 @@
+#!/bin/zsh -f
+
+
+
+#----------------------------------------------------------------------------
+# MacRm v0.0.1.1 for use with Darwin-OSX ......
+# by Gary Kerbaugh
+# Send comments, bugs or money to gkerbaugh@nc.rr.com
+#
+# MacRm emulates the Gnu FileUtils rm except that it moves file to the user's
+# Trash directory, using CpMac. It also unlocks the file if necessary.
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+# for more details.
+#
+# Modified by Wataru Kagawa (05/31/05)
+# wkagawa@jota.gsc.riken.go.jp
+#
+# In the modified version, the Dock Trash Can responds.  Instead of moving
+# the file directly to ~/.Trash, it is first moved to ~/Trash and then moved
+# to ~/.Trash by the Finder application.
+#----------------------------------------------------------------------------
+
+
+
+mkdir -p "$HOME/Trash"
+local dest_root="$HOME/Trash"
+local NO_ARGS=0
+local OPTERROR=65
+local E_BADARGS=65  # Exit value if incorrect number of args passed.
+local dest=""
+local USAGE_TEXT="`basename $0` $version: options (-dfirv) filename
+	required arguments: [filename]
+	Move the FILE(s) to the user's Trash.
+
+	-d, --directory
+		unlink  directory, even if non-empty (super-user
+		only)
+
+	-f, --force
+		ignore nonexistent files, never prompt
+
+	-i, --interactive
+		prompt before any removal
+
+	-r, -R, --recursive
+		remove the contents of directories recursively
+
+	-v, --verbose
+		explain what is being done
+
+	--help display this help and exit
+
+	--version
+		output version information and exit"
+
+
+
+#####################################################################
+#                                                                   #
+#   Append "copy" to the filename until a unique name is created.   #
+#                                                                   #
+#####################################################################
+
+dest_exists () {
+
+	#--------------------------------------------------------------------
+	# NCianca 2003-04-23 <ncianca@lightbulb.com>
+	# appends number after copy if more then one copy like the OSX Finder
+	#--------------------------------------------------------------------
+
+	si=0
+	suffix=''
+	base="${1%.*}"
+	ext=".${1##*.}"
+	if [ "$1" != "${base}${ext}" ]; then
+		ext=''
+	fi
+	while [ -e "$dest_root/${base}${suffix}${ext}" ]; do
+		if [ $si -eq 0 ]; then
+			suffix=" copy"
+		else
+			suffix=" copy $si"
+		fi
+		si=$(($si + 1))
+	done
+	echo -n "$dest_root/${base}${suffix}${ext}"
+
+}
+
+
+
+########################################################
+#                                                      #
+#   Unlock file and move it. Be verbose if required.   #
+#                                                      #
+########################################################
+
+move_file () {
+
+	if [ -n "$verbopt" ]; then
+		echo "Moving $1 to trash."
+		chflags -R nouchg "$1"
+#		/Developer/Tools/CpMac -p "$1" "$dest"
+		/usr/bin/ditto -rsrc "$1" "$dest"
+		/bin/rm "$1"
+
+	elif [ -n "$forceopt" ]; then
+		chflags -R nouchg "$1" > /dev/null 2>&1
+#		/Developer/Tools/CpMac -p "$1" "$dest" > /dev/null 2>&1
+		/usr/bin/ditto -rsrc "$1" "$dest" > /dev/null 2>&1
+		/bin/rm "$1" > /dev/null 2>&1
+
+	else
+		chflags -R nouchg "$1"
+#		/Developer/Tools/CpMac -p "$1" "$dest"
+		/usr/bin/ditto -rsrc "$1" "$dest"
+		/bin/rm "$1"
+
+	fi
+
+}
+
+
+
+######################################################
+#                                                    #
+#   Check with user if required and move to Trash.   #
+#                                                    #
+######################################################
+
+check_file () {
+
+	if [ \( -w "$1" \) -a \( -z "$interopt" \) ] || [ -n "$forceopt" ]
+	then
+		move_file "$1"
+	else
+		echo -n "Do you wish to move $1 to trash? "
+		read ans
+		case $ans in
+			[yY]*)
+				move_file "$1"
+			;;
+			*)
+				echo "Not moving $1 to trash."
+			;;
+		esac
+	fi
+
+}
+
+
+
+################################################################
+#                                                              #
+#   Move link by creating a new one. Be verbose if required.   #
+#                                                              #
+################################################################
+
+move_link () {
+
+	if [ -n "$verbopt" ]; then
+		echo "Moving $1 to trash."
+		chflags -R nouchg "$1"
+#		/Developer/Tools/CpMac -p "$1" "$dest"
+		/bin/ln -s "$(readlink "$1")" "$dest"
+#		target=$(readlink "$1")
+		/bin/rm "$1"
+	elif [ -n "$forceopt" ]; then
+		chflags -R nouchg "$1" > /dev/null 2>&1
+#		/Developer/Tools/CpMac -p "$1" "$dest" > /dev/null 2>&1
+		/bin/ln -s "$(readlink "$1")" "$dest" > /dev/null 2>&1
+		/bin/rm "$1" > /dev/null 2>&1
+	else
+		chflags -R nouchg "$1"
+#		/Developer/Tools/CpMac -p "$1" "$dest"
+		/bin/ln -s "$(readlink "$1")" "$dest"
+		/bin/rm "$1"
+	fi
+
+}
+
+
+
+######################################################
+#                                                    #
+#   Check with user if required and move to Trash.   #
+#                                                    #
+######################################################
+
+check_link () {
+
+	if [ \( -w "$1" \) -a \( -z "$interopt" \) ] || [ -n "$forceopt" ]
+	then
+		move_link "$1"
+	else
+		echo -n "Do you wish to move $1 to trash? "
+		read ans
+		case $ans in
+			[yY]*)
+				move_link "$1"
+			;;
+			*)
+				echo "Not moving $1 to trash."
+			;;
+		esac
+	fi
+
+}
+
+
+
+################################################
+#                                              #
+#   Check file to see if directory is empty.   #
+#                                              #
+################################################
+
+is_dir_empty () {
+
+	result=$(command ls "$1")
+	if echo "$result" | grep "[^[:space:]]">/dev/null; then
+		if [ -z "$forceopt" ]; then
+			echo "`basename $0`: `ls -d ${1}`: Directory is not empty"
+		fi
+		return 1
+	else
+		return 0
+	fi
+
+}
+
+
+
+##########################################################
+#                                                        #
+#   Check approval for moving directory or approve it.   #
+#                                                        #
+##########################################################
+
+set_dir () {
+
+	nicefile=$(echo "$1" | sed 's/\//_/g' | sed 's/[ \.-]//g')
+	if [ -n "$interopt" ]; then
+		echo -n "Do you wish to move directory $thisfile to trash? "
+		read ans
+		case $ans in
+			[yY]*)
+				eval $nicefile="true"
+				return 0
+			;;
+			*)
+				echo "Not moving $thisfile to trash."
+				eval $nicefile="false"
+				return 1
+			;;
+		esac
+	else
+		eval $nicefile="true"
+		return 0
+	fi
+
+}
+
+
+
+####################################################
+#                                                  #
+#   Check approval for moving directory to Trash   #
+#                                                  #
+####################################################
+
+check_dir () {
+
+	nicefile=$(echo "$1" | sed 's/\//_/g' | sed 's/[ \.-]//g')
+	eval testval=\$$nicefile
+	if [ -n "$interopt" ]; then
+		if [ $testval = "true" ]; then
+#			echo "after value of \$$nicefile is: $testval"
+			return 0
+		else
+			return 1
+		fi
+	else
+		return 0
+	fi
+
+}
+
+
+
+#########################################################
+#                                                       #
+#   Recursively move directory and contents to Trash.   #
+#                                                       #
+#########################################################
+
+lsdir () {
+
+	if set_dir "$thisfile" && [ -n "$recopt" ]; then
+		IFS='
+'
+		for file in $(command ls -A1 "$1"); do
+			IFS=$oldIFS
+			thisfile="$thisfile/$file"
+			dest="$dest/$file"
+			if [ -L "$thisfile" ]; then
+				check_link "$thisfile"
+			elif [ -d "$thisfile" ]; then
+				if [ -n "$forceopt" ]; then
+#					mkdir -p "$dest_root/${thisfile#*/}" > /dev/null 2>&1
+					mkdir -p "$dest" > /dev/null 2>&1
+				else
+					mkdir -p "$dest"
+				fi
+				lsdir "$thisfile"
+			else
+				check_file "$thisfile"
+			fi
+
+			thisfile=${thisfile%/*}
+			dest=${dest%/*}
+		done
+		if check_dir $thisfile && is_dir_empty "$1"; then
+			if [ -n "$forceopt" ]; then
+				rmdir "$thisfile" > /dev/null 2>&1
+			else
+				if [ -n "$verbopt" ]; then
+					echo "Moving $thisfile to trash."
+				fi
+				rmdir "$thisfile"
+			fi
+		fi
+	else
+		if check_dir "$1" && is_dir_empty "$1"; then
+			if [ -n "$forceopt" ]; then
+				rmdir "$1" > /dev/null 2>&1
+			else
+				if [ -n "$verbopt" ]; then
+					echo "Moving $1 to trash."
+				fi
+				rmdir "$1"
+			fi
+		fi
+	fi
+
+}
+
+
+
+###########################################################################
+#                                                                         #
+#   Use getopts to obtain the options passed to the script by the user.   #
+#                                                                         #
+###########################################################################
+
+while getopts ":dfirRv-:" Option
+do
+	case $Option in
+	d)		local diropt="true";;		# Move empty directories
+	f)		local forceopt="true";;		# Force move to user's Trash
+	i)		local interopt="true";;		# Request before moving
+	r|R)	local recopt="true";;		# Recursively move contents of directories
+	v)		local verbopt="true";;		# Report all movements to Trash
+	-) case $OPTARG in
+			directory)   local diropt="true";;
+			force)       local forceopt="true";;
+			interactive) local interopt="true";;
+			recursive)   local recopt="true";;
+			verbose)     local verbopt="true";;
+			help)        echo "$USAGE_TEXT"
+				return 0;;
+			version)	echo "$version"
+				return 0;;
+			*)	echo "$USAGE_TEXT"
+				return 0;;	#DEFAULT
+		esac;;
+	?     ) echo "Unimplemented option chosen: $OPTARG"
+		echo "$USAGE_TEXT"
+		return 0;;
+	*     ) echo "Unimplemented option chosen: $Option"
+		echo "$USAGE_TEXT"
+		return 0;;		# DEFAULT
+	esac
+done
+
+shift $(($OPTIND - 1))
+
+if [ -n "$forceopt" ]; then
+	local interopt=""
+	local verbopt=""
+fi
+
+function do_arg {
+
+	argu="$1"
+	IFS="	"
+	if [ -e "$argu" ]; then
+		for elem in  $(command ls -d "$argu")
+		do
+			IFS=$oldIFS
+			elem=$(echo "$elem" | sed 's/\/$//g')
+			if [ \( -n "$recopt" \) -o \( -n "$diropt" \) ]; then
+				if [ -L "$elem" ]; then
+					filename=$(basename "$elem")
+					dest=`dest_exists "$filename"`
+					check_link "$elem"
+					dest=""
+				elif [ -d "$elem" ]; then
+					thisfile="$elem"
+					temp=$(basename "$elem")
+					dest=`dest_exists "$temp"`
+					if [ -n "$forceopt" ]; then
+						mkdir -p "$dest" > /dev/null 2>&1
+					else
+						mkdir -p "$dest"
+					fi
+					lsdir "$elem"
+					dest=""
+				else
+					filename=$(basename "$elem")
+					dest=`dest_exists "$filename"`
+					check_file "$elem"
+					dest=""
+				fi
+			else
+				if [ -L "$elem" ]; then
+					filename=$(basename "$elem")
+					dest=`dest_exists "$filename"`
+					check_link "$elem"
+					dest=""
+				elif [ ! -d "$elem" ]; then
+					filename=$(basename "$elem")
+					dest=`dest_exists "$filename"`
+					check_file "$elem"
+					dest=""
+				elif [ -z "$forceopt" ]; then
+					echo "`basename $0`: ${elem}: is a directory"
+				fi
+			fi
+		done
+	elif [ -z "$forceopt" ]; then
+		echo "`basename $0`: ${argu}: No such file or directory"
+	fi
+
+}
+
+
+
+#################################
+#                               #
+#   Main program starts here.   #
+#                               #
+#################################
+
+local oldIFS=$IFS
+if [ -z "$*" ]; then
+	if [ -t 0 ]; then
+		echo "Usage: $USAGE_TEXT"
+		return 1
+	else
+		IFS='
+'
+		for argu in $( cat $@ )
+		do
+			do_arg "$argu"
+		done
+	fi
+else
+	for argu in "$@"
+	do
+		do_arg "$argu"
+	done
+fi
+
+osascript >/dev/null << eof
+set A to "$dest_root"
+set B to ( POSIX file A as alias )
+tell app "Finder"
+	delete items of folder B
+end tell
+eof
