@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+
+# Start webserver (with cgi support) for this folder and view it in the browser
+
+import CGIHTTPServer, BaseHTTPServer, sys, os
+
+class CGIExtHTTPRequestHandler(CGIHTTPServer.CGIHTTPRequestHandler):
+    def is_python(self, path):
+        return path.lower().endswith('.cgi')
+
+    def is_cgi(self):
+        base = self.path
+        query = ''
+        i = base.find('?')
+        if i != -1:
+            query = base[i:]
+            base = base[:i]
+        if not base.lower().endswith('.cgi'):
+            return False
+        [parentDirs, script] = base.rsplit('/', 1)
+        self.cgi_info = (parentDirs, script+query)
+        return True
+
+def run_server():
+    dirName = os.getcwd()
+    blanks = dirName.count(' ')
+    if 0 < blanks:
+        print "Error: The path to this directory contains spaces"
+        return
+
+    server_addr = ('localhost', 8765)
+    cgiServer = BaseHTTPServer.HTTPServer(server_addr, CGIExtHTTPRequestHandler)
+    cgiServer.serve_forever()
+
+os.system('open http://0.0.0.0:8765')
+run_server()
