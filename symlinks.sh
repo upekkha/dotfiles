@@ -12,6 +12,7 @@ $link .dotfiles/.bash_logout .bash_logout
 $link .dotfiles/.bash_profile .bash_profile
 $link .dotfiles/.bazaar .bazaar
 $link .dotfiles/.colordiffrc .colordiffrc
+$link .dotfiles/.colorizerc .colorizerc
 #$link .dotfiles/.colortailrc .colortailrc
 #$link .dotfiles/.conkyrc .conkyrc
 $link .dotfiles/.csshcluster .csshcluster
