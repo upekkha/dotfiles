@@ -36,7 +36,7 @@ highlight MatchParen    guifg=Blue      guibg=#FFFFA0   gui=none   ctermfg=18   
 
 highlight CodeSnip      guifg=Red       guibg=#FFDFFF   gui=none   ctermfg=9     ctermbg=225   cterm=none
 
-highlight Search        guifg=Black     guibg=Red       gui=bold   ctermfg=0     ctermbg=9     cterm=bold
+highlight Search        guifg=Black     guibg=#FFFFA0   gui=none   ctermfg=0     ctermbg=229   cterm=none
 highlight ExtWhiteSpace guifg=White     guibg=#DF5F00   gui=bold   ctermfg=255   ctermbg=166   cterm=bold
 highlight Pmenu         guifg=White     guibg=Blue      gui=none                               cterm=none
 highlight PmenuSel      guifg=White     guibg=Red       gui=none                               cterm=none
