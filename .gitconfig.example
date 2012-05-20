@@ -8,6 +8,7 @@
 
 [core]
     editor = vim
+    excludesfile = ~/.dotfiles/.gitignore.global
 
 [color]
     ui = auto
