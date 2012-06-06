@@ -33,6 +33,7 @@ highlight NonText       guifg=Grey40    guibg=NONE      gui=none                
 highlight SpecialKey    guifg=#0099DD   guibg=NONE      gui=none   ctermfg=32                  cterm=none
 highlight Conceal       guifg=#FFFFA0   guibg=Black     gui=none   ctermfg=229                 cterm=none
 highlight MatchParen    guifg=Blue      guibg=#FFFFA0   gui=none   ctermfg=18    ctermbg=229   cterm=none
+highlight Underlined    guifg=#80A0FF                   gui=none   ctermfg=81                  cterm=none
 
 highlight CodeSnip      guifg=Red       guibg=#FFDFFF   gui=none   ctermfg=9     ctermbg=225   cterm=none
 
