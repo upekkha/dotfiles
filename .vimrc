@@ -377,6 +377,28 @@ au filetype cucumber compiler cucumber
 " ------  Markdown  ------------------{{{
 au filetype markdown set conceallevel=2     "conceal markdown commands
 au filetype markdown set wrap               "wrap lines
+
+" folding
+au filetype markdown setlocal foldexpr=MarkdownFold()
+au filetype markdown setlocal foldmethod=expr
+au filetype markdown setlocal foldlevel=1
+function! MarkdownFold()
+    let line = getline(v:lnum)
+    " regular headers
+    let depth = match(line, '\(^#\+\)\@<=\( .*$\)\@=')
+    if depth > 0
+        return ">" . depth
+    endif
+    " setext headers
+    let nextline = getline(v:lnum + 1)
+    if (line =~ '^.\+$') && (nextline =~ '^=\+$')
+        return ">1"
+    endif
+    if (line =~ '^.\+$') && (nextline =~ '^-\+$')
+        return ">2"
+    endif
+    return "="
+endfunction
 "}}}
 
 " ------  Fortran  -------------------{{{
