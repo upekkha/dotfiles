@@ -684,6 +684,9 @@ let b:slime_config = {"sessionname": "vim-shell", "windowname": "1"}
 
 " indent-guides: custom colors
 let g:indent_guides_auto_colors = 0
+
+" vim markdown fenced code highlighting
+let g:markdown_github_languages = ['ruby', 'perl', 'sh', 'vim']
 "}}}
 "}}}
 
