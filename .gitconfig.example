@@ -41,6 +41,9 @@
     httpd = webrick
     port = 1234
 
+[interactive]
+	singlekey = true
+
 [alias]
     co = checkout
     st = status
