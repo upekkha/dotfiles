@@ -4,6 +4,7 @@
 let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'ack')
 call add(g:pathogen_disabled, 'bash-support')
+"call add(g:pathogen_disabled, 'browser-refresh')
 "call add(g:pathogen_disabled, 'bufexplorer')
 "call add(g:pathogen_disabled, 'BufOnly')
 "call add(g:pathogen_disabled, 'compiler-python')
@@ -686,7 +687,11 @@ let b:slime_config = {"sessionname": "vim-shell", "windowname": "1"}
 let g:indent_guides_auto_colors = 0
 
 " vim markdown fenced code highlighting
-let g:markdown_github_languages = ['ruby', 'perl', 'sh', 'vim']
+let g:markdown_github_languages = ['ruby', 'perl', 'sh', 'vim', 'html', 'javascript', 'css']
+
+" browser-refresh :RRB
+let g:RefreshRunningBrowserDefault = 'chrome'
+let g:RefreshRunningBrowserReturnFocus = 1
 "}}}
 "}}}
 
@@ -730,6 +735,9 @@ map <Leader>T :NERDTreeToggle<CR>
 
 " remap \b to open bash using ConqueTerm
 "map <Leader>b :ConqueTerm bash -l<CR>
+
+" remap \r to reload browser
+map <Leader>r :RRB<CR>
 
 " remap \rp to toggle rainbow-parenthesis
 map <Leader>rp :RainbowParenthesesToggle<CR>
