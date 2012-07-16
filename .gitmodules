@@ -127,9 +127,6 @@
 	path = .vim/bundle/xterm-color-table
 	url = https://github.com/guns/xterm-color-table.vim.git
 	ignore = dirty
-[submodule ".vim/bundle/IndexedSearch"]
-	path = .vim/bundle/IndexedSearch
-	url = https://github.com/vim-scripts/IndexedSearch.git
 [submodule ".vim/bundle/BufOnly"]
 	path = .vim/bundle/BufOnly
 	url = https://github.com/vim-scripts/BufOnly.vim.git
