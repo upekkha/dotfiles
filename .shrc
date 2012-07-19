@@ -154,6 +154,12 @@ mangv()
     man $* | col -bx | gvim -c ":set ft=man" -R -;
 }
 
+# Open perldoc in gvim
+perldocgv()
+{
+    perldoc $* | col -bx | gvim -c ":set ft=man" -R -;
+}
+
 # Convert man to ps and open in Skim
 mans()
 {
