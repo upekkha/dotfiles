@@ -736,8 +736,8 @@ map <Leader>T :NERDTreeToggle<CR>
 " remap \b to open bash using ConqueTerm
 "map <Leader>b :ConqueTerm bash -l<CR>
 
-" remap \r to reload browser
-map <Leader>r :RRB<CR>
+" remap \r to auto-reload browser on save
+map <Leader>r :autocmd BufWritePost <buffer> RRB<CR>
 
 " remap \rp to toggle rainbow-parenthesis
 map <Leader>rp :RainbowParenthesesToggle<CR>
