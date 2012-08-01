@@ -607,11 +607,12 @@ let g:NERDCustomDelimiters = {
 " wiki options
 let wiki_1 = {}
 let wiki_1.syntax = 'markdown'
-let wiki_1.ext = '.wiki'
+let wiki_1.ext = '.markdown'
+let g:vimwiki_global_ext = 0
 let wiki_1.index = 'index'
 let wiki_1.path = '~/Documents/Docs/Notes/wiki/'
 let wiki_1.path_html = '~/Sites/wiki/'
-let wiki_1.auto_export = 1
+let wiki_1.auto_export = 0
 let wiki_1.template_path = '~/Documents/Docs/Notes/wiki/'
 let wiki_1.template_default = 'template'
 let wiki_1.template_ext = '.html'
