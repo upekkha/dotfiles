@@ -257,7 +257,7 @@ mkcd()
 # cdf: change to folder opened in the frontmost Finder window {{{
 cdf ()
 {
-    currFolderPath=$( arch -i386 osascript <<"    EOT"
+    currFolderPath=$(osascript <<"    EOT"
         tell application "Finder"
             try
                 set currFolder to (folder of the front window as alias)
