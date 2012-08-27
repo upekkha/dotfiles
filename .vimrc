@@ -124,6 +124,7 @@ set wildmenu            "show matches for command-line completion
 set wildmode=full       "complete the next full match
 set switchbuf=usetab    "when switching buffer, switch to tab having it open
 set wildignore+=*.o,*.pdf   " Let tab completion ignore certain file types
+set fillchars+=vert:\ , "use blank as separator in vertical splits
 
 " Define replacement for invisivble characters (set invlist)
 set listchars=eol:¬,tab:>-,trail:~
