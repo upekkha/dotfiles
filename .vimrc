@@ -379,6 +379,9 @@ au filetype cucumber compiler cucumber
 au filetype markdown set conceallevel=2     "conceal markdown commands
 au filetype markdown set wrap               "wrap lines
 
+au filetype markdown syntax match Comment /%%.*/
+au filetype markdown syntax match RedTodo /TODO/
+
 " folding
 au filetype markdown setlocal foldexpr=MarkdownFold()
 au filetype markdown setlocal foldmethod=expr
