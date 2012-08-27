@@ -60,7 +60,7 @@ call add(g:pathogen_disabled, 'vim-latex')
 "call add(g:pathogen_disabled, 'vim-less')
 "call add(g:pathogen_disabled, 'vim-rails')
 "call add(g:pathogen_disabled, 'vim-slime')
-"call add(g:pathogen_disabled, 'vimwiki')
+call add(g:pathogen_disabled, 'vimwiki')
 "call add(g:pathogen_disabled, 'xterm-color-table')
 
 "automatically load bundles and generate help tags
