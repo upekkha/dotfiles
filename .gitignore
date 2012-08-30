@@ -23,6 +23,7 @@ Scripts/
 .bazaar/bazaar.conf
 .csshcluster
 .gitconfig
+.gnupg
 .irssi/config
 .netrc
 .shrc2

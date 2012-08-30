@@ -20,6 +20,7 @@ $link .dotfiles/.csshrc .csshrc
 $link .dotfiles/.ctags .ctags
 $link .dotfiles/.dir_colors .dir_colors
 $link .dotfiles/.gitconfig .gitconfig
+$link .dotfiles/.gnupg .gnupg
 $link .dotfiles/.hushlogin .hushlogin
 $link ./.dotfiles/.inputrc .inputrc
 $link ../.dotfiles/.irssi/config .irssi/config
