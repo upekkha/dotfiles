@@ -34,6 +34,7 @@ $link ../../../.dotfiles/.mc/skins .local/share/mc/skins
 $link .dotfiles/.multitailrc .multitailrc
 $link .dotfiles/.netrc .netrc
 $link .dotfiles/.perltidyrc .perltidyrc
+$link .dotfiles/.procmailrc .procmailrc
 $link .dotfiles/.screenrc .screenrc
 $link .dotfiles/Scripts Scripts
 $link .dotfiles/.ssh .ssh
