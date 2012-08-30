@@ -154,7 +154,7 @@
 	<key>NSNavBrowserPreferedColumnContentWidth</key>
 	<real>186</real>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/.dotfiles/.iterm</string>
+	<string>~/Desktop</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{585, 400}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -180,46 +180,25 @@
 	<array/>
 	<key>NSToolbar Configuration Terminal Toolbar</key>
 	<dict>
-		<key>TB Default Item Identifiers</key>
-		<array>
-			<string>New</string>
-			<string>Info</string>
-			<string>Close</string>
-			<string>Command</string>
-			<string>Profiles</string>
-		</array>
 		<key>TB Display Mode</key>
 		<integer>1</integer>
 		<key>TB Icon Size Mode</key>
 		<integer>1</integer>
 		<key>TB Is Shown</key>
 		<integer>0</integer>
-		<key>TB Item Identifiers</key>
-		<array>
-			<string>New</string>
-			<string>Info</string>
-			<string>NSToolbarSeparatorItem</string>
-			<string>NSToolbarCustomizeToolbarItem</string>
-			<string>Close</string>
-			<string>NSToolbarSeparatorItem</string>
-			<string>Command</string>
-			<string>Profiles</string>
-		</array>
 		<key>TB Size Mode</key>
 		<integer>1</integer>
-		<key>TB Visibility Priority Values</key>
-		<dict/>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>511 217 924 485 0 0 1920 1178 </string>
+	<string>58 304 924 485 0 0 1920 1178 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 594 592 584 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 4 1920 484 0 0 1920 1178 </string>
+	<string>886 234 819 588 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>587 338 745 506 0 0 1920 1178 </string>
+	<string>1114 236 745 506 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>131 605 745 506 0 0 1920 1178 </string>
+	<string>2113 351 745 506 1920 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>722 500 1032 677 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -229,6 +208,18 @@
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>AWDS Pane Directory</key>
+			<string></string>
+			<key>AWDS Pane Option</key>
+			<string>Recycle</string>
+			<key>AWDS Tab Directory</key>
+			<string></string>
+			<key>AWDS Tab Option</key>
+			<string>No</string>
+			<key>AWDS Window Directory</key>
+			<string></string>
+			<key>AWDS Window Option</key>
+			<string>No</string>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -440,7 +431,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Advanced</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Disable Printing</key>
@@ -2975,6 +2966,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20120203</string>
+	<string>1.0.0.20120724</string>
 </dict>
 </plist>
