@@ -684,9 +684,14 @@ let g:snippets_dir="~/.vim/mysnippets/"
 let g:rails_menu=1
 
 " vim-slime
+let g:slime_paste_file = "$HOME/.slime_cache"
 let g:slime_target = "screen"
-let g:slime_send_key = '<C-c><C-c>'
 let b:slime_config = {"sessionname": "vim-shell", "windowname": "1"}
+let g:slime_no_mappings = 1
+" Ctrl-C Ctrl-C sends single line, or visual selection
+nmap <C-c><C-c> <Plug>SlimeLineSend
+imap <C-c><C-c> <Plug>SlimeLineSend
+vmap <C-c><C-c> <Plug>SlimeRegionSend
 
 " indent-guides: custom colors
 let g:indent_guides_auto_colors = 0
