@@ -142,6 +142,25 @@ irssitail()
 }
 #}}}
 
+# gvimscp: open remote files using bash tab completion {{{
+gvimscp()
+{
+    if [[ -z $1 ]]; then
+        echo "usage: gvimscp [[user@]host1:]file1 ... [[user@]host2:]file2"
+        return
+    fi
+    declare -a targs=()
+    for iarg in $@
+    do
+        # adapt syntax for vim
+        targ="scp://$(echo $iarg | sed -e 's@:/@//@' | sed -e 's@:@/@')"
+        targs=("${targs[@]}" $targ)
+    done
+    gvim ${targs[@]}
+}
+complete -F _scp -o nospace gvimscp
+#}}}
+
 # manv, mangv, mans: manpages hacks {{{
 # Open manpage in vim/gvim
 manv()
