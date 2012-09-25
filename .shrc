@@ -44,6 +44,10 @@ export GREP_COLORS='ms=01;31:mc=01;31:sl=:cx=:fn=33:ln=32:bn=32:se=36'
 if [[ "$UNAME" == "Linux" ]]; then
     export PATH=/home/isg/bin:$PATH
 fi
+# SANS bin path if present
+if [[ -d $HOME/git/sans/bin ]]; then
+    export PATH=$HOME/git/sans/bin:$PATH
+fi
 #}}}
 
 # ------  alias commands  ------------{{{
