@@ -6,7 +6,7 @@ import CGIHTTPServer, BaseHTTPServer, sys, os
 
 class CGIExtHTTPRequestHandler(CGIHTTPServer.CGIHTTPRequestHandler):
     def is_python(self, path):
-        return path.lower().endswith('.cgi')
+        return path.lower().endswith(('.cgi','.pl'))
 
     def is_cgi(self):
         base = self.path
@@ -15,7 +15,7 @@ class CGIExtHTTPRequestHandler(CGIHTTPServer.CGIHTTPRequestHandler):
         if i != -1:
             query = base[i:]
             base = base[:i]
-        if not base.lower().endswith('.cgi'):
+        if not base.lower().endswith(('.cgi','.pl')):
             return False
         [parentDirs, script] = base.rsplit('/', 1)
         self.cgi_info = (parentDirs, script+query)
