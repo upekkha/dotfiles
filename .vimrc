@@ -675,7 +675,7 @@ let g:bufExplorerDefaultHelp=0
 let Tlist_Exit_OnlyWindow=1
 
 " ack plugin: use macports ack and scan all types of files
-let g:ackprg="/opt/local/bin/ack -H --nocolor --nogroup --column --all-types"
+let g:ackprg="~/Scripts/ack -H --nocolor --nogroup --column --all-types"
 
 " snipmate
 let g:snippets_dir="~/.vim/mysnippets/"
