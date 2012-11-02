@@ -1,20 +1,27 @@
 # Function
 snippet sub
 	sub ${1:function_name} {
-		${2:#body ...}
+		my ($${2:varname}) = @_;
+
+		${3:#body}
 	}
-# Conditional
+# Conditional if
 snippet if
 	if (${1}) {
-		${2:# body...}
+		${2:# body}
+	}
+# Conditional else
+snippet else
+	else {
+		${1:# body}
 	}
 # Conditional if..else
 snippet ife
 	if (${1}) {
-		${2:# body...}
+		${2:# body}
 	}
 	else {
-		${3:# else...}
+		${3:# body}
 	}
 # Conditional if..elsif..else
 snippet ifee
@@ -27,64 +34,26 @@ snippet ifee
 	else {
 		${5:# else...}
 	}
-# Conditional One-line
-snippet xif
-	${1:expression} if ${2:condition};${3}
-# Unless conditional
-snippet unless
-	unless (${1}) {
-		${2:# body...}
-	}
-# Unless conditional One-line
-snippet xunless
-	${1:expression} unless ${2:condition};${3}
-# Try/Except
-snippet eval
-	eval {
-		${1:# do something risky...}
-	};
-	if ($@) {
-		${2:# handle failure...}
-	}
 # While Loop
-snippet wh
+snippet while
 	while (${1}) {
 		${2:# body...}
 	}
-# While Loop One-line
-snippet xwh
-	${1:expression} while ${2:condition};${3}
 # For Loop C-Style
 snippet for
 	for (my $${2:var} = 0; $$2 < ${1:count}; $$2${3:++}) {
-		${4:# body...}
+		${4:# body}
 	}
-# For Loop one-line
-snippet xfor
-	${1:expression} for @${2:array};${3}
 # Foreach Loop
-snippet fore
+snippet foreach
 	foreach my $${1:x} (@${2:array}) {
-		${3:# body...}
+		${3:# body}
 	}
-# Foreach Loop One-line
-snippet xfore
-	${1:expression} foreach @${2:array};${3}
-# Package
-snippet cl
-	package ${1:ClassName};
-
-	use base qw(${2:ParentClass});
-
-	sub new {
-		my $class = shift;
-		$class = ref $class if ref $class;
-		my $self = bless {}, $class;
-		$self;
+# Open file
+snippet open
+	open my $${1:DATA}, '<', ${2:filename}
+		or die "Can't open file: $!";
+	while (my $line = <$1>) {
+		${3:# body}
 	}
-
-	1;${3}
-# Read File
-snippet slurp
-	my $${1:var};
-	{ local $/ = undef; local *FILE; open FILE, "<${2:file}"; $$1 = <FILE>; close FILE }${3}
+	close $1 or die "Couldn't close file: $!";
