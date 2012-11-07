@@ -827,11 +827,8 @@ map <Leader>[ :tabprev<CR>
 " remap \a to toggle line wrapping
 map <Leader>a :set invwrap<CR>
 
-" remap \H to toggle hlsearch
-map <Leader>H :set invhlsearch<CR>
-
-" remap \h to clear last hlsearch
-map <Leader>h :let @/ = ""<CR>
+" remap \h to stop hlsearch until next search
+map <Leader>h :noh<CR>
 
 " remap \s to toggle spellchecking
 map <Leader>s :set invspell<CR>
