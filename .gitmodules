@@ -12,10 +12,6 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/vcscommand"]
-	path = .vim/bundle/vcscommand
-	url = https://github.com/vim-scripts/vcscommand.vim.git
-	ignore = dirty
 [submodule ".vim/bundle/LaTeX-Box"]
 	path = .vim/bundle/LaTeX-Box
 	url = https://github.com/vim-scripts/LaTeX-Box.git
