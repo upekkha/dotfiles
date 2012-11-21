@@ -49,8 +49,8 @@ call add(g:pathogen_disabled, 'shebang')
 call add(g:pathogen_disabled, 'SudoEdit')
 "call add(g:pathogen_disabled, 'surround')
 "call add(g:pathogen_disabled, 'tabular')
-call add(g:pathogen_disabled, 'tagbar')
-"call add(g:pathogen_disabled, 'taglist')
+"call add(g:pathogen_disabled, 'tagbar')
+call add(g:pathogen_disabled, 'taglist')
 call add(g:pathogen_disabled, 'TaskList')
 call add(g:pathogen_disabled, 'TeX-PDF')
 call add(g:pathogen_disabled, 'undofile')
@@ -686,9 +686,6 @@ let NERDTreeIgnore=['\~$', '\.o']
 " Customize BufExplorer to not show help message
 let g:bufExplorerDefaultHelp=0
 
-" Customize Taglist
-let Tlist_Exit_OnlyWindow=1
-
 " ack plugin: use macports ack and scan all types of files
 let g:ackprg="~/Scripts/ack -H --nocolor --nogroup --column --all-types"
 
@@ -724,9 +721,6 @@ let g:RefreshRunningBrowserReturnFocus = 1
 " Toggle NERDTree
 cabbrev Tree NERDTreeToggle
 
-" Toggle Taglist
-cabbrev Tlist TlistToggle
-
 " Notes Script
 cabbrev Note set foldmethod=indent columns=120 <Bar>NERDTreeToggle <Bar>vertical res -11
 
@@ -752,8 +746,8 @@ cabbrev hapdf hardcopy > %<.ps <Bar>!ps2pdf %<.ps %<.pdf && rm %<.ps
     vmap <Leader>#  :Tabularize /#<CR>
 "endif
 
-" remap \t to toggle TagList
-map <Leader>t :TlistToggle<CR>
+" remap \t to toggle Tagbar
+map <Leader>t :TagbarToggle<CR>
 
 " remap \T to toggle NerdTree
 map <Leader>T :NERDTreeToggle<CR>
