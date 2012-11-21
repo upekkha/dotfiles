@@ -119,10 +119,6 @@
 	path = .vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
 	ignore = dirty
-[submodule ".vim/bundle/taglist"]
-	path = .vim/bundle/taglist
-	url = https://github.com/vim-scripts/taglist.vim.git
-	ignore = dirty
 [submodule ".vim/bundle/xterm-color-table"]
 	path = .vim/bundle/xterm-color-table
 	url = https://github.com/guns/xterm-color-table.vim.git
