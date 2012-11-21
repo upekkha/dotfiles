@@ -718,9 +718,6 @@ let g:RefreshRunningBrowserReturnFocus = 1
 "}}}
 
 " ------  Abbreviations  -------------{{{
-" Toggle NERDTree
-cabbrev Tree NERDTreeToggle
-
 " Notes Script
 cabbrev Note set foldmethod=indent columns=120 <Bar>NERDTreeToggle <Bar>vertical res -11
 
@@ -752,9 +749,6 @@ map <Leader>t :TagbarToggle<CR>
 " remap \T to toggle NerdTree
 map <Leader>T :NERDTreeToggle<CR>
 
-" remap \b to open bash using ConqueTerm
-"map <Leader>b :ConqueTerm bash -l<CR>
-
 " remap \r to auto-reload browser on save
 map <Leader>r :autocmd BufWritePost <buffer> RRB<CR>
 
@@ -782,10 +776,6 @@ vmap Y ^y$
 vmap . >gv
 vmap , <gv
 
-" use very magic regular expressions
-nnoremap / /\v
-vnoremap / /\v
-
 " remap space to fold/unfold
 map <space> za
 
@@ -804,18 +794,6 @@ nmap <SwipeRight> :bn<CR>
 
 " Command to save read-only file as root and reload
 "cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
-
-" remap Alt-Up/Down to scroll
-"map <A-up> <C-Y>
-"map <A-down> <C-E>
-"imap <A-up> <C-X><C-Y>
-"imap <A-down> <C-X><C-E>
-
-"" remap Alt-Left/Right to change tab
-"imap <A-left> <ESC>:tabp<CR>a
-"imap <A-right> <ESC>:tabn<CR>a
-"map <A-left> <ESC>:tabp<CR>
-"map <A-right> <ESC>:tabn<CR>
 
 " remap \X to set executable bit to current buffer
 nmap <Leader>X :call MySetExecutableBit()<CR>
@@ -846,9 +824,6 @@ map <Leader>ev :tabnew $MYVIMRC<CR>
 
 " remap \sv to source vimrc
 map <Leader>sv :source $MYVIMRC<CR>
-
-"" remap \cd to change working directory to the buffer's
-"map <Leader>cd :cd %:p:h<CR>
 
 " remap \cd to change working directory to the buffer's (follow symlinks)
 map <Leader>cd :exe 'cd'.fnamemodify(resolve(expand("%:p")),":h")<CR>
