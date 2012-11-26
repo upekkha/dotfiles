@@ -59,5 +59,3 @@
     # diff and show based on words instead of lines
     diffw = diff --color-words
     showw = show --color-words
-    # amend commit with same message
-    #amend = commit --amend -C head
