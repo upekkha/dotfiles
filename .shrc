@@ -20,8 +20,6 @@ export EDITOR=vim
 # MacPorts
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
-# MySQL
-export PATH=/usr/local/mysql/bin:$PATH
 # Munki
 export PATH=/usr/local/munki:$PATH
 # Developer Tools
