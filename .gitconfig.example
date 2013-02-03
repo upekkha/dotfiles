@@ -44,6 +44,9 @@
 [interactive]
 	singlekey = true
 
+[push]
+    default = simple
+
 [alias]
     co = checkout
     st = status
