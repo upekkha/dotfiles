@@ -707,7 +707,7 @@ vmap <C-c><C-c> <Plug>SlimeRegionSend
 let g:indent_guides_auto_colors = 0
 
 " vim markdown fenced code highlighting
-let g:markdown_github_languages = ['ruby', 'perl', 'sh', 'vim', 'html', 'javascript', 'css']
+let g:markdown_github_languages = ['ruby', 'perl', 'sh', 'vim', 'html', 'javascript', 'css', 'python']
 
 " browser-refresh :RRB
 let g:RefreshRunningBrowserDefault = 'chrome'
