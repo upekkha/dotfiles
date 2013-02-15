@@ -119,9 +119,9 @@ set modelines=5         "number of lines checked for modelines
 set display=lastline    "show beginning of broken line at bottom of window instead of displaying @
 set clipboard=unnamed   "make all operations such as yy, dd, p work with the clipboard
 set wildmenu            "show matches for command-line completion
-set wildmode=full       "complete the next full match
+set wildmode=longest:full,full  "define how tab completion proceeds on partial match
+set wildignore+=*.o,*.pdf       "Let tab completion ignore certain file types
 set switchbuf=usetab    "when switching buffer, switch to tab having it open
-set wildignore+=*.o,*.pdf   " Let tab completion ignore certain file types
 set fillchars+=vert:\ , "use blank as separator in vertical splits
 set nrformats=          "treat all numerals as decimal (instead of octal if padded with zeros)
 
