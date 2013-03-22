@@ -107,10 +107,6 @@
 	path = .vim/bundle/matchit
 	url = https://github.com/vim-scripts/matchit.zip.git
 	ignore = dirty
-[submodule ".vim/bundle/netrw"]
-	path = .vim/bundle/netrw
-	url = https://github.com/vim-scripts/netrw.vim.git
-	ignore = dirty
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
