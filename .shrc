@@ -264,14 +264,6 @@ cd () {
 }
 #}}}
 
-# mkcd: mkdir and cd into it {{{
-mkcd()
-{
-    mkdir -p "$*"
-    cd "$*"
-}
-#}}}
-
 # cdf: change to folder opened in the frontmost Finder window {{{
 cdf ()
 {
