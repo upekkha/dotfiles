@@ -92,9 +92,6 @@
 	path = .vim/bundle/SudoEdit
 	url = https://github.com/vim-scripts/SudoEdit.vim.git
 	ignore = dirty
-[submodule ".vim/bundle/css-color"]
-	path = .vim/bundle/css-color
-	url = https://github.com/skammer/vim-css-color.git
 [submodule ".vim/bundle/diffchanges"]
 	path = .vim/bundle/diffchanges
 	url = https://github.com/vim-scripts/diffchanges.vim.git
@@ -180,3 +177,6 @@
 [submodule ".vim/bundle/browser-refresh"]
 	path = .vim/bundle/browser-refresh
 	url = https://github.com/mkitt/browser-refresh.vim.git
+[submodule ".vim/bundle/css-color"]
+	path = .vim/bundle/css-color
+	url = https://github.com/ap/vim-css-color.git
