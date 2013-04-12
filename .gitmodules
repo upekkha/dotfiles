@@ -180,3 +180,6 @@
 [submodule ".vim/bundle/css-color"]
 	path = .vim/bundle/css-color
 	url = https://github.com/ap/vim-css-color.git
+[submodule ".vim/bundle/vim-dispatch"]
+	path = .vim/bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
