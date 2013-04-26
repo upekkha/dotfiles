@@ -134,10 +134,10 @@ irssitail()
 {
     if [[ $# -eq 0 ]]; then
         # without parameter: tail most recent file
-        multitail -cS irssi -n 5000 ~/.irssi/log/isgphys/`/bin/ls -t ~/.irssi/log/isgphys/ | head -1`
+        multitail -cS irssi -n 5000 `/bin/ls -t ~/.irssi/log/eth/*isgphys.log | head -1`
     else
         # else view most recent minus n-th file
-        view ~/.irssi/log/isgphys/`/bin/ls -t ~/.irssi/log/isgphys/ | head -$(($*+1)) | tail -1`
+        view `/bin/ls -t ~/.irssi/log/eth/*isgphys.log | head -$(($*+1)) | tail -1`
     fi
 }
 #}}}
