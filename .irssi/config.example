@@ -8,6 +8,11 @@ settings = {
     irssiproxy_password = "Password";
     irssiproxy_ports = "chatnetname=1234";
   };
+  "fe-common/core" = {
+      autolog = "yes";
+      autolog_level = "all";
+      autolog_path = "~/.irssi/log/$tag/%Y-%m-%d_$0.log";
+  };
 };
 
 chatnets = {
@@ -28,20 +33,6 @@ servers = (
 channels = (
   { name = "#channelname"; chatnet = "chatnetname"; autojoin = "yes"; },
 );
-
-logs = {
-  "~/.irssi/log/channelname/%Y-%m-%d_channelname.irs" = {
-    auto_open = "yes";
-    level = "all";
-    items = (
-      {
-        type   = "target";
-        name   = "#channelname";
-        server = "chatnetname";
-      }
-    );
-  };
-};
 
 statusbar = {
   # formats:
