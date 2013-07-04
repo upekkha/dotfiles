@@ -61,7 +61,7 @@ call add(g:pathogen_disabled, 'vimwiki')
 "call add(g:pathogen_disabled, 'xterm-color-table')
 
 "automatically load bundles and generate help tags
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 call pathogen#helptags()
 "}}}
 
