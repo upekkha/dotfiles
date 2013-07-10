@@ -58,6 +58,7 @@ alias latexmkp='latexmk -pdf -pvc'
 alias packagemaker='/Developer/Applications/Utilities/PackageMaker.app/Contents/MacOS/PackageMaker'
 alias myrsync='rsync -rLptgoDvzuhX --rsync-path=/opt/local/bin/rsync --exclude ".DS_Store" --exclude ".*.swp" --delete'
 alias netip='/usr/bin/appletviewer http://velsheda.ethz.ch:7777/forms/frmservlet?config=netip > /dev/null 2>&1 &'
+alias rbenv_init='export PATH="$HOME/.rbenv/bin:$PATH";eval "$(rbenv init -)";unalias rbenv_init'
 
 # use colordiff if it exists
 if [ -e ~/Scripts/colordiff ]; then
