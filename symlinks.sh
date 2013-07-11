@@ -11,6 +11,7 @@ $link .dotfiles/.ackrc .ackrc
 $link .dotfiles/.bash_logout .bash_logout
 $link .dotfiles/.bash_profile .bash_profile
 $link .dotfiles/.bazaar .bazaar
+$link .dotfiles/.bundle .bundle
 $link .dotfiles/.colordiffrc .colordiffrc
 $link .dotfiles/.colorizerc .colorizerc
 #$link .dotfiles/.colortailrc .colortailrc
