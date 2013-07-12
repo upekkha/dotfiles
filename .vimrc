@@ -670,6 +670,10 @@ let g:ctrlp_cmd = 'CtrlPMixed'  " use mixed mode by default
 let g:ctrlp_mruf_max = 25       " number of recently opened files to remember
 let g:ctrlp_open_new_file = 'r' " open new files in current window (t,h,v,r)
 let g:ctrlp_follow_symlinks = 1 " follow symlinks when listing files
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.git|vendor.*|tmp)$',
+  \ 'file': '\v\.(lock|jpg|png|ico)$',
+  \ }
 "}}}
 
 " ------  Other  ---------------------{{{
