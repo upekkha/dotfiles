@@ -24,6 +24,7 @@ $link .dotfiles/.gitconfig .gitconfig
 $link .dotfiles/.gnupg .gnupg
 $link .dotfiles/.hushlogin .hushlogin
 $link ./.dotfiles/.inputrc .inputrc
+$link ./.dotfiles/.irbrc .irbrc
 $link ../.dotfiles/.irssi/config .irssi/config
 $link ../.dotfiles/.irssi/startup .irssi/startup
 #$link .dotfiles/.latexmkrc .latexmkrc
