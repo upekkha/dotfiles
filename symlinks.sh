@@ -20,6 +20,7 @@ $link .dotfiles/.csshcluster .csshcluster
 $link .dotfiles/.csshrc .csshrc
 $link .dotfiles/.ctags .ctags
 $link .dotfiles/.dir_colors .dir_colors
+$link .dotfiles/.gemrc .gemrc
 $link .dotfiles/.gitconfig .gitconfig
 $link .dotfiles/.gnupg .gnupg
 $link .dotfiles/.hushlogin .hushlogin
