@@ -45,13 +45,13 @@ my_command_prompt(){
         local YELLOW="\[\033[0;33m\]"
 
     # define root prompt
-    export SUDO_PS1="${RED}\u@\h:${MAGENTA}\w\[/\] ${GRAY}"
+    export SUDO_PS1="${RED}\u@\h:${MAGENTA}\w/ ${GRAY}"
 
     USRNAME=`whoami`
     if [ "$USRNAME" == "root" ]; then
-        export PS1="${RED}\u@\h:${MAGENTA}\w\[/\] ${GRAY}"
+        export PS1="${RED}\u@\h:${MAGENTA}\w/ ${GRAY}"
     else
-        export PS1="${GREEN}\h:${MAGENTA}\${NEW_PWD}\[/\]${YELLOW}\${GITSTAT} ${GRAY}"
+        export PS1="${GREEN}\h:${MAGENTA}\${NEW_PWD}/${YELLOW}\${GITSTAT} ${GRAY}"
     fi
 }
 
