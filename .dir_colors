@@ -92,9 +92,10 @@ EXEC 00;31
 # to colorize below. Put the extension, a space, and the color init string.
 # (and any comments you want to add after a '#')
 #
-# txt, log
+# text
 .txt 00;32
 .log 00;32
+.markdown 00;32
 # TeX & Co
 .tex 00;31
 .pdf 00;32
