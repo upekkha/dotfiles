@@ -19,6 +19,7 @@ $link .dotfiles/.colorizerc .colorizerc
 $link .dotfiles/.csshcluster .csshcluster
 $link .dotfiles/.csshrc .csshrc
 $link .dotfiles/.ctags .ctags
+$link .dotfiles/.editrc .editrc
 $link .dotfiles/.dir_colors .dir_colors
 $link .dotfiles/.gemrc .gemrc
 $link .dotfiles/.gitconfig .gitconfig
