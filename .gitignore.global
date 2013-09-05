@@ -2,3 +2,4 @@
 *.sw?
 *~
 vendor/bundle/*
+.ruby-version
