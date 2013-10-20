@@ -123,6 +123,7 @@ set wildignore+=*.o,*.pdf       "Let tab completion ignore certain file types
 set switchbuf=usetab    "when switching buffer, switch to tab having it open
 set fillchars+=vert:\ , "use blank as separator in vertical splits
 set nrformats=          "treat all numerals as decimal (instead of octal if padded with zeros)
+set tabpagemax=30       "increase maximum number of tabs
 
 " Define replacement for invisivble characters (set invlist)
 set listchars=eol:¬,tab:>-,trail:~
