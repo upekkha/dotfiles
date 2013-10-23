@@ -46,16 +46,9 @@ fi
 
 # ------  alias commands  ------------{{{
 alias ll='ls -hlF'
-alias la='ls -AF'
-alias lla='ls -hlAF'
-alias lld='ls -hltrF'
 alias rebash='source ~/.bash_profile'
-alias eps2pdf='epstopdf'
 alias gvimtab='gvim --remote-tab-silent'
-alias latexmkp='latexmk -pdf -pvc'
-alias packagemaker='/Developer/Applications/Utilities/PackageMaker.app/Contents/MacOS/PackageMaker'
 alias myrsync='rsync -rLptgoDvzuhX --rsync-path=/opt/local/bin/rsync --exclude ".DS_Store" --exclude ".*.swp" --delete'
-alias netip='/usr/bin/appletviewer http://velsheda.ethz.ch:7777/forms/frmservlet?config=netip > /dev/null 2>&1 &'
 alias rbenv_init='export PATH="$HOME/.rbenv/bin:$PATH";eval "$(rbenv init -)";unalias rbenv_init'
 
 # use colordiff if it exists
@@ -66,10 +59,6 @@ fi
 # use gnu sort if it exists
 if [ -e /opt/local/bin/gsort ]; then
     alias sort='gsort'
-fi
-
-if [[ "$UNAME" == "Linux" ]]; then
-    alias lock='gnome-screensaver-command --lock & xset dpms force suspend'
 fi
 #}}}
 
