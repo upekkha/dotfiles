@@ -20,8 +20,6 @@ export EDITOR=vim
 # MacPorts
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
-# Developer Tools
-export PATH=/Developer/Tools:$PATH
 # Scripts
 export PATH=~/Scripts:$PATH
 # vimGPG plugin
