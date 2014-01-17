@@ -44,6 +44,6 @@ EOF
     endfunction
 
     command O call Open()
-    map <Leader>o :call Open()<CR>
+    map <Leader>o :call Open()<CR><CR>
 
 endif " python
