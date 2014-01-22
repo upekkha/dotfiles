@@ -191,6 +191,9 @@ complete -cf mans
 complete -cf manv
 complete -cf mangv
 
+# auto-complete like scp after custom gvimscp
+complete -F _scp -o nospace gvimscp
+
 # Bash_completion
 if [ -f ~/.dotfiles/.bash_completion ]; then
     . ~/.dotfiles/.bash_completion

@@ -141,7 +141,6 @@ gvimscp()
     done
     gvim ${targs[@]}
 }
-complete -F _scp -o nospace gvimscp
 #}}}
 
 # manv, mangv, mans: manpages hacks {{{
