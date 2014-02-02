@@ -68,7 +68,6 @@ call pathogen#helptags()
 
 " ------  Generic settings  ----------{{{
 syntax on               "enable syntax highlightning
-colorscheme ataraxia    "colorscheme
 set nocompatible        "enable all vim features
 set encoding=utf8       "default file encoding
 set term=xterm-color    "terminal type
@@ -146,15 +145,36 @@ let html_number_lines=1
 let html_use_css=1
 "}}}
 
+" ------  Colorscheme  ---------------{{{
+colorscheme jellybeans
+
+" Use no background in terminal instead of grey
+highlight Normal                                                                 ctermbg=none
+
+" Tweak Todo to be brighter
+highlight Todo          guifg=Blue      guibg=#FFFFA0   gui=none                 ctermbg=229   cterm=none
+
+" Red color for custom todo text
+highlight RedTodo       guifg=Red       guibg=Black     gui=none   ctermfg=9     ctermbg=0     cterm=none
+
+" Highlight superfluous whitespace in orange
+highlight ExtWhiteSpace guifg=White     guibg=#DF5F00   gui=bold   ctermfg=255   ctermbg=166   cterm=bold
+
+" Custom colors used in statusline
+highlight User1         guifg=#A0A8B0   guibg=#384048   gui=none   ctermfg=255   ctermbg=0     cterm=none
+highlight User2         guifg=#FF0000   guibg=#DDDDDD   gui=none   ctermfg=196   ctermbg=255   cterm=none
+highlight User3         guifg=black     guibg=#DF005F   gui=none   ctermfg=0     ctermbg=161   cterm=none
+"}}}
+
 " ------  Statusline  ----------------{{{
 set statusline =            "start with empty string
 "set statusline+=\ %02n     "buffer number
-set statusline+=\ %1*%<%f%* "filename with relative path
+set statusline+=\ %1*\ %<%f\ %* "filename with relative path in User1 color
 set statusline+=\ %y        "filetype flag:
 "set statusline+=\ %h       "helpfile flag: [help]
 set statusline+=%r          "readonly flag: [RO]
 set statusline+=%{fugitive#statusline()}    "git branch
-set statusline+=%2*%m%*     "modified flag: [+] modified, [-] unmodifiable
+set statusline+=%2*%m%*     "modified flag: [+] modified, [-] unmodifiable in User2 color
 set statusline+=%=          "switch from left to right justification
 set statusline+=%-20.(%l/%L,%c%V%)  "add block with given offset containing
                             " %l/%L current line number / total number of lines
@@ -218,6 +238,7 @@ function! StatlineTrailingSpaceWarning()
     return b:statline_trailing_space_warning
 endfunction
 
+" append to status line in User3 color
 set statusline+=%3*%{StatlineTrailingSpaceWarning()}%*
 
 " recalculate when idle, and after saving
