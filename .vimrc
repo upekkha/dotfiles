@@ -355,12 +355,6 @@ au filetype gnuplot imap <F3> <ESC>:w \| !gnuplot % <CR>
 "}}}
 
 " ------  C++  -----------------------{{{
-au filetype cpp imap <F4> <ESC>:wall \| !make remake<CR>
-au filetype cpp map <F4> <ESC>:wall \| !make remake<CR>
-au filetype cpp imap <F3> <ESC>:silent !make run &<CR>
-au filetype cpp map <F3> <ESC>:silent !make run &<CR>
-au filetype cpp imap <F5> <ESC>:silent !killall go; echo -e '\t stopped' >> ./dat/go.log<CR>
-au filetype cpp map <F5> <ESC>:silent !killall go; echo -e '\t stopped'>> ./dat/go.log<CR>
 au filetype cpp set nowrap              " don't wrap the lines of code
 au filetype cpp set foldmethod=syntax   "autofold all functions
 au filetype cpp set foldlevel=6         "open all folds on startup
@@ -377,9 +371,6 @@ au BufRead *.epl set filetype=embperl   "syntax highlighting for embedded perl
 "}}}
 
 " ------  Python  --------------------{{{
-" Execute code using F3
-au filetype python map <F3> <ESC>:w \| !/usr/bin/env python % <CR>
-au filetype python imap <F3> <ESC>:w \| !/usr/bin/env python % <CR><CR>
 " Indentation
 au filetype python setlocal autoindent  "automatic indentation
 au filetype python setlocal tabstop=4 softtabstop=4 "tabs=4chars
