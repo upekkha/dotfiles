@@ -427,11 +427,6 @@ function! MarkdownFold()
 endfunction
 "}}}
 
-" ------  Fortran  -------------------{{{
-" Don't show tabs as errors in fortran code
-let fortran_have_tabs=1
-"}}}
-
 " ------  LaTeX  ---------------------{{{
 "Vim-LaTeX
 set grepprg=grep\ -nH\ $*   " make grep always show filename
