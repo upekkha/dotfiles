@@ -372,10 +372,6 @@ au BufRead *.epl set filetype=embperl   "syntax highlighting for embedded perl
 
 " ------  Python  --------------------{{{
 " Indentation
-au filetype python setlocal autoindent  "automatic indentation
-au filetype python setlocal tabstop=4 softtabstop=4 "tabs=4chars
-au filetype python setlocal shiftwidth=4 "width for autoindent
-au filetype python setlocal expandtab   "convert tabs to spaces
 au filetype python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class "autoindent lines with given keywords
 " Use Python compiler to view errors in quickfix
 au filetype python compiler python
