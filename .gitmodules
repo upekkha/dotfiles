@@ -34,14 +34,6 @@
 	path = .vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
 	ignore = dirty
-[submodule ".vim/bundle/python"]
-	path = .vim/bundle/python
-	url = https://github.com/vim-scripts/python.vim--Vasiliev.git
-	ignore = dirty
-[submodule ".vim/bundle/python3.0"]
-	path = .vim/bundle/python3.0
-	url = https://github.com/vim-scripts/python.vim--Vasiliev.git
-	ignore = dirty
 [submodule ".vim/bundle/TeX-PDF"]
 	path = .vim/bundle/TeX-PDF
 	url = https://github.com/vim-scripts/TeX-PDF.git
@@ -54,18 +46,12 @@
 [submodule ".vim/bundle/gnupg"]
 	path = .vim/bundle/gnupg
 	url = https://github.com/vim-scripts/gnupg.git
-[submodule ".vim/bundle/pydoc"]
-	path = .vim/bundle/pydoc
-	url = https://github.com/vim-scripts/pydoc.vim.git
 [submodule ".vim/bundle/file-line"]
 	path = .vim/bundle/file-line
 	url = https://github.com/vim-scripts/file-line.git
 [submodule ".vim/bundle/TaskList"]
 	path = .vim/bundle/TaskList
 	url = https://github.com/vim-scripts/TaskList.vim.git
-[submodule ".vim/bundle/compiler-python"]
-	path = .vim/bundle/compiler-python
-	url = https://github.com/vim-scripts/compilerpython.vim.git
 [submodule ".vim/bundle/undofile"]
 	path = .vim/bundle/undofile
 	url = https://github.com/vim-scripts/undofile.vim.git
