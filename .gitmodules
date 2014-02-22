@@ -175,3 +175,6 @@
 [submodule ".vim/bundle/jellybeans"]
 	path = .vim/bundle/jellybeans
 	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule ".vim/bundle/python-mode"]
+	path = .vim/bundle/python-mode
+	url = https://github.com/klen/python-mode.git

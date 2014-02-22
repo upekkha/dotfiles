@@ -39,6 +39,7 @@ call add(g:pathogen_disabled, 'List-File')
 call add(g:pathogen_disabled, 'pydoc')
 call add(g:pathogen_disabled, 'python')
 call add(g:pathogen_disabled, 'python3.0')
+"call add(g:pathogen_disabled, 'python-mode')
 "call add(g:pathogen_disabled, 'rainbow-parentheses')
 "call add(g:pathogen_disabled, 'repeat')
 call add(g:pathogen_disabled, 'ScrollColors')
@@ -368,13 +369,6 @@ au filetype perl set foldmethod=syntax  "autofold all functions
 au filetype perl setf perl              "needed for folds
 au filetype perl match TODO /DEBUG/     "highlight debug as todo
 au BufRead *.epl set filetype=embperl   "syntax highlighting for embedded perl
-"}}}
-
-" ------  Python  --------------------{{{
-" Indentation
-au filetype python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class "autoindent lines with given keywords
-" Use Python compiler to view errors in quickfix
-au filetype python compiler python
 "}}}
 
 " ------  Ruby  ----------------------{{{
