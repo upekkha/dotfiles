@@ -335,8 +335,9 @@ au filetype text syntax match RedTodo /*)/
 "}}}
 
 " ------  Gitcommit  -----------------{{{
-" Disable modeline when editing git commit messages
+" Disable modeline when editing git commit messages or rebasing
 au BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit nomodeline
+au BufNewFile,BufRead git-rebase-todo set filetype=gitrebase nomodeline
 "}}}
 
 " ------  Irssi  ---------------------{{{
