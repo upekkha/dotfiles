@@ -28,6 +28,9 @@
     changed = red
     untracked = yellow
 
+[color "grep"]
+    filename = yellow
+
 [diff]
     tool = vimdiff
 
