@@ -382,27 +382,8 @@ au filetype markdown set wrap               "wrap lines
 au filetype markdown syntax match Comment /%%.*/
 au filetype markdown syntax match RedTodo /TODO/
 
-" folding
-au filetype markdown setlocal foldexpr=MarkdownFold()
-au filetype markdown setlocal foldmethod=expr
+let g:markdown_folding = 1
 au filetype markdown setlocal foldlevel=1
-function! MarkdownFold()
-    let line = getline(v:lnum)
-    " regular headers
-    let depth = match(line, '\(^#\+\)\@<=\( .*$\)\@=')
-    if depth > 0
-        return ">" . depth
-    endif
-    " setext headers
-    let nextline = getline(v:lnum + 1)
-    if (line =~ '^.\+$') && (nextline =~ '^=\+$')
-        return ">1"
-    endif
-    if (line =~ '^.\+$') && (nextline =~ '^-\+$')
-        return ">2"
-    endif
-    return "="
-endfunction
 "}}}
 
 " ------  LaTeX  ---------------------{{{
