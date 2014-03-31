@@ -25,7 +25,7 @@ call IMAP('`T', '\text{<++>}<++>', 'tex')
 " AA expands to custom align*
 call IMAP ('AA', "\\begin{align*}\<CR>\<Tab><++>\<CR>\<BS>\\end{align*}\<CR><++>", 'tex')
 
-" `3 expands to \item 
+" `3 expands to \item
 call IMAP('`3', '\item ', 'tex')
 
 " ITE expands to custom itemize
