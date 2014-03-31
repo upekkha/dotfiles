@@ -393,7 +393,7 @@ let g:tex_flavor='latex'
 let g:Tex_SmartKeyQuote=0   " Disable smart quotes
 let g:Tex_FoldedEnvironments = 'comment,figure,table,thebibliography,keywords,abstract,titlepage'
 let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_CompileRule_pdf = 'latexmk -pdf -r ~/.latexmkrc_ns $*'
+let g:Tex_CompileRule_pdf = 'latexmk $*'
 let g:Tex_IgnoreLevel = 7   " ignore all warnings
 let g:Tex_ViewRuleComplete_pdf = '/usr/bin/open $*.pdf'
 "Use Tab instead of Ctrl-j to jump to next <++>, Shift-Tab works as normal Tab
@@ -405,8 +405,8 @@ au filetype tex imap <S-F4> <ESC>:w \|silent !pdflatex --interaction=nonstopmode
 au filetype tex map <F4> <ESC>:w \| :BuildTexPdf<CR>
 au filetype tex imap <F4> <ESC>:w \| :BuildTexPdf<CR>
 "au filetype tex map <F4> <ESC>:w <CR><Leader>ll
-"au filetype tex map <F4> <ESC>:w \| !latexmk -pdf %<CR>
-"au filetype tex imap <F4> <ESC>:w \|silent !latexmk -pdf -r ~/.latexmkrc_ns %<CR>a
+"au filetype tex map <F4> <ESC>:w \| !latexmk %<CR>
+"au filetype tex imap <F4> <ESC>:w \|silent !latexmk %<CR>a
 
 " Customize LaTeX environments
 "let g:Tex_Env_eq = "\\begin{equation*}\<CR>\<Tab><++>\<CR>\<BS>\\end{equation*}\<CR><++>"
