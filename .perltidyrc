@@ -1,4 +1,4 @@
--l=0        # inlimited line width
+-l=0        # unlimited line width
 #-i=4       # indent level
 #-cti=0     # closing token indentation
 -ci=4       # continuation indent level
