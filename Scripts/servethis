@@ -1,36 +1,43 @@
 #!/usr/bin/env python
 
-# Start webserver (with cgi support) for this folder and view it in the browser
+manpage = """
+Start webserver with the contents of this folder and open it in a browser.
+Files ending in .cgi or .pl will be executed as cgi scripts.
+"""
 
-import CGIHTTPServer, BaseHTTPServer, sys, os
+import CGIHTTPServer, BaseHTTPServer, sys, os, argparse
 
 class CGIExtHTTPRequestHandler(CGIHTTPServer.CGIHTTPRequestHandler):
     def is_python(self, path):
         return path.lower().endswith(('.cgi','.pl'))
 
     def is_cgi(self):
-        base = self.path
         query = ''
+        base  = self.path
         i = base.find('?')
         if i != -1:
             query = base[i:]
-            base = base[:i]
+            base  = base[:i]
         if not base.lower().endswith(('.cgi','.pl')):
             return False
         [parentDirs, script] = base.rsplit('/', 1)
         self.cgi_info = (parentDirs, script+query)
         return True
 
-def run_server():
+def run_server(port):
     dirName = os.getcwd()
-    blanks = dirName.count(' ')
+    blanks  = dirName.count(' ')
     if 0 < blanks:
         print "Error: The path to this directory contains spaces"
         return
 
-    server_addr = ('localhost', 8765)
+    server_addr = ('localhost', port)
     cgiServer = BaseHTTPServer.HTTPServer(server_addr, CGIExtHTTPRequestHandler)
     cgiServer.serve_forever()
 
-os.system('open http://0.0.0.0:8765')
-run_server()
+parser = argparse.ArgumentParser(description=manpage)
+parser.add_argument('-p', '--port', default=8765, type=int, help='http port (default 8765)')
+args = parser.parse_args()
+
+os.system("open http://0.0.0.0:%s" % args.port)
+run_server(args.port)
