@@ -3,33 +3,26 @@
 "toggle activation of specific bundles
 let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'ack')
-call add(g:pathogen_disabled, 'bash-support')
 "call add(g:pathogen_disabled, 'browser-refresh')
 "call add(g:pathogen_disabled, 'bufexplorer')
 "call add(g:pathogen_disabled, 'BufOnly')
 "call add(g:pathogen_disabled, 'coffee-script')
-call add(g:pathogen_disabled, 'Conque-Shell')
-call add(g:pathogen_disabled, 'css-color')
 "call add(g:pathogen_disabled, 'ColorX')
-"call add(g:pathogen_disabled, 'cucumber')
+call add(g:pathogen_disabled, 'css-color')
 "call add(g:pathogen_disabled, 'ctrlp')
-call add(g:pathogen_disabled, 'diffchanges')
-call add(g:pathogen_disabled, 'drawIt')
 "call add(g:pathogen_disabled, 'file-line')
 "call add(g:pathogen_disabled, 'foldsearch')
 "call add(g:pathogen_disabled, 'fugitive')
-call add(g:pathogen_disabled, 'fugitive-extradite')
 "call add(g:pathogen_disabled, 'fugitive-gitv')
 "call add(g:pathogen_disabled, 'gnupg')
 call add(g:pathogen_disabled, 'gnuplot')
-call add(g:pathogen_disabled, 'Gundo')
 "call add(g:pathogen_disabled, 'haml')
 "call add(g:pathogen_disabled, 'hexHighlight')
 "call add(g:pathogen_disabled, 'indent-guides')
 "call add(g:pathogen_disabled, 'IndexedSearch')
 "call add(g:pathogen_disabled, 'irssi')
+"call add(g:pathogen_disabled, 'jellybeans')
 call add(g:pathogen_disabled, 'LaTeX-Box')
-call add(g:pathogen_disabled, 'List-File')
 "call add(g:pathogen_disabled, 'markdown')
 "call add(g:pathogen_disabled, 'matchit')
 "call add(g:pathogen_disabled, 'nerdcommenter')
@@ -38,20 +31,12 @@ call add(g:pathogen_disabled, 'List-File')
 "call add(g:pathogen_disabled, 'python-mode')
 "call add(g:pathogen_disabled, 'rainbow-parentheses')
 "call add(g:pathogen_disabled, 'repeat')
-call add(g:pathogen_disabled, 'ScrollColors')
-call add(g:pathogen_disabled, 'shebang')
 "call add(g:pathogen_disabled, 'snipmate')
-"call add(g:pathogen_disabled, 'solarized')
-call add(g:pathogen_disabled, 'SudoEdit')
 "call add(g:pathogen_disabled, 'surround')
 "call add(g:pathogen_disabled, 'tabular')
 "call add(g:pathogen_disabled, 'tagbar')
-call add(g:pathogen_disabled, 'TaskList')
-call add(g:pathogen_disabled, 'TeX-PDF')
-call add(g:pathogen_disabled, 'undofile')
 "call add(g:pathogen_disabled, 'unimpaired')
 "call add(g:pathogen_disabled, 'vim-javascript')
-call add(g:pathogen_disabled, 'vim-latex')
 "call add(g:pathogen_disabled, 'vim-less')
 "call add(g:pathogen_disabled, 'vim-rails')
 "call add(g:pathogen_disabled, 'vim-slime')
@@ -370,9 +355,8 @@ au BufRead *.epl set filetype=embperl   "syntax highlighting for embedded perl
 
 " ------  Ruby  ----------------------{{{
 let ruby_fold=1                         "needed for folds
-au filetype ruby,cucumber set foldmethod=syntax  "autofold all functions
-au filetype ruby,cucumber set ts=2 sw=2 sts=2    "tabs of 2 spaces
-au filetype cucumber compiler cucumber
+au filetype ruby set foldmethod=syntax  "autofold all functions
+au filetype ruby set ts=2 sw=2 sts=2    "tabs of 2 spaces
 "}}}
 
 " ------  Markdown  ------------------{{{
@@ -387,39 +371,9 @@ au filetype markdown setlocal foldlevel=1
 "}}}
 
 " ------  LaTeX  ---------------------{{{
-"Vim-LaTeX
-set grepprg=grep\ -nH\ $*   " make grep always show filename
-let g:tex_flavor='latex'
-let g:Tex_SmartKeyQuote=0   " Disable smart quotes
-let g:Tex_FoldedEnvironments = 'comment,figure,table,thebibliography,keywords,abstract,titlepage'
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_CompileRule_pdf = 'latexmk $*'
-let g:Tex_IgnoreLevel = 7   " ignore all warnings
-let g:Tex_ViewRuleComplete_pdf = '/usr/bin/open $*.pdf'
-"Use Tab instead of Ctrl-j to jump to next <++>, Shift-Tab works as normal Tab
-au filetype tex imap <Tab> <C-j>
-"pdflatex with Shift-F4 -- nonstopmode while in insert mode
-au filetype tex map <S-F4> <ESC>:w \| !pdflatex %<CR>
-au filetype tex imap <S-F4> <ESC>:w \|silent !pdflatex --interaction=nonstopmode %<CR>a
-"compile using tex_pdf with F4
-au filetype tex map <F4> <ESC>:w \| :BuildTexPdf<CR>
-au filetype tex imap <F4> <ESC>:w \| :BuildTexPdf<CR>
-"au filetype tex map <F4> <ESC>:w <CR><Leader>ll
-"au filetype tex map <F4> <ESC>:w \| !latexmk %<CR>
-"au filetype tex imap <F4> <ESC>:w \|silent !latexmk %<CR>a
-
-" Customize LaTeX environments
-"let g:Tex_Env_eq = "\\begin{equation*}\<CR>\<Tab><++>\<CR>\<BS>\\end{equation*}\<CR><++>"
-"let g:Tex_Env_a = "\\begin{align*}\<CR>\<Tab><++>\<CR>\<BS>\\end{align*}\<CR><++>"
-"let g:Tex_Env_s = "%==================================================\<CR>\\section{<++>}\<CR>%==================================================\<CR>\<CR>\<CR><++>"
-"let g:Tex_Env_ss = "\<Tab>%-----------------------------------------------------------\<CR>\\subsection{<++>}\<CR>%-----------------------------------------------------------\<CR>\<CR>\<BS><++>"
-
 " LaTeX-box plugin
 let g:LatexBox_latexmk_options="-pvc"
 let g:LatexBox_viewer="open"
-
-" TeX-pdf plugin
-let g:tex_pdf_map_func_keys = 0 "don't remap F9 and S-F9
 "}}}
 "}}}
 

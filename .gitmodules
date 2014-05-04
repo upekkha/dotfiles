@@ -2,10 +2,6 @@
 	path = .vim/bundle/bufexplorer
 	url = https://github.com/corntrace/bufexplorer.git
 	ignore = dirty
-[submodule ".vim/bundle/Conque-Shell"]
-	path = .vim/bundle/Conque-Shell
-	url = https://github.com/vim-scripts/Conque-Shell.git
-	ignore = dirty
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
@@ -16,51 +12,25 @@
 	path = .vim/bundle/LaTeX-Box
 	url = https://github.com/vim-scripts/LaTeX-Box.git
 	ignore = dirty
-[submodule ".vim/bundle/bash-support"]
-	path = .vim/bundle/bash-support
-	url = https://github.com/vim-scripts/bash-support.vim.git
-	ignore = dirty
 [submodule ".vim/bundle/gnuplot"]
 	path = .vim/bundle/gnuplot
 	url = https://github.com/vim-scripts/gnuplot.vim.git
-[submodule ".vim/bundle/Gundo"]
-	path = .vim/bundle/Gundo
-	url = https://github.com/vim-scripts/Gundo.git
-	ignore = dirty
-[submodule ".vim/bundle/List-File"]
-	path = .vim/bundle/List-File
-	url = https://github.com/vim-scripts/List-File.git
 [submodule ".vim/bundle/tagbar"]
 	path = .vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
 	ignore = dirty
-[submodule ".vim/bundle/TeX-PDF"]
-	path = .vim/bundle/TeX-PDF
-	url = https://github.com/vim-scripts/TeX-PDF.git
 [submodule ".vim/bundle/foldsearch"]
 	path = .vim/bundle/foldsearch
 	url = https://github.com/vim-scripts/foldsearch.git
-[submodule ".vim/bundle/ScrollColors"]
-	path = .vim/bundle/ScrollColors
-	url = https://github.com/vim-scripts/ScrollColors.git
 [submodule ".vim/bundle/gnupg"]
 	path = .vim/bundle/gnupg
 	url = https://github.com/vim-scripts/gnupg.git
 [submodule ".vim/bundle/file-line"]
 	path = .vim/bundle/file-line
 	url = https://github.com/vim-scripts/file-line.git
-[submodule ".vim/bundle/TaskList"]
-	path = .vim/bundle/TaskList
-	url = https://github.com/vim-scripts/TaskList.vim.git
-[submodule ".vim/bundle/undofile"]
-	path = .vim/bundle/undofile
-	url = https://github.com/vim-scripts/undofile.vim.git
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/fugitive-extradite"]
-	path = .vim/bundle/fugitive-extradite
-	url = https://github.com/int3/vim-extradite.git
 [submodule ".vim/bundle/hexHighlight"]
 	path = .vim/bundle/hexHighlight
 	url = https://github.com/yurifury/hexHighlight.git
@@ -74,14 +44,6 @@
 [submodule ".vim/bundle/markdown"]
 	path = .vim/bundle/markdown
 	url = https://github.com/tpope/vim-markdown.git
-[submodule ".vim/bundle/SudoEdit"]
-	path = .vim/bundle/SudoEdit
-	url = https://github.com/vim-scripts/SudoEdit.vim.git
-	ignore = dirty
-[submodule ".vim/bundle/diffchanges"]
-	path = .vim/bundle/diffchanges
-	url = https://github.com/vim-scripts/diffchanges.vim.git
-	ignore = dirty
 [submodule ".vim/bundle/indent-guides"]
 	path = .vim/bundle/indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
@@ -121,10 +83,6 @@
 	path = .vim/bundle/coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
 	ignore = dirty
-[submodule ".vim/bundle/solarized"]
-	path = .vim/bundle/solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
-	ignore = dirty
 [submodule ".vim/bundle/rainbow-parentheses"]
 	path = .vim/bundle/rainbow-parentheses
 	url = https://github.com/kien/rainbow_parentheses.vim.git
@@ -133,9 +91,6 @@
 	path = .vim/bundle/vim-rails
 	url = https://github.com/tpope/vim-rails.git
 	ignore = dirty
-[submodule ".vim/bundle/cucumber"]
-	path = .vim/bundle/cucumber
-	url = https://github.com/tpope/vim-cucumber.git
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
