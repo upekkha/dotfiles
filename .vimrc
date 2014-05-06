@@ -358,6 +358,7 @@ au BufRead *.epl set filetype=embperl   "syntax highlighting for embedded perl
 let ruby_fold=1                         "needed for folds
 au filetype ruby set foldmethod=syntax  "autofold all functions
 au filetype ruby set ts=2 sw=2 sts=2    "tabs of 2 spaces
+au filetype ruby set path+=app/models/* "support gf jump to namespaced relations
 "}}}
 
 " ------  Markdown  ------------------{{{
