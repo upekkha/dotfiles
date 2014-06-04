@@ -8,6 +8,7 @@ let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'BufOnly')
 "call add(g:pathogen_disabled, 'coffee-script')
 "call add(g:pathogen_disabled, 'ColorX')
+"call add(g:pathogen_disabled, 'colorizer')
 call add(g:pathogen_disabled, 'css-color')
 "call add(g:pathogen_disabled, 'ctrlp')
 "call add(g:pathogen_disabled, 'file-line')
@@ -17,7 +18,7 @@ call add(g:pathogen_disabled, 'css-color')
 "call add(g:pathogen_disabled, 'gnupg')
 call add(g:pathogen_disabled, 'gnuplot')
 "call add(g:pathogen_disabled, 'haml')
-"call add(g:pathogen_disabled, 'hexHighlight')
+call add(g:pathogen_disabled, 'hexHighlight')
 "call add(g:pathogen_disabled, 'indent-guides')
 "call add(g:pathogen_disabled, 'IndexedSearch')
 "call add(g:pathogen_disabled, 'irssi')
@@ -569,6 +570,11 @@ let g:rbpt_colorpairs = [
     \ ['magenta',   'magenta'],
     \ ['cyan',      'cyan'],
     \ ]
+"}}}
+
+" ------  Colorizer  -----------------{{{
+let g:colorizer_nomap = 1       " don't define keyboard mappings
+let g:colorizer_startup = 0     " don't automatically start, use :ColorToggle instead
 "}}}
 
 " ------  CtrlP  ---------------------{{{
