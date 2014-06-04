@@ -31,9 +31,6 @@
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/hexHighlight"]
-	path = .vim/bundle/hexHighlight
-	url = https://github.com/yurifury/hexHighlight.git
 [submodule ".vim/bundle/snipmate"]
 	path = .vim/bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
