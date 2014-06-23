@@ -96,6 +96,7 @@ EXEC 00;31
 .txt 00;32
 .log 00;32
 .markdown 00;32
+.md 00;32
 # TeX & Co
 .tex 00;31
 .pdf 00;32
