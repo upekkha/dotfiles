@@ -109,19 +109,6 @@ export LESS_TERMCAP_us=$'\E[04;32m'     # underline begin
 
 # ------  custom functions  ----------{{{
 
-# irssitail: multitail irc log {{{
-irssitail()
-{
-    if [[ $# -eq 0 ]]; then
-        # without parameter: tail most recent file
-        multitail -cS irssi -n 5000 `/bin/ls -t ~/.irssi/log/eth/*isgphys.log | head -1`
-    else
-        # else view most recent minus n-th file
-        view `/bin/ls -t ~/.irssi/log/eth/*isgphys.log | head -$(($*+1)) | tail -1`
-    fi
-}
-#}}}
-
 # gvimscp: open remote files using bash tab completion {{{
 gvimscp()
 {
