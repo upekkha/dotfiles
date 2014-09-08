@@ -7,8 +7,8 @@ defscrollback 5000         # number of scrollback lines
 termcapinfo xterm* ti@:te@ # scroll with mouse
 #escape \\`                # redefine escape key (default: ctrl-a)
 ## define statusline
-caption    always         "%{+b kr}%H%{bk} | %c %d/%m | %{yk}%72=Load: %l %{wk}"
-hardstatus alwayslastline "%{= kw}%-w%{= BW}%n %t%{-}%+w %-="
+#caption    always         "%{+b kr}%H%{bk} | %c %d/%m | %{yk}%72=Load: %l %{wk}"
+hardstatus alwayslastline "%{+b kr}%H%{= kw} %-w%{= BW}%n %t%{-}%+w %-="
 ## start window numbering at 1 not 0
 bind c screen 1
 bind ^c screen 1
