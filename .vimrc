@@ -133,6 +133,8 @@ colorscheme jellybeans
 
 " Use no background in terminal instead of grey
 highlight Normal                                                                 ctermbg=none
+highlight NonText                                                                ctermbg=none
+highlight SpecialKey                                                             ctermbg=none
 
 " Tweak Todo to be brighter
 highlight Todo          guifg=Blue      guibg=#FFFFA0   gui=none                 ctermbg=229   cterm=none
