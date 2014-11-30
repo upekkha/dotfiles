@@ -27,7 +27,6 @@ export SCREENDIR=$HOME/.sessions
 # locale setting
 export LC_ALL=en_US.UTF-8
 # grep options
-export GREP_OPTIONS='--color=auto'
 export GREP_COLORS='ms=01;31:mc=01;31:sl=:cx=:fn=33:ln=32:bn=32:se=36'
 # ISG bin path on Linux
 if [[ "$UNAME" == "Linux" ]]; then
@@ -40,6 +39,7 @@ fi
 #}}}
 
 # ------  alias commands  ------------{{{
+alias grep='grep --color=auto'
 alias ll='ls -hlF'
 alias rebash='source ~/.bash_profile'
 alias gvimtab='gvim --remote-tab-silent'
