@@ -28,7 +28,6 @@ export SCREENDIR=$HOME/.sessions
 export LC_ALL=en_US.UTF-8
 # grep options
 export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;31'
 export GREP_COLORS='ms=01;31:mc=01;31:sl=:cx=:fn=33:ln=32:bn=32:se=36'
 # ISG bin path on Linux
 if [[ "$UNAME" == "Linux" ]]; then
