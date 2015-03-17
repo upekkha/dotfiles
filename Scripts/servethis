@@ -8,8 +8,10 @@ Files ending in .cgi, .pl, .rb or .py will be executed as cgi scripts.
 import http.server
 import argparse
 import os
+import sys
 
 cgi_extensions = ('.cgi', '.pl', '.rb', '.py')
+colorize_log = True
 
 
 class CGIExtHTTPRequestHandler(http.server.CGIHTTPRequestHandler):
@@ -25,6 +27,20 @@ class CGIExtHTTPRequestHandler(http.server.CGIHTTPRequestHandler):
         [parentDirs, script] = base.rsplit('/', 1)
         self.cgi_info = (parentDirs, script+query)
         return True
+
+    def log_message(self, format, *args):
+        if colorize_log:
+            blue = "\033[0;34m"
+            cyan = "\033[0;36m"
+            white = "\033[0;37m"
+            msg = blue + "%s - - [%s] " + cyan + "%s" + white + "\n"
+        else:
+            msg = "%s - - [%s] %s\n"
+
+        sys.stderr.write(msg %
+                         (self.address_string(),
+                          self.log_date_time_string(),
+                          format % args))
 
 
 def run_server(port):
