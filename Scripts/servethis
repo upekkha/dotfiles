@@ -60,4 +60,8 @@ parser.add_argument('-p', '--port', default=8765, type=int,
 args = parser.parse_args()
 
 os.system("open http://0.0.0.0:%s" % args.port)
-run_server(args.port)
+
+try:
+    run_server(args.port)
+except KeyboardInterrupt:
+    sys.exit(0)
