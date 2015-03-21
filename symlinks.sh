@@ -16,8 +16,6 @@ $link .dotfiles/.colordiffrc .colordiffrc
 $link .dotfiles/.colorizerc .colorizerc
 #$link .dotfiles/.colortailrc .colortailrc
 #$link .dotfiles/.conkyrc .conkyrc
-$link .dotfiles/.csshcluster .csshcluster
-$link .dotfiles/.csshrc .csshrc
 $link .dotfiles/.ctags .ctags
 $link .dotfiles/.editrc .editrc
 $link .dotfiles/.dir_colors .dir_colors

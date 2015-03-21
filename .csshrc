@@ -1,3 +1,0 @@
-# Cluster SSH config
-# see http://code.google.com/p/csshx/wiki/Manual
-extra_cluster_file = ~/.csshcluster
