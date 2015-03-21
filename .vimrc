@@ -331,6 +331,10 @@ au BufNewFile,BufRead git-rebase-todo set filetype=gitrebase nomodeline
 au BufRead *.irs set syntax=irssi wrap
 "}}}
 
+" ------  AutoPkg  -------------------{{{
+au BufRead *.recipe set ft=xml
+"}}}
+
 " ------  Gnuplot  -------------------{{{
 " Gnuplot syntax highlighting
 au BufNewFile,BufRead *.gp,*.plt,*.gnuplot,*.gplot set filetype=gnuplot
