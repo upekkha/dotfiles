@@ -2,7 +2,7 @@
 # create symlinks to dotfiles
 link="ln -snfv"
 cd ~/
-mkdir -p ~/.irssi
+#mkdir -p ~/.irssi
 mkdir -p ~/.config/mc
 mkdir -p ~/.local/share/mc
 mkdir -p ~/.sessions
@@ -10,7 +10,7 @@ chmod 700 ~/.sessions
 $link .dotfiles/.ackrc .ackrc
 $link .dotfiles/.bash_logout .bash_logout
 $link .dotfiles/.bash_profile .bash_profile
-$link .dotfiles/.bazaar .bazaar
+#$link .dotfiles/.bazaar .bazaar
 $link .dotfiles/.bundle .bundle
 $link .dotfiles/.colordiffrc .colordiffrc
 $link .dotfiles/.colorizerc .colorizerc
@@ -25,8 +25,8 @@ $link .dotfiles/.gnupg .gnupg
 $link .dotfiles/.hushlogin .hushlogin
 $link ./.dotfiles/.inputrc .inputrc
 $link ./.dotfiles/.irbrc .irbrc
-$link ../.dotfiles/.irssi/config .irssi/config
-$link ../.dotfiles/.irssi/startup .irssi/startup
+#$link ../.dotfiles/.irssi/config .irssi/config
+#$link ../.dotfiles/.irssi/startup .irssi/startup
 $link .dotfiles/.latexmkrc .latexmkrc
 #$link .dotfiles/.matplotlib .matplotlib
 $link ../../.dotfiles/.mc/ini .config/mc/ini
@@ -35,13 +35,13 @@ $link ../../../.dotfiles/.mc/skins .local/share/mc/skins
 $link .dotfiles/.multitailrc .multitailrc
 $link .dotfiles/.netrc .netrc
 $link .dotfiles/.perltidyrc .perltidyrc
-$link .dotfiles/.procmailrc .procmailrc
+#$link .dotfiles/.procmailrc .procmailrc
 $link .dotfiles/.proverc .proverc
 $link .dotfiles/.Rprofile .Rprofile
 $link .dotfiles/.screenrc .screenrc
 $link .dotfiles/Scripts Scripts
 $link .dotfiles/.ssh .ssh
-$link .dotfiles/.synergy.conf .synergy.conf
+#$link .dotfiles/.synergy.conf .synergy.conf
 $link .dotfiles/.tmux.conf .tmux.conf
 $link .dotfiles/.vim .vim
 $link .dotfiles/.vimrc .vimrc
