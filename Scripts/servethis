@@ -29,18 +29,28 @@ class CGIExtHTTPRequestHandler(http.server.CGIHTTPRequestHandler):
         return True
 
     def log_message(self, format, *args):
+        msg = "%s - - [%s] %s"
+
         if colorize_log:
+            red = "\033[0;31m"
+            green = "\033[0;32m"
             blue = "\033[0;34m"
             cyan = "\033[0;36m"
             white = "\033[0;37m"
-            msg = blue + "%s - - [%s] " + cyan + "%s" + white + "\n"
-        else:
-            msg = "%s - - [%s] %s\n"
+            msg = blue + "%s - - [%s] " + cyan + "%s" + white
+            if format == '"%s" %s %s':
+                if args[1] == '200':
+                    status_col = green
+                else:
+                    status_col = red
+                format = '"%s" ' + status_col + '%s ' + cyan + '%s'
+            if format == 'code %d, message %s':
+                format = red + format
 
-        sys.stderr.write(msg %
-                         (self.address_string(),
-                          self.log_date_time_string(),
-                          format % args))
+        print(msg %
+              (self.address_string(),
+               self.log_date_time_string(),
+               format % args))
 
 
 def run_server(port):
