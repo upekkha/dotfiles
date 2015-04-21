@@ -53,25 +53,27 @@ class CGIExtHTTPRequestHandler(http.server.CGIHTTPRequestHandler):
                format % args))
 
 
-def run_server(port):
+def run_server(bind, port):
     dirName = os.getcwd()
     blanks = dirName.count(' ')
     if blanks > 0:
         print("Error: The path to this directory contains spaces")
         return
 
-    server_addr = ('localhost', port)
+    server_addr = (bind, port)
     cgiServer = http.server.HTTPServer(server_addr, CGIExtHTTPRequestHandler)
     cgiServer.serve_forever()
 
 parser = argparse.ArgumentParser(description=manpage)
 parser.add_argument('-p', '--port', default=8765, type=int,
                     help='http port (default 8765)')
+parser.add_argument('-b', '--bind', default='localhost', type=str,
+                    help='bind IP or hostname (default localhost)')
 args = parser.parse_args()
 
 os.system("open http://0.0.0.0:%s" % args.port)
 
 try:
-    run_server(args.port)
+    run_server(args.bind, args.port)
 except KeyboardInterrupt:
     sys.exit(0)
