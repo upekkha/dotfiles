@@ -632,7 +632,7 @@ let g:indent_guides_auto_colors = 0
 let g:markdown_fenced_languages = ['ruby', 'perl', 'sh', 'vim', 'html', 'javascript', 'css', 'python']
 
 " browser-refresh :RRB
-let g:RefreshRunningBrowserDefault = 'chrome'
+let g:RefreshRunningBrowserDefault = 'safari'
 let g:RefreshRunningBrowserReturnFocus = 1
 "}}}
 "}}}
