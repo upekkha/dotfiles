@@ -108,7 +108,7 @@ set nrformats=          "treat all numerals as decimal (instead of octal if padd
 set tabpagemax=30       "increase maximum number of tabs
 
 " Define replacement for invisivble characters (set invlist)
-set listchars=eol:¬,tab:>-,trail:~
+set listchars=eol:¬,tab:>-,trail:~,space:·
 
 " No error beeps/flash screens
 set noerrorbells
@@ -426,26 +426,6 @@ function! MySetExecutableBit()
     silent !chmod a+x %
     checktime
     execute "au! FileChangedShell " . fname
-endfunction
-"}}}
-
-" ------  Toggle spaces  -------------{{{
-" Show spaces as middle dots and highlight as SpecialKey
-match SpecialKey /·/
-" Define function to toggle showing of spaces, tabs etc
-" rem: should not be applied on documents with · (like vimrc)
-function! MyToggleSpaces()
-    if !exists('b:ws_show')
-        let b:ws_show = 0
-    endif
-    let b:ws_show = !b:ws_show
-    if b:ws_show
-        set list
-        %s/ /·/g
-    else
-        set nolist
-        %s/·/ /g
-    endif
 endfunction
 "}}}
 
