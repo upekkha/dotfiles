@@ -107,8 +107,8 @@ set fillchars+=vert:\ , "use blank as separator in vertical splits
 set nrformats=          "treat all numerals as decimal (instead of octal if padded with zeros)
 set tabpagemax=30       "increase maximum number of tabs
 
-" Define replacement for invisivble characters (set invlist)
-set listchars=eol:¬,tab:>-,trail:~,space:·
+" Define replacement for invisible characters (set invlist)
+set listchars=eol:¬,tab:>-,trail:~
 
 " No error beeps/flash screens
 set noerrorbells
@@ -238,6 +238,9 @@ augroup END
 " ------  Vim version options  -------{{{
 if version >= 730
     set cryptmethod=blowfish    "define default method for encryption
+endif
+if v:version >704 || v:version==704 && has('patch710')
+    set listchars+=space:·
 endif
 "}}}
 
