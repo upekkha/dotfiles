@@ -236,8 +236,10 @@ augroup END
 " ------  Platform-dependent  --------{{{
 
 " ------  Vim version options  -------{{{
-if version >= 730
-    set cryptmethod=blowfish    "define default method for encryption
+if v:version >704 || v:version==704 && has('patch399')
+	set cryptmethod=blowfish2
+else
+	set cryptmethod=blowfish
 endif
 if v:version >704 || v:version==704 && has('patch710')
     set listchars+=space:·
