@@ -378,6 +378,9 @@ au filetype markdown set wrap               "wrap lines
 au filetype markdown syntax match Comment /%%.*/
 au filetype markdown syntax match RedTodo /TODO/
 
+au filetype markdown map <F3> <ESC>:w \| !marked % <CR><CR>
+au filetype markdown imap <F3> <ESC>:w \| !marked % <CR><CR>
+
 let g:markdown_folding = 1
 au filetype markdown setlocal foldlevel=1
 "}}}
