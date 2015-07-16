@@ -362,6 +362,7 @@ au filetype perl set foldmethod=syntax  "autofold all functions
 au filetype perl setf perl              "needed for folds
 au filetype perl match TODO /DEBUG/     "highlight debug as todo
 au BufRead *.epl set filetype=embperl   "syntax highlighting for embedded perl
+au BufRead *.tt set filetype=html       "syntax highlighting for TemplateToolkit
 "}}}
 
 " ------  Ruby  ----------------------{{{
