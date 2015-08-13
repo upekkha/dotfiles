@@ -110,9 +110,6 @@
 [submodule ".vim/bundle/vim-less"]
 	path = .vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
-[submodule ".vim/bundle/browser-refresh"]
-	path = .vim/bundle/browser-refresh
-	url = https://github.com/mkitt/browser-refresh.vim.git
 [submodule ".vim/bundle/css-color"]
 	path = .vim/bundle/css-color
 	url = https://github.com/ap/vim-css-color.git
