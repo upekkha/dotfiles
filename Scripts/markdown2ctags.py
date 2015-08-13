@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 
 # Copyright (C) 2013 John Szakmeister <john@szakmeister.net>
 # All rights reserved.
