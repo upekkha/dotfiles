@@ -3,6 +3,7 @@
 "toggle activation of specific bundles
 let g:pathogen_disabled = []
 "call add(g:pathogen_disabled, 'ack')
+"call add(g:pathogen_disabled, 'ansible-vim')
 "call add(g:pathogen_disabled, 'browser-refresh')
 "call add(g:pathogen_disabled, 'bufexplorer')
 "call add(g:pathogen_disabled, 'BufOnly')
@@ -599,7 +600,6 @@ let g:tagbar_type_markdown = {
 \ }
 "}}}
 
-
 " ------  Other  ---------------------{{{
 " netrw: silent file transfer
 let g:netrw_silent=1
@@ -612,6 +612,10 @@ let g:bufExplorerDefaultHelp=0
 
 " ack plugin: use macports ack and scan all types of files
 let g:ackprg="~/Scripts/ack -H --nocolor --nogroup --column"
+
+" ansible-vim
+let g:ansible_attribute_highlight = 'ab'    " bright highlighting of all key=value pairs
+let g:ansible_name_highlight = 'b'          " bright highlighting of name: instances
 
 " snipmate
 let g:snippets_dir="~/.vim/mysnippets/"

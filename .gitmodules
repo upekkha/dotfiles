@@ -131,3 +131,6 @@
 [submodule ".vim/bundle/colorizer"]
 	path = .vim/bundle/colorizer
 	url = https://github.com/lilydjwg/colorizer.git
+[submodule ".vim/bundle/ansible-vim"]
+	path = .vim/bundle/ansible-vim
+	url = https://github.com/pearofducks/ansible-vim
