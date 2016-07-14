@@ -86,7 +86,7 @@ function git_status_prompt #{{{
     elif [[ ${GITSTATUS} =~ "must be run in a work tree" ]]; then
         # Bare git repo
         GITSTAT=""
-    elif [[ ${GITSTATUS} =~ "working directory clean" ]]; then
+    elif [[ ${GITSTATUS} =~ "working tree clean" ]]; then
         # Clean repo
         GITSTAT="[${GITBRANCH}]"
         # Display only if not on master branch
