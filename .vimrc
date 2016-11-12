@@ -622,6 +622,7 @@ let g:snippets_dir="~/.vim/mysnippets/"
 
 " python-mode
 let g:pymode_options_max_line_length = 100
+let g:pymode_rope = 0
 
 " vim-rails: define command to open browser
 command -bar -nargs=1 OpenURL :!open <args>
