@@ -704,10 +704,6 @@ vmap r "_dP
 " remap Y to yank from first to last non-blank character on line (including final carriage return)
 vmap Y ^y$
 
-" remap ./, to indent visual selection without deselecting
-vmap . >gv
-vmap , <gv
-
 " remap space to fold/unfold
 map <space> za
 
@@ -719,6 +715,19 @@ map <up> gk
 map <down> gj
 imap <up> <ESC>gka
 imap <down> <ESC>gja
+
+" disable MacVim cmd- and alt- keybindings
+if has("gui_macvim")
+    let macvim_skip_cmd_opt_movement = 1
+endif
+
+" remap alt-arrow keys to move/indent lines
+nmap <M-down> :m+<CR>
+nmap <M-up> :m-2<CR>
+vmap <M-down> :m '>+1<CR>gv
+vmap <M-up> :m '<-2<CR>gv
+vmap <M-right> >gv
+vmap <M-left> <gv
 
 " map three-finger swipes to change buffer
 nmap <SwipeLeft> :bN<CR>
