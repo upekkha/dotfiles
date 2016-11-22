@@ -410,6 +410,24 @@ function! s:VSetSearch()
 endfunction
 "}}}
 
+" ------  Format Markdown Table  -----{{{
+" source: https://github.com/plasticboy/vim-markdown
+function! TableFormat()
+    let l:pos = getpos('.')
+    normal! {
+    call search('|')
+    normal! j
+    let l:flags = (&gdefault ? '' : 'g')
+    execute 's/\(:\@<!-:\@!\|[^|:-]\)//e' . l:flags
+    execute 's/--/-/e' . l:flags
+    Tabularize /|
+    execute 's/:\( \+\)|/\1:|/e' . l:flags
+    execute 's/|\( \+\):/|:\1/e' . l:flags
+    execute 's/ /-/' . l:flags
+    call setpos('.', l:pos)
+endfunction
+"}}}
+
 " ------  Insert Timestamp  ----------{{{
 function! ListTimestampString()
     "take minutes in steps of 10
