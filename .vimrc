@@ -734,9 +734,18 @@ map <down> gj
 imap <up> <ESC>gka
 imap <down> <ESC>gja
 
-" disable MacVim cmd- and alt- keybindings
+" disable MacVim alt- keybindings
 if has("gui_macvim")
     let macvim_skip_cmd_opt_movement = 1
+    no   <D-Left> <Home>
+    no!  <D-Left> <Home>
+    nmap <D-Left> <Home>
+    imap <D-Left> <Home>
+
+    no   <D-Right> <End>
+    no!  <D-Right> <End>
+    nmap <D-Right> <End>
+    imap <D-Right> <End>
 endif
 
 " remap alt-arrow keys to move/indent lines
