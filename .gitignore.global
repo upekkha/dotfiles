@@ -6,3 +6,5 @@ vendor/bundle/*
 .vagrant
 .ropeproject
 .ipynb_checkpoints/
+__pycache__
+.cache
