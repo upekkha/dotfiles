@@ -623,7 +623,7 @@ let g:tagbar_type_markdown = {
 let g:netrw_silent=1
 
 " NerdTree file filter: *~ *.o
-let NERDTreeIgnore=['\~$', '\.o']
+let NERDTreeIgnore=['\~$', '\.o', '__pycache__', '.cache']
 
 " Customize BufExplorer to not show help message
 let g:bufExplorerDefaultHelp=0
