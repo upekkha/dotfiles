@@ -119,6 +119,11 @@ if [ -f ~/.dotfiles/.bash_completion ]; then
     . ~/.dotfiles/.bash_completion
 fi
 
+# iTerm shell integration
+if [ -f ~/.dotfiles/Scripts/.iterm2_shell_integration.bash ]; then
+    . ~/.dotfiles/Scripts/.iterm2_shell_integration.bash
+fi
+
 # auto-complete remote hosts for ssh -> bash_completion
 # Rem: does not work for ssh user@host; instead use ssh host -l user
 #complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
