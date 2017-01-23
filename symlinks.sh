@@ -10,6 +10,7 @@ chmod 700 ~/.sessions
 $link .dotfiles/.ackrc .ackrc
 $link .dotfiles/.bash_logout .bash_logout
 $link .dotfiles/.bash_profile .bash_profile
+$link .dotfiles/.bash_sessions_disable .bash_sessions_disable
 #$link .dotfiles/.bazaar .bazaar
 $link .dotfiles/.bundle .bundle
 $link .dotfiles/.colordiffrc .colordiffrc
