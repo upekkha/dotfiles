@@ -57,9 +57,10 @@ set switchbuf=usetab    "when switching buffer, switch to tab having it open
 set fillchars+=vert:\ , "use blank as separator in vertical splits
 set nrformats=          "treat all numerals as decimal (instead of octal if padded with zeros)
 set tabpagemax=30       "increase maximum number of tabs
+set cryptmethod=blowfish2       "use strong encryption method
 
 " Define replacement for invisible characters (set invlist)
-set listchars=eol:¬,tab:>-,trail:~
+set listchars=eol:¬,tab:>-,trail:~,space:·
 
 " No error beeps/flash screens
 set noerrorbells
@@ -185,17 +186,6 @@ augroup END
 "}}}
 
 " ------  Platform-dependent  --------{{{
-
-" ------  Vim version options  -------{{{
-if v:version >704 || v:version==704 && has('patch399')
-	set cryptmethod=blowfish2
-else
-	set cryptmethod=blowfish
-endif
-if v:version >704 || v:version==704 && has('patch710')
-    set listchars+=space:·
-endif
-"}}}
 
 " ------  GUI options  ---------------{{{
 if has("gui_running")
