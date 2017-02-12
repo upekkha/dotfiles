@@ -650,9 +650,6 @@ map <Leader>rp :RainbowParenthesesToggle<CR>
 " remap \w to toggle display of invisible characters
 map <Leader>w :set invlist<CR>
 
-" remap \W to toggle display of whitespace as middle dot
-map <Leader>W :call MyToggleSpaces()<CR>
-
 " remap ,t to insert timestamp at end of line
 nmap ,t :call ListTimestamp()<CR>
 
