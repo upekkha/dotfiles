@@ -71,7 +71,7 @@ parser.add_argument('-b', '--bind', default='localhost', type=str,
                     help='bind IP or hostname (default localhost)')
 args = parser.parse_args()
 
-os.system("open http://0.0.0.0:%s" % args.port)
+os.system("open http://127.0.0.1:%s" % args.port)
 
 try:
     run_server(args.bind, args.port)
