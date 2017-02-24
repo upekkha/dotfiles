@@ -202,9 +202,6 @@ endif
 " ------  Mac options  ---------------{{{
 if has("mac")
     set guifont=Menlo:h12   " use 12pt Menlo font
-    " for TeX files open pdf in skim at the line under the cursor
-    au filetype tex map <F3> <ESC>:w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<.pdf %<CR><CR>
-    au filetype tex imap <F3> <ESC>:w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<.pdf %<CR><CR>
 endif
 "}}}
 "}}}
@@ -226,33 +223,16 @@ au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
 set backupskip+=/private/tmp/*
 
-" Allow reading of epub files
-au BufReadCmd *.epub call zip#Browse(expand("<amatch>"))
-
-" Add timestamp to backups
-"au BufWritePre * let &bex = '-' . strftime("%Y%m%d.%H%M%S")
-
-" Reload vimrc on change
-"au BufWritePost .vimrc source $MYVIMRC
-
 " Automatically toggle quickfix window
 au QuickFixCmdPost [^1]* nested cwindow
 au QuickFixCmdPost    1* nested lwindow
 
 " Extra whitespaces
 " highlight trailing spaces, and spaces in front of tabs while not in insert mode
-" to switch higlighting off, enter :match
+" to switch highlighting off, enter :match
 au BufEnter * match ExtWhiteSpace /\s\+$\| \+\ze\t/
 au InsertEnter * match ExtWhiteSpace /\s\+\%#\@<!$/
 au InsertLeave * match ExtWhiteSpace /\s\+$\| \+\ze\t/
-
-"" Add/remove comment sign at beginning of line
-"au Filetype c,cpp,java,javascript           let b:comment_leader = '// '
-"au Filetype bash,sh,ruby,python,perl        let b:comment_leader = '# '
-"au Filetype tex                             let b:comment_leader = '% '
-"au Filetype vim                             let b:comment_leader = '" '
-"noremap <silent> <leader>cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:let @/ = ""<CR>
-"noremap <silent> <leader>cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:let @/ = ""<CR>
 "}}}
 
 " ------  Filetypes  -----------------{{{
@@ -261,7 +241,6 @@ au InsertLeave * match ExtWhiteSpace /\s\+$\| \+\ze\t/
 " Use # for comments in txt and log files and force unlimited textwidth
 au BufRead *.txt,*.log set filetype=text textwidth=0
 au filetype text syntax match Comment /#.*/
-" Highlight todo,todo:,*) in red
 au filetype text syntax match RedTodo /TODO/
 au filetype text syntax match RedTodo /TODO:/
 au filetype text syntax match RedTodo /*)/
@@ -273,35 +252,14 @@ au BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit nomodeline
 au BufNewFile,BufRead git-rebase-todo set filetype=gitrebase nomodeline
 "}}}
 
-" ------  Irssi  ---------------------{{{
-au BufRead *.irs set syntax=irssi wrap
-"}}}
-
 " ------  AutoPkg  -------------------{{{
 au BufRead *.recipe set ft=xml
-"}}}
-
-" ------  Gnuplot  -------------------{{{
-" Gnuplot syntax highlighting
-au BufNewFile,BufRead *.gp,*.plt,*.gnuplot,*.gplot set filetype=gnuplot
-" Generate Plot using F3
-au filetype gnuplot map <F3> <ESC>:w \| !gnuplot % <CR>
-au filetype gnuplot imap <F3> <ESC>:w \| !gnuplot % <CR>
-"}}}
-
-" ------  C++  -----------------------{{{
-au filetype cpp set nowrap              " don't wrap the lines of code
-au filetype cpp set foldmethod=syntax   "autofold all functions
-au filetype cpp set foldlevel=6         "open all folds on startup
-au filetype cpp set printoptions=paper:A4,portrait:n,number:n   " Landscape printing for code
-au filetype cpp match TODO /DEBUG/      "highlight debug as todo
 "}}}
 
 " ------  Perl  ----------------------{{{
 let perl_fold=1                         "needed for folds
 au filetype perl set foldmethod=syntax  "autofold all functions
 au filetype perl setf perl              "needed for folds
-au filetype perl match TODO /DEBUG/     "highlight debug as todo
 au BufRead *.epl set filetype=embperl   "syntax highlighting for embedded perl
 au BufRead *.tt set filetype=html       "syntax highlighting for TemplateToolkit
 "}}}
@@ -325,12 +283,8 @@ au filetype markdown imap <F3> <ESC>:w \| !marked % <CR><CR>
 
 let g:markdown_folding = 1
 au filetype markdown setlocal foldlevel=1
-"}}}
 
-" ------  LaTeX  ---------------------{{{
-" LaTeX-box plugin
-let g:LatexBox_latexmk_options="-pvc"
-let g:LatexBox_viewer="open"
+let g:markdown_fenced_languages = ['ruby', 'perl', 'bash=sh', 'sh', 'vim', 'html', 'javascript', 'css', 'python']
 "}}}
 "}}}
 
@@ -430,23 +384,6 @@ function! MyFold()
 endfunction
 set foldtext=MyFold()
 "}}}
-
-" ------  Vimfu Modeline  ------------{{{
-" allow execution of commands in vimfu modelines
-function! MyVimfuModeline()
-  let i = &modelines
-  let lln = line("$")
-  if i > lln | let i = lln | endif
-  while i > 0
-    let l = getline(lln-i+1)
-    if l =~ "vimfu:"
-        exec strpart(l, stridx(l, "vimfu:")+strlen("vimfu:"))
-    endif
-    let i = i-1
-  endwhile
-endfunction
-au BufReadPost * :call MyVimfuModeline()
-"}}}
 "}}}
 
 " ------  Plugins  -------------------{{{
@@ -476,40 +413,6 @@ let g:NERDCustomDelimiters = {
     \ 'wiki': { 'left': '%%' },
     \ 'snippet': { 'left': '#' }
 \ }
-"}}}
-
-" ------  Vim Wiki  ------------------{{{
-" wiki options
-let wiki_1 = {}
-let wiki_1.syntax = 'markdown'
-let wiki_1.ext = '.markdown'
-let g:vimwiki_global_ext = 0
-let wiki_1.index = 'index'
-let wiki_1.path = '~/Documents/Docs/Notes/wiki/'
-let wiki_1.path_html = '~/Sites/wiki/'
-let wiki_1.auto_export = 0
-let wiki_1.template_path = '~/Documents/Docs/Notes/wiki/'
-let wiki_1.template_default = 'template'
-let wiki_1.template_ext = '.html'
-let wiki_1.nested_syntaxes = {'bash': 'sh', 'perl': 'perl', 'python': 'python', 'cpp': 'cpp'}
-let g:vimwiki_list = [wiki_1]
-" enable folding
-let g:vimwiki_folding = 1
-let g:vimwiki_fold_lists = 0
-let g:vimwiki_fold_trailing_empty_lines = 0
-" disable camelcase autolinks
-let g:vimwiki_camel_case=0
-" use taglist
-let tlist_vimwiki_settings = 'dokuwiki;h:Headers'
-" place menu as plugin submenu
-let g:vimwiki_menu = 'Plugin.Vimwiki'
-" don't allow for spaces in names and replace by _
-let g:vimwiki_badsyms = ' '
-let g:vimwiki_stripsym = '_'
-" use open command to view in default browser
-let g:vimwiki_browsers=['open']
-" dokuwiki hacks
-let g:vimwiki_valid_html_tags = 'b,i,s,u,sub,sup,kbd,br,hr,div,center,strong,em,del,nowiki,code'
 "}}}
 
 " ------  Rainbow Parentheses  -------{{{
@@ -598,21 +501,10 @@ vmap <C-c><C-c> <Plug>SlimeRegionSend
 " indent-guides: custom colors
 let g:indent_guides_auto_colors = 0
 
-" vim markdown fenced code highlighting
-let g:markdown_fenced_languages = ['ruby', 'perl', 'bash=sh', 'sh', 'vim', 'html', 'javascript', 'css', 'python']
-
 " browser-refresh :RRB
 let g:RefreshRunningBrowserDefault = 'safari'
 let g:RefreshRunningBrowserReturnFocus = 1
 "}}}
-"}}}
-
-" ------  Abbreviations  -------------{{{
-" Notes Script
-cabbrev Note set foldmethod=indent columns=120 <Bar>NERDTreeToggle <Bar>vertical res -11
-
-" Command to print to pdf
-cabbrev hapdf hardcopy > %<.ps <Bar>!ps2pdf %<.ps %<.pdf && rm %<.ps
 "}}}
 
 " ------  Keyboard mappings  ---------{{{
@@ -644,7 +536,6 @@ map <Leader>r :autocmd BufWritePost <buffer> RRB<CR>
 
 " remap \rp to toggle rainbow-parenthesis
 map <Leader>rp :RainbowParenthesesToggle<CR>
-
 "}}}
 
 " remap \w to toggle display of invisible characters
@@ -655,9 +546,6 @@ nmap ,t :call ListTimestamp()<CR>
 
 " remap r to replace visual selection with yanked text, putting the selection in the black hole buffer
 vmap r "_dP
-
-" remap Y to yank from first to last non-blank character on line (including final carriage return)
-vmap Y ^y$
 
 " remap space to fold/unfold
 map <space> za
@@ -696,9 +584,6 @@ vmap <M-left> <gv
 " map three-finger swipes to change buffer
 nmap <SwipeLeft> :bN<CR>
 nmap <SwipeRight> :bn<CR>
-
-" Command to save read-only file as root and reload
-"cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
 
 " remap \X to set executable bit to current buffer
 nmap <Leader>X :call MySetExecutableBit()<CR>
@@ -741,6 +626,115 @@ map <Leader>c :tabe \| set ft=xml \| read ++edit !plutil -convert xml1 -o - #<CR
 
 " remap \cc to convert plist to xml
 map <Leader>cc :set autoread \| set ft=xml \|!plutil -convert xml1 %<CR>
+"}}}
+
+" ------  Unused  --------------------{{{
+"" remap Y to yank from first to last non-blank character on line (including final carriage return)
+"vmap Y ^y$
+
+"" Add timestamp to backups
+"au BufWritePre * let &bex = '-' . strftime("%Y%m%d.%H%M%S")
+
+"" Reload vimrc on change
+"au BufWritePost .vimrc source $MYVIMRC
+
+"" Add/remove comment sign at beginning of line
+"au Filetype c,cpp,java,javascript           let b:comment_leader = '// '
+"au Filetype bash,sh,ruby,python,perl        let b:comment_leader = '# '
+"au Filetype tex                             let b:comment_leader = '% '
+"au Filetype vim                             let b:comment_leader = '" '
+"noremap <silent> <leader>cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:let @/ = ""<CR>
+"noremap <silent> <leader>cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:let @/ = ""<CR>
+
+"" Allow reading of epub files
+"au BufReadCmd *.epub call zip#Browse(expand("<amatch>"))
+
+"" Command to save read-only file as root and reload
+"cmap w!! w !sudo tee % >/dev/null<CR>:e!<CR><CR>
+
+"" ------  Gnuplot  -------------------{{{
+"" Gnuplot syntax highlighting
+"au BufNewFile,BufRead *.gp,*.plt,*.gnuplot,*.gplot set filetype=gnuplot
+"" Generate Plot using F3
+"au filetype gnuplot map <F3> <ESC>:w \| !gnuplot % <CR>
+"au filetype gnuplot imap <F3> <ESC>:w \| !gnuplot % <CR>
+""}}}
+
+"" ------  C++  -----------------------{{{
+"au filetype cpp set nowrap              " don't wrap the lines of code
+"au filetype cpp set foldmethod=syntax   "autofold all functions
+"au filetype cpp set foldlevel=6         "open all folds on startup
+"au filetype cpp set printoptions=paper:A4,portrait:n,number:n   " Landscape printing for code
+""}}}
+
+"" ------  LaTeX  ---------------------{{{
+"" for TeX files open pdf in skim at the line under the cursor
+"au filetype tex map <F3> <ESC>:w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<.pdf %<CR><CR>
+"au filetype tex imap <F3> <ESC>:w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<.pdf %<CR><CR>
+
+"" LaTeX-box plugin
+"let g:LatexBox_latexmk_options="-pvc"
+"let g:LatexBox_viewer="open"
+""}}}
+
+"" ------  Vimfu Modeline  ------------{{{
+"" allow execution of commands in vimfu modelines
+"function! MyVimfuModeline()
+  "let i = &modelines
+  "let lln = line("$")
+  "if i > lln | let i = lln | endif
+  "while i > 0
+    "let l = getline(lln-i+1)
+    "if l =~ "vimfu:"
+        "exec strpart(l, stridx(l, "vimfu:")+strlen("vimfu:"))
+    "endif
+    "let i = i-1
+  "endwhile
+"endfunction
+"au BufReadPost * :call MyVimfuModeline()
+""}}}
+
+"" ------  Vim Wiki  ------------------{{{
+"" wiki options
+"let wiki_1 = {}
+"let wiki_1.syntax = 'markdown'
+"let wiki_1.ext = '.markdown'
+"let g:vimwiki_global_ext = 0
+"let wiki_1.index = 'index'
+"let wiki_1.path = '~/Documents/Docs/Notes/wiki/'
+"let wiki_1.path_html = '~/Sites/wiki/'
+"let wiki_1.auto_export = 0
+"let wiki_1.template_path = '~/Documents/Docs/Notes/wiki/'
+"let wiki_1.template_default = 'template'
+"let wiki_1.template_ext = '.html'
+"let wiki_1.nested_syntaxes = {'bash': 'sh', 'perl': 'perl', 'python': 'python', 'cpp': 'cpp'}
+"let g:vimwiki_list = [wiki_1]
+"" enable folding
+"let g:vimwiki_folding = 1
+"let g:vimwiki_fold_lists = 0
+"let g:vimwiki_fold_trailing_empty_lines = 0
+"" disable camelcase autolinks
+"let g:vimwiki_camel_case=0
+"" use taglist
+"let tlist_vimwiki_settings = 'dokuwiki;h:Headers'
+"" place menu as plugin submenu
+"let g:vimwiki_menu = 'Plugin.Vimwiki'
+"" don't allow for spaces in names and replace by _
+"let g:vimwiki_badsyms = ' '
+"let g:vimwiki_stripsym = '_'
+"" use open command to view in default browser
+"let g:vimwiki_browsers=['open']
+"" dokuwiki hacks
+"let g:vimwiki_valid_html_tags = 'b,i,s,u,sub,sup,kbd,br,hr,div,center,strong,em,del,nowiki,code'
+""}}}
+
+"" ------  Abbreviations  -------------{{{
+"" Notes Script
+"cabbrev Note set foldmethod=indent columns=120 <Bar>NERDTreeToggle <Bar>vertical res -11
+
+"" Command to print to pdf
+"cabbrev hapdf hardcopy > %<.ps <Bar>!ps2pdf %<.ps %<.pdf && rm %<.ps
+""}}}
 "}}}
 
 " ------  Vim Modeline  --------------{{{
