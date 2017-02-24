@@ -33,9 +33,6 @@
 	path = .vim/pack/bundles/all/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
 	ignore = dirty
-[submodule ".vim/pack/bundles/all/markdown"]
-	path = .vim/pack/bundles/all/markdown
-	url = https://github.com/tpope/vim-markdown.git
 [submodule ".vim/pack/bundles/all/indent-guides"]
 	path = .vim/pack/bundles/all/indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
