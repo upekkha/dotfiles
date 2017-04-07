@@ -50,6 +50,10 @@
 [push]
     default = simple
 
+[pull]
+    # Only pull if fast-forward is possible. Use `git pull --rebase` or `git pull --no-ff` otherwise.
+    ff = only
+
 [alias]
     co = checkout
     st = status
