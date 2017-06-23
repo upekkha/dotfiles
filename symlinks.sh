@@ -3,9 +3,8 @@
 link="ln -snfv"
 cd ~/
 #mkdir -p ~/.irssi
-mkdir -p ~/.config/mc
 mkdir -p ~/.config/ranger
-mkdir -p ~/.local/share/mc
+#mkdir -p ~/.local/share/mc
 mkdir -p ~/.sessions
 chmod 700 ~/.sessions
 $link .dotfiles/.ackrc .ackrc
@@ -33,9 +32,9 @@ $link .dotfiles/.hushlogin .hushlogin
 #$link ../.dotfiles/.irssi/startup .irssi/startup
 #$link .dotfiles/.latexmkrc .latexmkrc
 #$link .dotfiles/.matplotlib .matplotlib
-$link ../../.dotfiles/.mc/ini .config/mc/ini
-$link ../../../.dotfiles/.mc/mc.ext .local/share/mc/mc.ext
-$link ../../../.dotfiles/.mc/skins .local/share/mc/skins
+#$link ../../.dotfiles/.mc/ini .config/mc/ini
+#$link ../../../.dotfiles/.mc/mc.ext .local/share/mc/mc.ext
+#$link ../../../.dotfiles/.mc/skins .local/share/mc/skins
 #$link .dotfiles/.multitailrc .multitailrc
 $link .dotfiles/.netrc .netrc
 $link .dotfiles/.perltidyrc .perltidyrc
