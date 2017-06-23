@@ -4,6 +4,7 @@ link="ln -snfv"
 cd ~/
 #mkdir -p ~/.irssi
 mkdir -p ~/.config/mc
+mkdir -p ~/.config/ranger
 mkdir -p ~/.local/share/mc
 mkdir -p ~/.sessions
 chmod 700 ~/.sessions
@@ -16,6 +17,8 @@ $link .dotfiles/.bundle .bundle
 $link .dotfiles/.colordiffrc .colordiffrc
 $link .dotfiles/.colorizerc .colorizerc
 #$link .dotfiles/.colortailrc .colortailrc
+$link ../../.dotfiles/.config/ranger/rc.conf .config/ranger/rc.conf
+$link ../../.dotfiles/.config/ranger/scope.sh .config/ranger/scope.sh
 #$link .dotfiles/.conkyrc .conkyrc
 $link .dotfiles/.ctags .ctags
 $link .dotfiles/.editrc .editrc
