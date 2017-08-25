@@ -64,10 +64,10 @@ export HISTFILE=$HOME/.bash_history
 # Let history ignore sequential duplicate commands
 export HISTCONTROL=ignoredups
 # Number of commands to keep in history
-export HISTFILESIZE=1000
+export HISTFILESIZE=10000
 export SAVEHIST=$HISTFILESIZE
 # Number of commands to keep in history of current session
-export HISTSIZE=1000
+export HISTSIZE=10000
 # Rem: history is read/written when logging in/out. To read manually:"history -n", to write "history -a". With the following, this is done for each command entered.
 #export PROMPT_COMMAND="history -n; history -a"
 #}}}
