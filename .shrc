@@ -46,6 +46,7 @@ alias gvimtab='gvim --remote-tab-silent'
 alias myrsync='rsync -rLptgoDvzuhX --rsync-path=/opt/local/bin/rsync --exclude ".DS_Store" --exclude ".*.swp" --delete'
 alias rbenv_init='export PATH="$HOME/.rbenv/bin:$PATH";eval "$(rbenv init -)";export PATH="./bin:$PATH";unalias rbenv_init'
 alias ccat='pygmentize -g -O "style=native" -f console256'
+alias exa='exa -l --git --color-scale --group'
 
 # use colordiff if it exists
 if [ -e ~/Scripts/colordiff ]; then
