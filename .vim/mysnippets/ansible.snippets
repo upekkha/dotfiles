@@ -1,0 +1,33 @@
+snippet name:
+	- name: ${1:DESCRIPTION}
+snippet lineinfile:
+	lineinfile:
+	  dest: ${1:PATH}
+	  regexp: '${2:REGEXP}'
+	  line: '${3:CONTENT}'
+snippet git:
+	git:
+	  repo: ${1:URL}
+	  dest: ${2:PATH}
+	  update: no${3}
+snippet copy:
+	copy:
+	  src: ${1:LOCALPATH}
+	  dest: ${2:PATH}
+	  owner: ${3:root}
+	  group: ${4:root}
+	  mode: ${5:0644}
+snippet template:
+	template:
+	  src: ${1:LOCALPATH}
+	  dest: ${2:PATH}
+	  owner: ${3:root}
+	  group: ${4:root}
+	  mode: ${5:0644}
+snippet whendist:
+	when: ansible_distribution_release == '${1:stretch}'${2}
+snippet link:
+	file:
+	  src:  ${1:TARGET}
+	  dest: ${2:SYMLINK}
+	  state: link${3}
