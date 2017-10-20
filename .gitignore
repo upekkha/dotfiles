@@ -11,7 +11,7 @@
 .vim/view
 
 # Ignore matplotlib's font cache
-.matplotlib/fontList*cache
+.matplotlib/fontList*
 
 # Ignore Scripts folder
 Scripts/
