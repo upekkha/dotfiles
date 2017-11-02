@@ -33,6 +33,8 @@
 
 [diff]
     tool = vimdiff
+    compactionHeuristic = true
+    colorMoved = default
 
 [difftool]
     prompt = true
