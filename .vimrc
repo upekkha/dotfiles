@@ -486,6 +486,9 @@ let g:snippets_dir="~/.vim/mysnippets/"
 let g:pymode_options_max_line_length = 100
 let g:pymode_rope = 0
 
+" vim-gitgutter
+let g:gitgutter_enabled = 0
+
 " vim-rails: define command to open browser
 command -bar -nargs=1 OpenURL :!open <args>
 
@@ -531,6 +534,13 @@ map <Leader>t :TagbarToggle<CR>
 
 " remap \T to toggle NerdTree
 map <Leader>T :NERDTreeToggle<CR>
+
+" remap \g to toggle vim-gitgutter
+nmap <Leader>g :GitGutterToggle<CR>
+nmap <Leader>ga <Plug>GitGutterStageHunk
+nmap <Leader>gr <Plug>GitGutterUndoHunk
+nmap ]g <Plug>GitGutterNextHunk
+nmap [g <Plug>GitGutterPrevHunk
 
 " remap \r to auto-reload browser on save
 map <Leader>r :autocmd BufWritePost <buffer> RRB<CR>

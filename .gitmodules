@@ -122,3 +122,6 @@
 [submodule ".vim/pack/bundles/all/ansiesc"]
 	path = .vim/pack/bundles/all/ansiesc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc.git
+[submodule ".vim/pack/bundles/all/vim-gitgutter"]
+	path = .vim/pack/bundles/all/vim-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
