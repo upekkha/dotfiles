@@ -125,3 +125,6 @@
 [submodule ".vim/pack/bundles/all/vim-gitgutter"]
 	path = .vim/pack/bundles/all/vim-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule ".vim/pack/bundles/all/nerdtree-git-plugin"]
+	path = .vim/pack/bundles/all/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
