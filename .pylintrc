@@ -1,5 +1,5 @@
 [MESSAGES CONTROL]
-disable=invalid-name,missing-docstring
+disable=invalid-name,missing-docstring,too-few-public-methods
 
 [TYPECHECK]
 ignored-classes=SQLAlchemy,scoped_session
