@@ -40,6 +40,7 @@ $link .dotfiles/.netrc .netrc
 $link .dotfiles/.perltidyrc .perltidyrc
 #$link .dotfiles/.procmailrc .procmailrc
 $link .dotfiles/.proverc .proverc
+$link .dotfiles/.pylintrc .pylintrc
 #$link .dotfiles/.Rprofile .Rprofile
 $link .dotfiles/.screenrc .screenrc
 $link .dotfiles/Scripts Scripts
