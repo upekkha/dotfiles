@@ -389,21 +389,21 @@ set foldtext=MyFold()
 " ------  Plugins  -------------------{{{
 
 " ------  Nerdcommenter  -------------{{{
-let g:NERDCreateDefaultMappings = 0 "don't create <leader> key mappings
+"let g:NERDCreateDefaultMappings = 0 "don't create <leader> key mappings
 " create custom mappings with , instead of <leader>
-map ,cc <plug>NERDCommenterComment
-map ,c<space> <plug>NERDCommenterToggle
-map ,cm <plug>NERDCommenterMinimal
-map ,cs <plug>NERDCommenterSexy
-map ,ci <plug>NERDCommenterInvert
-map ,cy <plug>NERDCommenterYank
-map ,cl <plug>NERDCommenterAlignLeft
-map ,cb <plug>NERDCommenterAlignBoth
-map ,cn <plug>NERDCommenterNest
-map ,cu <plug>NERDCommenterUncomment
-map ,c$ <plug>NERDCommenterToEOL
-map ,cA <plug>NERDCommenterAppend
-map ,ca <plug>NERDCommenterAltDelims
+"map ,cc <plug>NERDCommenterComment
+"map ,c<space> <plug>NERDCommenterToggle
+"map ,cm <plug>NERDCommenterMinimal
+"map ,cs <plug>NERDCommenterSexy
+"map ,ci <plug>NERDCommenterInvert
+"map ,cy <plug>NERDCommenterYank
+"map ,cl <plug>NERDCommenterAlignLeft
+"map ,cb <plug>NERDCommenterAlignBoth
+"map ,cn <plug>NERDCommenterNest
+"map ,cu <plug>NERDCommenterUncomment
+"map ,c$ <plug>NERDCommenterToEOL
+"map ,cA <plug>NERDCommenterAppend
+"map ,ca <plug>NERDCommenterAltDelims
 " custom delimiter for cpp: /* -> /*<space>
 " define delimiter for txt and log
 let g:NERDCustomDelimiters = {
