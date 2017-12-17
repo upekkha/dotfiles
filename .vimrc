@@ -633,10 +633,10 @@ map <Leader>cd :exe 'cd'.fnamemodify(resolve(expand("%:p")),":h")<CR>
 map <Leader>n :set invnu<CR>
 
 " remap \c to convert plist to xml and open in new tab
-map <Leader>c :tabe \| set ft=xml \| read ++edit !plutil -convert xml1 -o - #<CR>
+"map <Leader>c :tabe \| set ft=xml \| read ++edit !plutil -convert xml1 -o - #<CR>
 
 " remap \cc to convert plist to xml
-map <Leader>cc :set autoread \| set ft=xml \|!plutil -convert xml1 %<CR>
+"map <Leader>cc :set autoread \| set ft=xml \|!plutil -convert xml1 %<CR>
 "}}}
 
 " ------  Unused  --------------------{{{
