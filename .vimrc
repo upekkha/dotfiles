@@ -411,7 +411,8 @@ let g:NERDCustomDelimiters = {
     \ 'text': { 'left': '#' },
     \ 'embperl': { 'left': '#' },
     \ 'wiki': { 'left': '%%' },
-    \ 'snippet': { 'left': '#' }
+    \ 'snippet': { 'left': '#' },
+    \ 'ansible_template': { 'left': '{# ', 'right': ' #}' }
 \ }
 "}}}
 
