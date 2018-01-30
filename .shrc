@@ -48,6 +48,7 @@ alias rbenv_init='export PATH="$HOME/.rbenv/bin:$PATH";eval "$(rbenv init -)";ex
 alias ccat='pygmentize -g -O "style=native" -f console256'
 alias exa='exa -l --git --color-scale --group'
 alias rg='rg -S --colors "line:fg:yellow" --colors "path:fg:green"'
+alias ncdu='ncdu --color dark'
 
 # use colordiff if it exists
 if [ -e ~/Scripts/colordiff ]; then
