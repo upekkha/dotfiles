@@ -45,7 +45,6 @@ alias rebash='source ~/.bash_profile'
 alias gvimtab='gvim --remote-tab-silent'
 alias myrsync='rsync -rLptgoDvzuhX --rsync-path=/opt/local/bin/rsync --exclude ".DS_Store" --exclude ".*.swp" --delete'
 alias rbenv_init='export PATH="$HOME/.rbenv/bin:$PATH";eval "$(rbenv init -)";export PATH="./bin:$PATH";unalias rbenv_init'
-alias ccat='pygmentize -g -O "style=native" -f console256'
 alias exa='exa -l --git --color-scale --group'
 alias rg='rg -S --colors "line:fg:yellow" --colors "path:fg:green"'
 alias ncdu='ncdu --color dark'
@@ -110,6 +109,22 @@ export LESS_TERMCAP_us=$'\E[04;32m'     # underline begin
 #}}}
 
 # ------  custom functions  ----------{{{
+
+# ccat: colorized cat using pygments {{{
+ccat()
+{
+    for iarg in $@
+    do
+        ext=${iarg##*.}
+        # force md lexer on .markdown files
+        if [ $ext == 'markdown' ]; then
+            pygmentize -O "style=native" -f console256 -l md $iarg
+        else
+            pygmentize -O "style=native" -f console256 -g $iarg
+        fi
+    done
+}
+#}}}
 
 # gvimscp: open remote files using bash tab completion {{{
 gvimscp()
