@@ -4,7 +4,6 @@ syntax on               "enable syntax highlightning
 set nocompatible        "enable all vim features
 set encoding=utf8       "default file encoding
 set ttyfast             "fast terminal
-set t_Co=256            "use 256 colors
 set mouse=i             "enable mouse in insert mode
 filetype plugin on      "enable filetype plugins
 filetype indent on      "automatic indentation according to filetype
@@ -64,6 +63,8 @@ if !has("nvim")
         set guifont=Menlo:h12   " use 12pt Menlo font
     endif
 endif
+
+set t_Co=256            "use 256 colors
 
 " Define replacement for invisible characters (set invlist)
 set listchars=eol:¬,tab:>-,trail:~,space:·
