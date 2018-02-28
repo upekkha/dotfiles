@@ -3,7 +3,6 @@
 syntax on               "enable syntax highlightning
 set nocompatible        "enable all vim features
 set encoding=utf8       "default file encoding
-set term=xterm-color    "terminal type
 set ttyfast             "fast terminal
 set t_Co=256            "use 256 colors
 set mouse=i             "enable mouse in insert mode
@@ -57,7 +56,14 @@ set switchbuf=usetab    "when switching buffer, switch to tab having it open
 set fillchars+=vert:\ , "use blank as separator in vertical splits
 set nrformats=          "treat all numerals as decimal (instead of octal if padded with zeros)
 set tabpagemax=30       "increase maximum number of tabs
-set cryptmethod=blowfish2       "use strong encryption method
+
+if !has("nvim")
+    set term=xterm-color        "terminal type
+    set cryptmethod=blowfish2   "use strong encryption method
+    if has("mac")
+        set guifont=Menlo:h12   " use 12pt Menlo font
+    endif
+endif
 
 " Define replacement for invisible characters (set invlist)
 set listchars=eol:¬,tab:>-,trail:~,space:·
@@ -196,12 +202,6 @@ if has("gui_running")
     set lines=38 columns=80 " larger window
     set autochdir           " change working directory to directory of current file
     set mouse=a             " enable mouse
-endif
-"}}}
-
-" ------  Mac options  ---------------{{{
-if has("mac")
-    set guifont=Menlo:h12   " use 12pt Menlo font
 endif
 "}}}
 "}}}
