@@ -16,6 +16,7 @@ $link .dotfiles/.bundle .bundle
 $link .dotfiles/.colordiffrc .colordiffrc
 $link .dotfiles/.colorizerc .colorizerc
 #$link .dotfiles/.colortailrc .colortailrc
+$link ../.dotfiles/.config/nvim .config/nvim
 $link ../../.dotfiles/.config/ranger/rc.conf .config/ranger/rc.conf
 $link ../../.dotfiles/.config/ranger/scope.sh .config/ranger/scope.sh
 #$link .dotfiles/.conkyrc .conkyrc
