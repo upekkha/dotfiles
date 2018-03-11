@@ -52,3 +52,6 @@ $link .dotfiles/.vim .vim
 $link .dotfiles/.vimrc .vimrc
 $link .dotfiles/.xmodmap .xmodmap
 $link .dotfiles/.zshrc .zshrc
+cd ~/Library/Application\ Support/Code/User
+$link ../../../../.dotfiles/.vscode/settings.json settings.json
+$link ../../../../.dotfiles/.vscode/keybindings.json keybindings.json

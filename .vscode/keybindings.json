@@ -1,0 +1,5 @@
+[
+    { "key": "cmd+]",    "command": "workbench.action.nextEditor" },
+    { "key": "cmd+[",    "command": "workbench.action.previousEditor" },
+    { "key": "ctrl+p",   "command": "workbench.action.quickOpen" },
+]

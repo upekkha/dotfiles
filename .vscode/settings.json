@@ -1,0 +1,46 @@
+{
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "explorer.openEditors.visible": 0,
+    "files.insertFinalNewline": true,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "*.code-workspace": true
+        ".vscode": true,
+        ".venv": true,
+    },
+    "python.pythonPath": "/opt/local/bin/python",
+    "python.linting.pep8Enabled": true,
+    "python.linting.pep8Args": [
+        "--max-line-length=100"
+    ],
+    "search.smartCase": true,
+    "search.exclude": {
+        "**/*.min.js*": true,
+        "**/*.min.css*": true,
+        "**/db/*": true
+    },
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.copyOnSelection": true,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "vim.useSystemClipboard": true,
+    "vim.visualstar": true,
+    "vim.otherModesKeyBindings": [
+        { "before": [ "<Leader>", "c" ], "after": [ "g", "c" ] },
+        {
+            "before": ["<Leader>", "w"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.toggleRenderWhitespace",
+                    "args": []
+                }
+            ]
+        }
+    ],
+    "vsicons.presets.foldersAllDefaultIcon": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.iconTheme": "vscode-icons",
+}
