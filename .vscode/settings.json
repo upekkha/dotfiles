@@ -3,6 +3,7 @@
     "editor.renderWhitespace": "none",
     "explorer.openEditors.visible": 0,
     "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "files.exclude": {
         "**/__pycache__": true,
         "**/*.pyc": true,
