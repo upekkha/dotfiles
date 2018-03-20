@@ -6,7 +6,7 @@
     "files.exclude": {
         "**/__pycache__": true,
         "**/*.pyc": true,
-        "*.code-workspace": true
+        "*.code-workspace": true,
         ".vscode": true,
         ".venv": true,
     },
