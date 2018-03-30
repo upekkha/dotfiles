@@ -25,6 +25,7 @@ export SCREENDIR=$HOME/.sessions
 # path for cd commands
 #export CDPATH=.:$HOME
 # locale setting
+export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 # grep options
 export GREP_COLORS='ms=01;31:mc=01;31:sl=:cx=:fn=33:ln=32:bn=32:se=36'
@@ -36,6 +37,8 @@ fi
 if [[ -d $HOME/git/sans/bin ]]; then
     export PATH=$HOME/git/sans/bin:$PATH
 fi
+# Pipenv
+export PIPENV_VENV_IN_PROJECT=1
 #}}}
 
 # ------  alias commands  ------------{{{
