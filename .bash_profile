@@ -80,7 +80,7 @@ function git_status_prompt #{{{
         GITBRANCH=${BASH_REMATCH[1]}
     fi
 
-    if [[ ${GITSTATUS} =~ "Not a git repository" ]]; then
+    if [[ ${GITSTATUS} =~ "ot a git repository" ]]; then
         # No git repo
         GITSTAT=""
     elif [[ ${GITSTATUS} =~ "must be run in a work tree" ]]; then
