@@ -1,5 +1,6 @@
 {
     "editor.minimap.enabled": false,
+    "editor.autoClosingBrackets": false,
     "editor.renderWhitespace": "none",
     "explorer.openEditors.visible": 0,
     "files.insertFinalNewline": true,
