@@ -29,7 +29,7 @@
     "telemetry.enableTelemetry": false,
     "vim.useSystemClipboard": true,
     "vim.visualstar": true,
-    "vim.otherModesKeyBindings": [
+    "vim.normalModeKeyBindings": [
         { "before": [ "<Leader>", "c" ], "after": [ "g", "c" ] },
         {
             "before": ["<Leader>", "w"],
@@ -41,6 +41,9 @@
                 }
             ]
         }
+    ],
+    "vim.visualModeKeyBindings": [
+        { "before": [ "<Leader>", "c" ], "after": [ "g", "c" ] },
     ],
     "vsicons.presets.foldersAllDefaultIcon": false,
     "workbench.startupEditor": "newUntitledFile",
