@@ -110,10 +110,6 @@
 [submodule ".vim/pack/bundles/all/jellybeans"]
 	path = .vim/pack/bundles/all/jellybeans
 	url = https://github.com/nanotech/jellybeans.vim.git
-[submodule ".vim/pack/bundles/all/python-mode"]
-	path = .vim/pack/bundles/all/python-mode
-	url = https://github.com/klen/python-mode.git
-    ignore = dirty
 [submodule ".vim/pack/bundles/all/colorizer"]
 	path = .vim/pack/bundles/all/colorizer
 	url = https://github.com/lilydjwg/colorizer.git
@@ -129,3 +125,7 @@
 [submodule ".vim/pack/bundles/all/nerdtree-git-plugin"]
 	path = .vim/pack/bundles/all/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule ".vim/pack/bundles/all/python-mode"]
+	path = .vim/pack/bundles/all/python-mode
+	url = https://github.com/python-mode/python-mode.git
+	ignore = dirty
