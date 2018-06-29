@@ -492,6 +492,10 @@ let g:ansible_name_highlight = 'b'          " bright highlighting of name: insta
 let g:snippets_dir="~/.vim/mysnippets/"
 
 " python-mode
+set pythonthreehome=/opt/local/Library/Frameworks/Python.framework/Versions/3.6
+set pythonthreedll=/opt/local/Library/Frameworks/Python.framework/Versions/3.6/lib/libpython3.6.dylib
+set pythonhome=/opt/local/Library/Frameworks/Python.framework/Versions/2.7
+set pythondll=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib
 let g:pymode_options_max_line_length = 100
 let g:pymode_rope = 0
 
