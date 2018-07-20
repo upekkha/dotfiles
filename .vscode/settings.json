@@ -12,6 +12,7 @@
         ".vscode": true,
         ".venv": true,
     },
+    "python.jediEnabled": false,
     "python.pythonPath": "/opt/local/bin/python",
     "python.linting.pep8Enabled": true,
     "python.linting.pep8Args": [
