@@ -482,7 +482,7 @@ let g:bufExplorerDefaultHelp=0
 
 " ack plugin: use macports ack and scan all types of files
 "let g:ackprg="~/Scripts/ack -H --nocolor --nogroup --column"
-let g:ackprg="~/Scripts/rg --vimgrep --no-heading"
+let g:ackprg="/opt/local/bin/rg --vimgrep --no-heading"
 
 " ansible-vim
 let g:ansible_attribute_highlight = 'ab'    " bright highlighting of all key=value pairs
