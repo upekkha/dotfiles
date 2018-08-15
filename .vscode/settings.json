@@ -5,6 +5,10 @@
     "explorer.openEditors.visible": 0,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
+    "files.associations": {
+        "**/tasks/*.yml": "ansible",
+        "Vagrantfile": "ruby",
+    },
     "files.exclude": {
         "**/__pycache__": true,
         "**/*.pyc": true,
