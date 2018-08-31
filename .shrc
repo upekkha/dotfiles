@@ -39,6 +39,8 @@ if [[ -d $HOME/git/sans/bin ]]; then
 fi
 # Pipenv
 export PIPENV_VENV_IN_PROJECT=1
+# Bat
+export BAT_THEME='DarkNeon'
 #}}}
 
 # ------  alias commands  ------------{{{
