@@ -53,6 +53,7 @@ alias rbenv_init='export PATH="$HOME/.rbenv/bin:$PATH";eval "$(rbenv init -)";ex
 alias exa='exa -l --git --color-scale --group'
 alias rg='rg -S --colors "line:fg:yellow" --colors "path:fg:green"'
 alias ncdu='ncdu --color dark'
+alias ccat='bat --plain'
 
 # use colordiff if it exists
 if [ -e ~/Scripts/colordiff ]; then
@@ -116,19 +117,19 @@ export LESS_TERMCAP_us=$'\E[04;32m'     # underline begin
 # ------  custom functions  ----------{{{
 
 # ccat: colorized cat using pygments {{{
-ccat()
-{
-    for iarg in $@
-    do
-        ext=${iarg##*.}
-        # force md lexer on .markdown files
-        if [ $ext == 'markdown' ]; then
-            pygmentize -O "style=native" -f console256 -l md $iarg
-        else
-            pygmentize -O "style=native" -f console256 -g $iarg
-        fi
-    done
-}
+#ccat()
+#{
+#    for iarg in $@
+#    do
+#        ext=${iarg##*.}
+#        # force md lexer on .markdown files
+#        if [ $ext == 'markdown' ]; then
+#            pygmentize -O "style=native" -f console256 -l md $iarg
+#        else
+#            pygmentize -O "style=native" -f console256 -g $iarg
+#        fi
+#    done
+#}
 #}}}
 
 # gvimscp: open remote files using bash tab completion {{{
