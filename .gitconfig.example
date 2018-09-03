@@ -48,7 +48,7 @@
 
 [diff-so-fancy]
     # Disable green marker at the beginning of new empty lines
-	markEmptyLines = false
+    markEmptyLines = false
 
 [merge]
     tool = vimdiff
@@ -58,7 +58,7 @@
     port = 1234
 
 [interactive]
-	singlekey = true
+    singlekey = true
 
 [push]
     default = simple
