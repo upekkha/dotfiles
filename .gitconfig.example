@@ -15,7 +15,7 @@
     ui = auto
 
 [color "diff"]
-    meta = white                # metainformation
+    meta = white dim            # metainformation
     frag = cyan                 # line number in hunk header
     func = white                # function name in hunk header
     plain = white               # context text
