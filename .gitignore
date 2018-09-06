@@ -1,10 +1,3 @@
-# Ignore Mac .DS_Store files
-.DS_Store
-
-# Ignore vim swp files and backups
-*.sw?
-*~
-
 # Ignore vim netrw history
 .vim/.netrwhist
 # Ignore vim views
@@ -19,13 +12,10 @@ Scripts/
 # Ignore folder with sensitive data
 .sensitive
 # and symlinks to it
-.bazaar/authentication.conf
-.bazaar/bazaar.conf
 .csshcluster
 .gitconfig
 .gnupg
 .irssi/config
 .netrc
-.procmailrc
 .ssh
 .synergy.conf
