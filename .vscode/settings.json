@@ -1,4 +1,5 @@
 {
+    "breadcrumbs.enabled": true,
     "editor.minimap.enabled": false,
     "editor.autoClosingBrackets": false,
     "editor.renderWhitespace": "none",
