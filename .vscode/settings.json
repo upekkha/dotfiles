@@ -1,7 +1,7 @@
 {
     "breadcrumbs.enabled": true,
     "editor.minimap.enabled": false,
-    "editor.autoClosingBrackets": false,
+    "editor.autoClosingBrackets": "never",
     "editor.renderWhitespace": "none",
     "explorer.openEditors.visible": 0,
     "files.insertFinalNewline": true,
