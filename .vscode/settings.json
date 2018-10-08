@@ -51,6 +51,10 @@
     "vim.visualModeKeyBindings": [
         { "before": [ "<Leader>", "c" ], "after": [ "g", "c" ] },
     ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        { "before": [ ">" ], "commands": [ "editor.action.indentLines" ] },
+        { "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] },
+    ],
     "vsicons.presets.foldersAllDefaultIcon": false,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.feedback.visible": false,
