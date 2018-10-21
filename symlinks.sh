@@ -55,3 +55,4 @@ $link .dotfiles/.zshrc .zshrc
 cd ~/Library/Application\ Support/Code/User
 $link ../../../../.dotfiles/.vscode/settings.json settings.json
 $link ../../../../.dotfiles/.vscode/keybindings.json keybindings.json
+$link ../../../../.dotfiles/.vscode/snippets snippets

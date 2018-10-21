@@ -1,0 +1,23 @@
+{
+	"symlink": {
+		"prefix": "sym",
+		"body": [
+			"file: src=${1:Target} dest=${2:Destination} state=link",
+			"$0",
+		],
+		"description": "Create Symlink"
+	},
+	"deps": {
+		"prefix": "deps",
+		"body": [
+			"- name: define ${1} dependencies",
+			"  set_fact:",
+			"    ${1}_dependencies:",
+			"      - ${2}",
+			"- name: install ${1} dependencies",
+			"  package: pkg={{ ${1}_dependencies }}",
+			"$0",
+		],
+		"description": "Install dependencies"
+	}
+}
