@@ -56,7 +56,7 @@ alias ncdu='ncdu --color dark'
 alias ccat='bat --plain'
 
 # use colordiff if it exists
-if [ -e ~/Scripts/colordiff ]; then
+if [ -e /opt/local/bin/colordiff ]; then
     alias diff='colordiff'
 fi
 
