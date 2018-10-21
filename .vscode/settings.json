@@ -1,8 +1,12 @@
 {
     "breadcrumbs.enabled": true,
-    "editor.minimap.enabled": false,
+    "editor.acceptSuggestionOnEnter": "off",
     "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.minimap.enabled": false,
     "editor.renderWhitespace": "none",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
@@ -23,6 +27,7 @@
     "python.linting.pep8Args": [
         "--max-line-length=100"
     ],
+    "searchRipgrep.enable": true,
     "search.smartCase": true,
     "search.exclude": {
         "**/*.min.js*": true,
@@ -33,6 +38,7 @@
     "terminal.integrated.copyOnSelection": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
+    "vim.foldfix": true,
     "vim.useSystemClipboard": true,
     "vim.visualstar": true,
     "vim.normalModeKeyBindings": [
