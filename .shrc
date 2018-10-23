@@ -53,7 +53,7 @@ alias rbenv_init='export PATH="$HOME/.rbenv/bin:$PATH";eval "$(rbenv init -)";ex
 alias exa='exa -l --git --color-scale --group'
 alias rg='rg -S --colors "line:fg:yellow" --colors "path:fg:green"'
 alias ncdu='ncdu --color dark'
-alias ccat='bat --plain'
+alias ccat='bat --plain --paging=never'
 
 # use colordiff if it exists
 if [ -e /opt/local/bin/colordiff ]; then
