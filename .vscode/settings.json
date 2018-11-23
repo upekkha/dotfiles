@@ -27,17 +27,29 @@
     "python.linting.pep8Args": [
         "--max-line-length=100"
     ],
-    "searchRipgrep.enable": true,
-    "search.smartCase": true,
     "search.exclude": {
         "**/*.min.js*": true,
         "**/*.min.css*": true,
         "**/db/*": true
     },
+    "search.smartCase": true,
+    "search.usePCRE2": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.copyOnSelection": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
+    "todohighlight.isEnable": true,
+    "todohighlight.isCaseSensitive": true,
+    "todohighlight.keywords": [
+        {
+            "text": "TODO",
+            "color": "red",
+            "backgroundColor": "rgba(256,0,0,.2)",
+        }
+    ],
+    "todohighlight.include": [
+        "**/*.markdown",
+    ],
     "vim.foldfix": true,
     "vim.useSystemClipboard": true,
     "vim.visualstar": true,
