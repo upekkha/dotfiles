@@ -12,7 +12,7 @@
 use strict;
 use warnings;
 
-use version; (our $VERSION = '$Rev: 0.74$') =~ s/\$Rev:(.*)\$/$1/;
+use version; (our $VERSION = '$Rev: 0.74.1$') =~ s/\$Rev:(.*)\$/$1/;
 
 my $config; # Global configuration object..
 
@@ -520,20 +520,25 @@ sub open_window {
 
     my $tabobj = $terminal->doScript_in_($cmd, undef) || return;
 
-    # Get the window and tab IDs from the Apple Event itself
-    my $tab_ed = $tabobj->qualifiedSpecifier; # Undocumented call
-    my $tab_id = $tab_ed->descriptorForKeyword_(OSType 'seld')->int32Value-1;
-    my $win_ed = $tab_ed->descriptorForKeyword_(OSType 'from');
-    my $win_id = $win_ed->descriptorForKeyword_(OSType 'seld')->int32Value.'';
+    my $tty = $tabobj->tty->UTF8String || return;
 
-    # Create an object unless we were passed one
-    my $obj = ref $pack ? $pack : $pack->SUPER::new();
-    $obj->set_windowid($win_id);
-    $obj->set_tabid($tab_id);
-
-    return $obj;
+    my $windows = $terminal->windows;
+     # Quickly check if the tty even exists, since the next code is REALLY slow
+    #return unless grep { $tty eq $_ } @{Foundation::perlRefFromObjectRef $windows->valueForKey_("tty")};
+    for (my $n=0; $n<$windows->count; $n++) {
+        my $window = $windows->objectAtIndex_($n);
+        my $tabs = $window->tabs;
+        for (my $m=0; $m<$tabs->count; $m++) {
+            my $tab = $tabs->objectAtIndex_($m);
+            if ($tab->tty && ($tab->tty->UTF8String eq $tty)) {
+                my $obj = ref $pack ? $pack : $pack->SUPER::new();
+                $obj->set_windowid("".$window->id);
+                $obj->set_tabid($m);
+                return $obj;
+            }
+        }
+    }
 }
-
 
 sub set_windowid  { *{$_[0]}->{windowid} = $_[1]; }
 sub windowid      { *{$_[0]}->{windowid};         }
