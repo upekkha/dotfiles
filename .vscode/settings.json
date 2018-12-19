@@ -22,7 +22,7 @@
         ".venv": true,
     },
     "python.jediEnabled": false,
-    "python.pythonPath": "/opt/local/bin/python",
+    "python.pythonPath": "/usr/local/bin/python3",
     "python.linting.pep8Enabled": true,
     "python.linting.pep8Args": [
         "--max-line-length=100"

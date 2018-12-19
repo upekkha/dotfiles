@@ -56,12 +56,12 @@ alias ncdu='ncdu --color dark'
 alias ccat='bat --plain --paging=never'
 
 # use colordiff if it exists
-if [ -e /opt/local/bin/colordiff ]; then
+if [ $(which colordiff) ]; then
     alias diff='colordiff'
 fi
 
 # use gnu sort if it exists
-if [ -e /opt/local/bin/gsort ]; then
+if [ $(which gsort) ]; then
     alias sort='gsort'
 fi
 #}}}
@@ -86,7 +86,7 @@ export HISTSIZE=10000
 # alternatively use -B which always hides *~ files
 if [[ "$UNAME" == "Darwin" ]]; then
     # use gnu ls if it exists
-    if [ -e /opt/local/bin/gls ]; then
+    if [ $(which gls) ]; then
         eval `gdircolors ~/.dir_colors`
         alias ls='gls --color'
     else
