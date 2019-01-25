@@ -34,17 +34,17 @@ my_command_prompt(){
     # Display git branch and dirty status
     git_status_prompt
 
-        # Define colors
-        local WHITE="\[\033[1;37m\]"
-        local GREEN="\[\033[0;32m\]"
-        local CYAN="\[\033[0;36m\]"
-        local GRAY="\[\033[0;37m\]"
-        local BLUE="\[\033[0;34m\]"
-        local MAGENTA="\[\033[0;35m\]"
-        local RED="\[\033[0;31m\]"
-        local YELLOW="\[\033[0;33m\]"
+    # Define colors
+    local WHITE="\[\033[1;37m\]"
+    local GREEN="\[\033[0;32m\]"
+    local CYAN="\[\033[0;36m\]"
+    local GRAY="\[\033[0;37m\]"
+    local BLUE="\[\033[0;34m\]"
+    local MAGENTA="\[\033[0;35m\]"
+    local RED="\[\033[0;31m\]"
+    local YELLOW="\[\033[0;33m\]"
 
-    # define root prompt
+    # Define root prompt
     export SUDO_PS1="${RED}\u@\h:${MAGENTA}\w/ ${GRAY}"
 
     USRNAME=`whoami`
@@ -57,17 +57,17 @@ my_command_prompt(){
 
 function truncate_pwd #{{{
 {
-        local pwdmaxlen=25
-        local trunc_symbol=".."
-        local dir=${PWD##*/}
-        pwdmaxlen=$(( ( pwdmaxlen < ${#dir} ) ? ${#dir} : pwdmaxlen ))
-        NEW_PWD=${PWD/#$HOME/\~}
-        local pwdoffset=$(( ${#NEW_PWD} - pwdmaxlen ))
-        if [ ${pwdoffset} -gt "0" ]
-        then
-                NEW_PWD=${NEW_PWD:$pwdoffset:$pwdmaxlen}
-                NEW_PWD=${trunc_symbol}/${NEW_PWD#*/}
-        fi
+    local pwdmaxlen=25
+    local trunc_symbol=".."
+    local dir=${PWD##*/}
+    pwdmaxlen=$(( ( pwdmaxlen < ${#dir} ) ? ${#dir} : pwdmaxlen ))
+    NEW_PWD=${PWD/#$HOME/\~}
+    local pwdoffset=$(( ${#NEW_PWD} - pwdmaxlen ))
+    if [ ${pwdoffset} -gt "0" ]
+    then
+        NEW_PWD=${NEW_PWD:$pwdoffset:$pwdmaxlen}
+        NEW_PWD=${trunc_symbol}/${NEW_PWD#*/}
+    fi
 }
 #}}}
 
