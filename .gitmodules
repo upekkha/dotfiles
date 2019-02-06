@@ -23,9 +23,6 @@
 	path = .vim/pack/bundles/all/foldsearch
 	url = https://github.com/vim-scripts/foldsearch.git
 	ignore = dirty
-[submodule ".vim/pack/bundles/all/gnupg"]
-	path = .vim/pack/bundles/all/gnupg
-	url = https://github.com/vim-scripts/gnupg.git
 [submodule ".vim/pack/bundles/all/fugitive"]
 	path = .vim/pack/bundles/all/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -129,3 +126,6 @@
 	path = .vim/pack/bundles/all/python-mode
 	url = https://github.com/python-mode/python-mode.git
 	ignore = dirty
+[submodule ".vim/pack/bundles/all/vim-gnupg"]
+	path = .vim/pack/bundles/all/vim-gnupg
+	url = https://github.com/jamessan/vim-gnupg.git
