@@ -50,6 +50,13 @@
     # Disable green marker at the beginning of new empty lines
     markEmptyLines = false
 
+[diff "ansible-vault"]
+    # Custom command to diff ansible vaults.
+    # Requires a .gitattributes file with the following line:
+    # *.vault.yml  diff=ansible-vault  merge=binary
+    textconv = ansible-vault view
+    cachetextconv = false
+
 [merge]
     tool = vimdiff
 
