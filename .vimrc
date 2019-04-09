@@ -285,7 +285,7 @@ au filetype markdown imap <F3> <ESC>:w \| !marked % <CR><CR>
 let g:markdown_folding = 1
 au filetype markdown setlocal foldlevel=1
 
-let g:markdown_fenced_languages = ['ruby', 'perl', 'bash=sh', 'sh', 'vim', 'html', 'javascript', 'css', 'python']
+let g:markdown_fenced_languages = ['ruby', 'perl', 'bash=sh', 'sh', 'vim', 'html', 'javascript', 'css', 'python', 'yaml']
 let g:markdown_minlines = 100       "synchronize syntax highlighting with more lines (default:50)
 
 "Enable concealing of links (https://github.com/tpope/vim-markdown/pull/9/commits/44dec444c959fa57c2fc835980ad15dbbbf11d1c)
