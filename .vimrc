@@ -293,6 +293,28 @@ au filetype markdown syn region markdownLinkText matchgroup=markdownLinkTextDeli
 au filetype markdown syn region markdownLink matchgroup=markdownLinkDelimiter start="(" end=")" contains=markdownUrl keepend contained conceal
 au filetype markdown syn region markdownId matchgroup=markdownIdDelimiter start="\s*\[" end="\]" keepend contained conceal
 au filetype markdown syn region markdownAutomaticLink matchgroup=markdownUrlDelimiter start="<\%(\w\+:\|[[:alnum:]_+-]\+@\)\@=" end=">" keepend oneline concealends
+
+"Custom markdown folding
+au filetype markdown setlocal foldexpr=MyMarkdownFold()
+au filetype markdown setlocal foldmethod=expr
+au filetype markdown setlocal foldlevel=1
+function! MyMarkdownFold()
+    let line = getline(v:lnum)
+    " regular headers
+    let depth = match(line, '\(^##\+\)\@<=\( .*$\)\@=')
+    if depth > 0
+        return ">" . depth
+    endif
+    " setext headers
+    let nextline = getline(v:lnum + 1)
+    if (line =~ '^.\+$') && (nextline =~ '^=\+$')
+        return ">1"
+    endif
+    if (line =~ '^.\+$') && (nextline =~ '^-\+$')
+        return ">2"
+    endif
+    return "="
+endfunction
 "}}}
 "}}}
 
