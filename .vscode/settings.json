@@ -76,7 +76,6 @@
     ],
     "vsicons.presets.foldersAllDefaultIcon": false,
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.statusBar.feedback.visible": false,
     "workbench.iconTheme": "vscode-icons",
     "vsicons.dontShowNewVersionMessage": true,
 }
