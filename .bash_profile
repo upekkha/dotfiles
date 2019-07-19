@@ -33,6 +33,8 @@ my_command_prompt(){
     truncate_pwd
     # Display git branch and dirty status
     git_status_prompt
+    # Display name of activated venv
+    venv_status_prompt
 
     # Define colors
     local WHITE="\[\033[1;37m\]"
@@ -51,7 +53,7 @@ my_command_prompt(){
     if [ "$USRNAME" == "root" ]; then
         export PS1="${RED}\u@\h:${MAGENTA}\w/ ${GRAY}"
     else
-        export PS1="${GREEN}\h:${MAGENTA}\${NEW_PWD}/${YELLOW}\${GITSTAT} ${GRAY}"
+        export PS1="${GREEN}\h:${MAGENTA}\${NEW_PWD}/${YELLOW}\${GITSTAT}\${VENVSTAT} ${GRAY}"
     fi
 }
 
@@ -96,6 +98,18 @@ function git_status_prompt #{{{
         GITSTAT="[${GITBRANCH} ±]"
         # Display only if not on master branch
         test "$GITBRANCH" != master || GITSTAT="[±]"
+    fi
+}
+#}}}
+
+function venv_status_prompt #{{{
+{
+    local VENVNAME="${VIRTUAL_ENV##*/}"
+
+    if [[ -z $VENVNAME ]]; then
+        VENVSTAT=""
+    else
+        VENVSTAT="(${VENVNAME})"
     fi
 }
 #}}}
