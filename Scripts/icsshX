@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+"""
+icsshX: Cluster-SSH for iTerm2.
+
+Given a list of hosts, this script opens a new iTerm window,
+creates a split pane for each host, and connects to it via ssh.
+
+iTerm2 Python API Docs: https://iterm2.com/python-api/
+
+The next step would be to add a red split pane
+for command input and use asymmetric broadcast like csshX.
+See https://iterm2.com/python-api/examples/broadcast.html
+"""
+
+import sys
+import iterm2
+from math import ceil, floor, sqrt
+
+window_size = iterm2.util.Size(width=200, height=60)
+
+# Parse list of hosts from command-line arguments
+if len(sys.argv) == 1:
+    print("Missing arguments: provide a list of ssh connection targets.")
+    print("Usage: " + sys.argv[0] + ' [user@]host1 [host2] [...]')
+    sys.exit(-1)
+hosts = sys.argv[1:]
+
+
+async def main(connection):
+    tab = None
+    columns = range(ceil(sqrt(len(hosts))))
+    rows = range(floor(sqrt(len(hosts))))
+    sessions = [[None for row in rows] for column in columns]
+
+    # Create grid of split panes with sessions
+    for row in rows:
+        for column in columns:
+            if row == 0 and column == 0:
+                # Create new iTerm window and resize it
+                app = await iterm2.async_get_app(connection)
+                window = await app.current_terminal_window.async_create(connection)
+                tab = window.current_tab
+                session = tab.current_session
+                await session.async_set_grid_size(window_size)
+            elif row == 0 and column != 0:
+                # Create columns by splitting panes to the right
+                session = await sessions[column - 1][row].async_split_pane(vertical=True)
+            else:
+                # Create rows by splitting panes down
+                session = await sessions[column][row - 1].async_split_pane(vertical=False)
+
+            sessions[column][row] = session
+            index = row * len(columns) + column
+            await session.async_send_text(f"ssh {hosts[index]}\n")
+
+            # Stop if we reached the last host
+            if index == (len(hosts) - 1):
+                break
+
+    # Enable broadcast to all sessions
+    domain = iterm2.broadcast.BroadcastDomain()
+    for session in tab.sessions:
+        domain.add_session(session)
+    await iterm2.async_set_broadcast_domains(connection, [domain])
+
+
+iterm2.run_until_complete(main)
