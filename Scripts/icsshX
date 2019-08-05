@@ -5,23 +5,27 @@ icsshX: Cluster-SSH for iTerm2.
 Given a list of hosts, this script opens a new iTerm window,
 creates a split pane for each host, and connects to it via ssh.
 
-iTerm2 Python API Docs: https://iterm2.com/python-api/
+A red input pane on the bottom allows to send commands to
+all hosts. Alternatively one can directly enter commands
+in the split pane of an individual host.
 
-The next step would be to add a red split pane
-for command input and use asymmetric broadcast like csshX.
-See https://iterm2.com/python-api/examples/broadcast.html
+This script requires the iTerm2 Python API to be enabled
+and the python module `iterm2` to be installed.
+iTerm2 Python Api Docs: https://iterm2.com/python-api/
 """
 
+import asyncio
 import sys
 import iterm2
 from math import ceil, floor, sqrt
 
-window_size = iterm2.util.Size(width=200, height=60)
+window_size = iterm2.util.Size(width=200, height=100)
+input_size = iterm2.util.Size(width=200, height=10)
 
 # Parse list of hosts from command-line arguments
 if len(sys.argv) == 1:
     print("Missing arguments: provide a list of ssh connection targets.")
-    print("Usage: " + sys.argv[0] + ' [user@]host1 [host2] [...]')
+    print("Usage: " + sys.argv[0] + " [user@]host1 [host2] [...]")
     sys.exit(-1)
 hosts = sys.argv[1:]
 
@@ -42,6 +46,15 @@ async def main(connection):
                 tab = window.current_tab
                 session = tab.current_session
                 await session.async_set_grid_size(window_size)
+
+                # Create narrow, red pane at the bottom for the command input
+                red_profile = iterm2.LocalWriteOnlyProfile()
+                red_profile.set_background_color(iterm2.Color(100, 2, 2))
+                input_session = await session.async_split_pane(
+                    vertical=False, profile_customizations=red_profile
+                )
+                input_session.preferred_size = input_size
+                await tab.async_update_layout()
             elif row == 0 and column != 0:
                 # Create columns by splitting panes to the right
                 session = await sessions[column - 1][row].async_split_pane(vertical=True)
@@ -57,11 +70,45 @@ async def main(connection):
             if index == (len(hosts) - 1):
                 break
 
-    # Enable broadcast to all sessions
-    domain = iterm2.broadcast.BroadcastDomain()
-    for session in tab.sessions:
-        domain.add_session(session)
-    await iterm2.async_set_broadcast_domains(connection, [domain])
+    # Activate lower input session
+    await input_session.async_activate()
+
+    # Broadcast keys from input session to all ssh sessions
+    # Adapted from the iTerm2 asymmetric broadcast example
+    # https://iterm2.com/python-api/examples/broadcast.html
+    future = asyncio.Future()
+
+    async def async_handle_keystroke(keystroke):
+        if keystroke.keycode == iterm2.Keycode.ESCAPE:
+            # User pressed escape. Terminate script.
+            return True
+        for sessions_row in sessions:
+            for session in sessions_row:
+                if session:
+                    await session.async_send_text(keystroke.characters)
+        return False
+
+    # Construct a pattern that matches all keystrokes except those with a Command modifier
+    pattern = iterm2.KeystrokePattern()
+    pattern.keycodes = [keycode for keycode in iterm2.Keycode]
+    pattern.forbidden_modifiers = [iterm2.Modifier.COMMAND]
+
+    # Swallow all keystrokes matching the pattern
+    async def filter_all_keystrokes():
+        async with iterm2.KeystrokeFilter(connection, [pattern], input_session.session_id):
+            await asyncio.wait([future])
+
+    # This will block until async_handle_keystroke returns True.
+    async with iterm2.KeystrokeMonitor(connection, input_session.session_id) as mon:
+        done = False
+        while not done:
+            keystroke = await mon.async_get()
+            done = await async_handle_keystroke(keystroke)
+            if done:
+                break
+        future.set_result(True)
+
+    await asyncio.create_task(filter_all_keystrokes())
 
 
 iterm2.run_until_complete(main)
