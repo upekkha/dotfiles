@@ -34,7 +34,6 @@
         "**/db/*": true
     },
     "search.smartCase": true,
-    "search.usePCRE2": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.copyOnSelection": true,
     "telemetry.enableCrashReporter": false,
