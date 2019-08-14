@@ -5,4 +5,24 @@
     { "key": "cmd+=",    "command": "editor.action.fontZoomIn" },
     { "key": "cmd+-",    "command": "editor.action.fontZoomOut" },
     { "key": "cmd+0",    "command": "editor.action.fontZoomReset" },
+    {
+        "key": "up",
+        "command": "cursorUp",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+    },
+    {
+        "key": "down",
+        "command": "cursorDown",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+    },
+    {
+        "key": "up",
+        "command": "cursorUp",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Insert' && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+    },
+    {
+        "key": "down",
+        "command": "cursorDown",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Insert' && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+    },
 ]
