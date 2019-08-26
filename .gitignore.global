@@ -2,6 +2,7 @@
 *.sw?
 *~
 vendor/bundle/*
+.venv
 .ruby-version
 .vagrant
 .ropeproject
