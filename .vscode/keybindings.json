@@ -25,4 +25,9 @@
         "command": "cursorDown",
         "when": "editorTextFocus && vim.active && vim.mode == 'Insert' && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
     },
+    {
+        "key": "space",
+        "command": "editor.toggleFold",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+    },
 ]
