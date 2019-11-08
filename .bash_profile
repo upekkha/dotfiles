@@ -1,6 +1,7 @@
 
 # ------  misc bash settings  --------{{{
 shopt -s histappend     # append history lists of different sessions instead of overwriting
+export BASH_SILENCE_DEPRECATION_WARNING=1   # silence macOS 10.15 bash deprecation warning
 #}}}
 
 # ------  source .shrc  --------------{{{
