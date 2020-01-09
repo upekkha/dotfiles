@@ -294,6 +294,9 @@ au filetype markdown syn region markdownLink matchgroup=markdownLinkDelimiter st
 au filetype markdown syn region markdownId matchgroup=markdownIdDelimiter start="\s*\[" end="\]" keepend contained conceal
 au filetype markdown syn region markdownAutomaticLink matchgroup=markdownUrlDelimiter start="<\%(\w\+:\|[[:alnum:]_+-]\+@\)\@=" end=">" keepend oneline concealends
 
+"Disable highlighting underscores as error
+au filetype markdown syn match markdownError "\w\@<=\w\@="
+
 "Custom markdown folding
 au filetype markdown setlocal foldexpr=MyMarkdownFold()
 au filetype markdown setlocal foldmethod=expr
