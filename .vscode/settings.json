@@ -77,6 +77,9 @@
         { "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] },
     ],
     "vsicons.presets.foldersAllDefaultIcon": false,
+    "vsicons.associations.files": [
+        { "icon": "html", "extensions": ["html.j2"], "format": "svg" }
+    ],
     "workbench.startupEditor": "newUntitledFile",
     "workbench.iconTheme": "vscode-icons",
     "vsicons.dontShowNewVersionMessage": true,
