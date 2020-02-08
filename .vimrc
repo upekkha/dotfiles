@@ -468,7 +468,7 @@ let g:colorizer_startup = 0     " don't automatically start, use :ColorToggle in
 
 " ------  CtrlP  ---------------------{{{
 let g:ctrlp_map = '<c-p>'       " key mapping to invoke ctrlp
-let g:ctrlp_cmd = 'CtrlPMixed'  " use mixed mode by default
+let g:ctrlp_cmd = 'CtrlP'       " command mode (CtrlP or CtrlPMixed)
 let g:ctrlp_mruf_max = 25       " number of recently opened files to remember
 let g:ctrlp_open_new_file = 'r' " open new files in current window (t,h,v,r)
 let g:ctrlp_follow_symlinks = 1 " follow symlinks when listing files
