@@ -273,7 +273,7 @@ au filetype ruby set path+=app/models/* "support gf jump to namespaced relations
 "}}}
 
 " ------  Markdown  ------------------{{{
-au filetype markdown set conceallevel=2     "conceal markdown commands
+au filetype markdown set conceallevel=0     "do not conceal markdown commands
 au filetype markdown set wrap               "wrap lines
 
 au filetype markdown syntax match Comment /%%.*/
@@ -285,7 +285,7 @@ au filetype markdown imap <F3> <ESC>:w \| !marked % <CR><CR>
 let g:markdown_folding = 1
 au filetype markdown setlocal foldlevel=1
 
-let g:markdown_fenced_languages = ['ruby', 'perl', 'bash=sh', 'sh', 'vim', 'html', 'javascript', 'css', 'python', 'yaml']
+let g:markdown_fenced_languages = ['ruby', 'perl', 'bash=sh', 'sh', 'vim', 'html', 'javascript', 'css', 'python', 'yaml', 'sql']
 let g:markdown_minlines = 100       "synchronize syntax highlighting with more lines (default:50)
 
 "Enable concealing of links (https://github.com/tpope/vim-markdown/pull/9/commits/44dec444c959fa57c2fc835980ad15dbbbf11d1c)
@@ -299,8 +299,10 @@ au filetype markdown syn match markdownError "\w\@<=\w\@="
 
 "Custom markdown folding
 au filetype markdown setlocal foldexpr=MyMarkdownFold()
+au filetype markdown setlocal foldtext=MyFold()
 au filetype markdown setlocal foldmethod=expr
 au filetype markdown setlocal foldlevel=1
+
 function! MyMarkdownFold()
     let line = getline(v:lnum)
     " regular headers
