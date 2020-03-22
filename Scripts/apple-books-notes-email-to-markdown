@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+"""
+Convert email with shared notes from Apple Books to markdown quotes.
+
+Usage: cat email.eml | apple-books-notes-email-to-markdown > quotes.markdown
+"""
+
+import sys
+import email
+import email.policy
+
+# Read the email from stdin and extract the lines of the body
+email_raw = sys.stdin.read()
+email_parsed = email.message_from_string(email_raw, policy=email.policy.SMTP)
+email_body = email_parsed.get_body(preferencelist=('plain', 'html')).get_content()
+email_lines = email_body.splitlines()
+
+# The first lines contain the information about the book, including
+# title and author. The bulk are two lines per quote: one for the
+# date of the highlight and the book chapter; and one with the actual
+# quote. The last lines contain the copyright information.
+book_title = email_lines[3]
+book_author = email_lines[5]
+book_quotes = email_lines[8:-6:2]
+
+# Return markdown with book quotes
+markdown_header = book_author + " - " + book_title
+print(markdown_header)
+print("".center(len(markdown_header), "="))
+print("\n\n")
+for quote in book_quotes:
+    print('> ' + quote)
+    print("\n")
+

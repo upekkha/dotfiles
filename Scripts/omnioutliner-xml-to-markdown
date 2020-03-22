@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+"""
+Parse given OmniOutliner XML file
+and convert content into Markdown.
+"""
+
+import sys
+import xmltodict
+
+
+def parse_node(node, lvl):
+    print_node(node, lvl)
+    if 'children' in node:
+        if len(node['children']) > 1:
+            for child in node['children']:
+                parse_node(child['item'], lvl+1)
+        else:
+            if 'children' in node['children']['item']:
+                parse_node(node['children']['item'], lvl+1)
+            else:
+                print_node(node['children']['item'], lvl+1)
+
+
+def print_node(node, lvl):
+    name = node['values']['text']['p']['run']['lit']
+
+    if lvl == 0:
+        print('')
+        print(name)
+        print('=' * len(name))
+    elif lvl == 1:
+        print('')
+        print(name)
+        print('-' * len(name))
+        print('')
+    else:
+        indent = '  ' * (lvl - 1)
+        print("%s- %s" % (indent, name))
+
+
+if len(sys.argv) == 2:
+    xml_string = open(sys.argv[1], 'r').read()
+    xml_dict = xmltodict.parse(xml_string)
+
+    for node in xml_dict['outline']['root']['item']:
+        parse_node(node, 0)
+else:
+    print('Usage: provide OmniOutliner xml file as single command line argument')
+    sys.exit(-1)

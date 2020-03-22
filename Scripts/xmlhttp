@@ -1,0 +1,3 @@
+#!/bin/bash
+# Fetch URL with httpie and pass through tidy formatter and bat pager.
+http --body $1 | tidy -quiet -xml -indent --indent-spaces 4 | bat --plain --paging=never
