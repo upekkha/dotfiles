@@ -25,6 +25,12 @@
         ".vscode": true,
         ".venv": true,
     },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
     "python.formatting.provider": "black",
     "python.jediEnabled": false,
     "python.pythonPath": "/usr/local/bin/python3",
@@ -78,6 +84,7 @@
         { "before": [ ">" ], "commands": [ "editor.action.indentLines" ] },
         { "before": [ "<" ], "commands": [ "editor.action.outdentLines" ] },
     ],
+    "vsicons.dontShowNewVersionMessage": true,
     "vsicons.presets.foldersAllDefaultIcon": false,
     "vsicons.associations.files": [
         { "icon": "html", "extensions": ["html.j2"], "format": "svg" }
@@ -85,5 +92,4 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.iconTheme": "vscode-icons",
-    "vsicons.dontShowNewVersionMessage": true,
 }
