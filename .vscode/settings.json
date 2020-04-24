@@ -5,6 +5,7 @@
     "editor.autoClosingQuotes": "never",
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "none",
+    "editor.suggestSelection": "first",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
@@ -81,6 +82,7 @@
     "vsicons.associations.files": [
         { "icon": "html", "extensions": ["html.j2"], "format": "svg" }
     ],
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.iconTheme": "vscode-icons",
     "vsicons.dontShowNewVersionMessage": true,
