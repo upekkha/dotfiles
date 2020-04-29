@@ -9,7 +9,8 @@
 [core]
     editor = vim
     excludesfile = ~/.dotfiles/.gitignore.global
-    pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = delta --dark --plus-color="#004200" --minus-color="#420000" --theme="DarkNeon" --highlight-removed
+    #pager = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
     ui = auto
@@ -66,6 +67,7 @@
 
 [interactive]
     singlekey = true
+    diffFilter = delta --color-only --dark --plus-color="#004200" --minus-color="#420000" --theme="DarkNeon" --highlight-removed
 
 [push]
     default = simple
