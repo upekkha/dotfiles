@@ -286,7 +286,7 @@ let g:markdown_folding = 1
 au filetype markdown setlocal foldlevel=1
 
 let g:markdown_fenced_languages = ['ruby', 'perl', 'bash=sh', 'sh', 'vim', 'html', 'javascript', 'css', 'python', 'yaml', 'sql']
-let g:markdown_minlines = 100       "synchronize syntax highlighting with more lines (default:50)
+let g:markdown_minlines = 500       "synchronize syntax highlighting with more lines (default:50)
 
 "Enable concealing of links (https://github.com/tpope/vim-markdown/pull/9/commits/44dec444c959fa57c2fc835980ad15dbbbf11d1c)
 au filetype markdown syn region markdownLinkText matchgroup=markdownLinkTextDelimiter start="!\=\[\%(\_[^]]*]\%( \=[[(]\)\)\@=" end="\]\%( \=[[(]\)\@=" keepend nextgroup=markdownLink,markdownId skipwhite contains=@markdownInline,markdownLineStart concealends
