@@ -32,6 +32,9 @@
         "editor.defaultFormatter": "ms-python.python"
     },
     "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length=100"
+    ],
     "python.jediEnabled": false,
     "python.pythonPath": "/usr/local/bin/python3",
     "python.linting.flake8Enabled": true,
