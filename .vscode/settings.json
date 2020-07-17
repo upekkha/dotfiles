@@ -36,11 +36,12 @@
         "--line-length=100"
     ],
     "python.pythonPath": "/usr/local/bin/python3",
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Pylance",
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Args": [
         "--max-line-length=100"
     ],
+    "python.showStartPage": false,
     "scm.defaultViewMode": "tree",
     "search.exclude": {
         "**/*.min.js*": true,
