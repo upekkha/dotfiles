@@ -6,10 +6,19 @@
     user = githubusername
     token = githubtoken
 
+[delta]
+    # https://github.com/dandavison/delta
+    dark = true
+    highligh-removed = true
+    navigate = false
+    plus-style = "syntax #004200"
+    minus-style = "syntax #420000"
+    theme = "DarkNeon"
+
 [core]
     editor = vim
     excludesfile = ~/.dotfiles/.gitignore.global
-    pager = delta --dark --plus-color="#004200" --minus-color="#420000" --theme="DarkNeon" --highlight-removed
+    pager = delta
     #pager = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
@@ -67,7 +76,7 @@
 
 [interactive]
     singlekey = true
-    diffFilter = delta --color-only --dark --plus-color="#004200" --minus-color="#420000" --theme="DarkNeon" --highlight-removed
+    diffFilter = delta --color-only
 
 [push]
     default = simple
