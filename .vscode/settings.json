@@ -31,6 +31,7 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
+    "python.dataScience.alwaysTrustNotebooks": true,
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
         "--line-length=100"
