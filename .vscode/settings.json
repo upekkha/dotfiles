@@ -28,6 +28,9 @@
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "prettier.disableLanguages": [
+        "markdown"
+    ],
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
