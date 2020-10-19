@@ -78,6 +78,9 @@
     singlekey = true
     diffFilter = delta --color-only
 
+[fetch]
+	prune = true
+
 [push]
     default = simple
 
