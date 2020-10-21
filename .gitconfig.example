@@ -18,6 +18,7 @@
 [core]
     editor = vim
     excludesfile = ~/.dotfiles/.gitignore.global
+    attributesfile = ~/.dotfiles/.gitattributes.global
     pager = delta
     #pager = diff-so-fancy | less --tabs=4 -RFX
 

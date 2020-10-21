@@ -1,0 +1,5 @@
+# Treat minified JavaScript and CSS files as binary
+*.min.js    binary
+*.min.css   binary
+*.js.map    binary
+*.css.map   binary
