@@ -28,13 +28,13 @@
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "jupyter.alwaysTrustNotebooks": true,
     "prettier.disableLanguages": [
         "markdown"
     ],
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
-    "python.dataScience.alwaysTrustNotebooks": true,
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
         "--line-length=100"
