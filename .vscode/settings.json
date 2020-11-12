@@ -20,6 +20,7 @@
     "files.exclude": {
         "**/__pycache__": true,
         "**/*.pyc": true,
+        "**/*.egg-info": true,
         "**/.pytest_cache": true,
         "*.code-workspace": true,
         ".vscode": true,
