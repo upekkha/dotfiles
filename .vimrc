@@ -530,9 +530,6 @@ let g:pymode_rope = 0
 " vim-gitgutter
 let g:gitgutter_enabled = 0
 
-" vim-rails: define command to open browser
-command -bar -nargs=1 OpenURL :!open <args>
-
 " vim-slime
 let g:slime_paste_file = "$HOME/.slime_cache"
 let g:slime_target = "screen"
@@ -723,10 +720,6 @@ map <Leader>n :set invnu<CR>
 "" for TeX files open pdf in skim at the line under the cursor
 "au filetype tex map <F3> <ESC>:w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<.pdf %<CR><CR>
 "au filetype tex imap <F3> <ESC>:w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<.pdf %<CR><CR>
-
-"" LaTeX-box plugin
-"let g:LatexBox_latexmk_options="-pvc"
-"let g:LatexBox_viewer="open"
 ""}}}
 
 "" ------  Vimfu Modeline  ------------{{{
