@@ -23,16 +23,22 @@
         "**/*.egg-info": true,
         "**/.pytest_cache": true,
         "*.code-workspace": true,
+        ".vagrant": true,
         ".vscode": true,
         ".venv": true,
     },
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "jupyter.alwaysTrustNotebooks": true,
     "prettier.disableLanguages": [
         "markdown"
     ],
+    "prettier.printWidth": 120,
+    "prettier.tabWidth": 4,
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
