@@ -14,7 +14,7 @@
     "files.trimTrailingWhitespace": true,
     "files.associations": {
         "*.wsgi": "python",
-        "**/tasks/*.yml": "ansible",
+        "**/tasks/**/*.yml": "ansible",
         "Vagrantfile": "ruby",
     },
     "files.exclude": {
