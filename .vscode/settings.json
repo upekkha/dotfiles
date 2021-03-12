@@ -53,6 +53,7 @@
         "--max-line-length=100"
     ],
     "python.showStartPage": false,
+    "python.useIsolation": false,
     "scm.defaultViewMode": "tree",
     "search.exclude": {
         "**/*.min.js*": true,
