@@ -10,7 +10,7 @@
     # https://github.com/dandavison/delta
     dark = true
     highligh-removed = true
-    navigate = false
+    navigate = true
     plus-style = "syntax #004200"
     minus-style = "syntax #420000"
     theme = "DarkNeon"
