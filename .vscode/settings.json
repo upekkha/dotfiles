@@ -27,18 +27,18 @@
         ".vscode": true,
         ".venv": true,
     },
+    "jupyter.alwaysTrustNotebooks": true,
+    "prettier.printWidth": 120,
+    "prettier.tabWidth": 4,
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "jupyter.alwaysTrustNotebooks": true,
-    "prettier.disableLanguages": [
-        "markdown"
-    ],
-    "prettier.printWidth": 120,
-    "prettier.tabWidth": 4,
+    "[markdown]": {
+        "editor.formatOnSave": false
+    },
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
