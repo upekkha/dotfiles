@@ -469,15 +469,15 @@ let g:colorizer_startup = 0     " don't automatically start, use :ColorToggle in
 "}}}
 
 " ------  CtrlP  ---------------------{{{
-let g:ctrlp_map = '<c-p>'       " key mapping to invoke ctrlp
-let g:ctrlp_cmd = 'CtrlP'       " command mode (CtrlP or CtrlPMixed)
-let g:ctrlp_mruf_max = 25       " number of recently opened files to remember
-let g:ctrlp_open_new_file = 'r' " open new files in current window (t,h,v,r)
-let g:ctrlp_follow_symlinks = 1 " follow symlinks when listing files
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|vendor.*|tmp)$',
-  \ 'file': '\v\.(lock|jpg|png|ico)$',
-  \ }
+"let g:ctrlp_map = '<c-p>'       " key mapping to invoke ctrlp
+"let g:ctrlp_cmd = 'CtrlP'       " command mode (CtrlP or CtrlPMixed)
+"let g:ctrlp_mruf_max = 25       " number of recently opened files to remember
+"let g:ctrlp_open_new_file = 'r' " open new files in current window (t,h,v,r)
+"let g:ctrlp_follow_symlinks = 1 " follow symlinks when listing files
+"let g:ctrlp_custom_ignore = {
+  "\ 'dir':  '\v[\/](\.git|vendor.*|tmp)$',
+  "\ 'file': '\v\.(lock|jpg|png|ico)$',
+  "\ }
 "}}}
 
 " ------  tagbar  --------------------{{{
@@ -505,11 +505,11 @@ let g:netrw_silent=1
 let NERDTreeIgnore=['\~$', '\.o', '__pycache__', '.cache']
 
 " Customize BufExplorer to not show help message
-let g:bufExplorerDefaultHelp=0
+"let g:bufExplorerDefaultHelp=0
 
 " ack plugin: use macports ack and scan all types of files
 "let g:ackprg="~/Scripts/ack -H --nocolor --nogroup --column"
-let g:ackprg="/usr/local/bin/rg --vimgrep --no-heading"
+"let g:ackprg="/usr/local/bin/rg --vimgrep --no-heading"
 
 " ansible-vim
 let g:ansible_attribute_highlight = 'ab'    " bright highlighting of all key=value pairs
@@ -552,6 +552,14 @@ let g:RefreshRunningBrowserReturnFocus = 1
 " ------  Keyboard mappings  ---------{{{
 
 " ------  Plugins  -------------------{{{
+
+" ctrl-p to open files with fzf
+nmap <C-p> :Files<CR>
+" cmd-8 to ripgrep for current word
+nnoremap <D-8> yiw:Rg <C-r>"<CR>
+vnoremap <D-8> y:Rg <C-r>"<CR>
+" \be to open bufferexplorer
+nmap <Leader>be :Buffers<CR>
 
 " Tabularize mappings
 "if exists(":Tabularize")
