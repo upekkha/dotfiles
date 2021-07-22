@@ -25,7 +25,7 @@
         "*.code-workspace": true,
         ".vagrant": true,
         ".vscode": true,
-        ".venv": true,
+        "**/.venv": true,
     },
     "jupyter.alwaysTrustNotebooks": true,
     "prettier.printWidth": 120,
