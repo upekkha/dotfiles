@@ -30,4 +30,8 @@
         "command": "editor.toggleFold",
         "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
     },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpen"
+    },
 ]
