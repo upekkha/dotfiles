@@ -139,6 +139,11 @@ fi
     #. ~/.dotfiles/Scripts/.iterm2_shell_integration.bash
 #fi
 
+# fzf keybindings
+if [ -f $HOME/.dotfiles/.fzf.sh ]; then
+    source $HOME/.dotfiles/.fzf.sh
+fi
+
 # auto-complete remote hosts for ssh -> bash_completion
 # Rem: does not work for ssh user@host; instead use ssh host -l user
 #complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
