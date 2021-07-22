@@ -63,6 +63,22 @@
     "search.smartCase": true,
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.defaultProfile.osx": "bash",
+    "terminal.integrated.profiles.osx": {
+        "bash": {
+            "path": "bash",
+            "args": ["-l"],
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+    },
+    "terminal.integrated.tabs.enabled": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "todohighlight.isEnable": true,
