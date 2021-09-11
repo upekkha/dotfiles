@@ -3,6 +3,7 @@
     "editor.acceptSuggestionOnEnter": "off",
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingQuotes": "never",
+    "editor.bracketPairColorization.enabled": true,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "none",
     "editor.suggestSelection": "first",
@@ -28,6 +29,7 @@
         "**/.venv": true,
     },
     "jupyter.alwaysTrustNotebooks": true,
+    "jupyter.askForKernelRestart": false,
     "prettier.printWidth": 120,
     "prettier.tabWidth": 4,
     "[html]": {
@@ -47,13 +49,10 @@
         "--line-length=100"
     ],
     "python.pythonPath": "/usr/local/bin/python3",
-    "python.languageServer": "Pylance",
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Args": [
         "--max-line-length=100"
     ],
-    "python.showStartPage": false,
-    "python.useIsolation": false,
     "scm.defaultViewMode": "tree",
     "search.exclude": {
         "**/*.min.js*": true,
@@ -124,7 +123,4 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.iconTheme": "vscode-icons",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
 }
