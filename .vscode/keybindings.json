@@ -8,22 +8,22 @@
     {
         "key": "up",
         "command": "cursorUp",
-        "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && !jupyter.ispythonorinteractiveeactive"
     },
     {
         "key": "down",
         "command": "cursorDown",
-        "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && !jupyter.ispythonorinteractiveeactive"
     },
     {
         "key": "up",
         "command": "cursorUp",
-        "when": "editorTextFocus && vim.active && vim.mode == 'Insert' && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+        "when": "editorTextFocus && vim.active && vim.mode == 'Insert' && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && !jupyter.ispythonorinteractiveeactive"
     },
     {
         "key": "down",
         "command": "cursorDown",
-        "when": "editorTextFocus && vim.active && vim.mode == 'Insert' && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+        "when": "editorTextFocus && vim.active && vim.mode == 'Insert' && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && !jupyter.ispythonorinteractiveeactive"
     },
     {
         "key": "space",
