@@ -48,7 +48,7 @@
     "python.formatting.blackArgs": [
         "--line-length=100"
     ],
-    "python.pythonPath": "/usr/local/bin/python3",
+    "python.pythonPath": "/opt/homebrew/bin/python3",
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Args": [
         "--max-line-length=100"

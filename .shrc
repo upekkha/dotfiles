@@ -17,7 +17,7 @@ export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
 #export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 #export MANPATH=/opt/local/share/man:$MANPATH
 # Scripts
-export PATH=~/Scripts:$PATH
+export PATH=~/Scripts:/opt/homebrew/bin:$PATH
 # vimGPG plugin
 export GPG_TTY=`tty`
 # gnu screen sockets directory
