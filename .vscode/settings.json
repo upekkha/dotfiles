@@ -53,6 +53,7 @@
     "python.linting.flake8Args": [
         "--max-line-length=100"
     ],
+    "redhat.telemetry.enabled": false,
     "scm.defaultViewMode": "tree",
     "search.exclude": {
         "**/*.min.js*": true,
