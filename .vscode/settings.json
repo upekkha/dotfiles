@@ -30,6 +30,7 @@
     },
     "jupyter.alwaysTrustNotebooks": true,
     "jupyter.askForKernelRestart": false,
+    "markdown.extension.syntax.decorations": false,
     "prettier.printWidth": 120,
     "prettier.tabWidth": 4,
     "[html]": {
