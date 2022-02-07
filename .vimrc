@@ -514,6 +514,7 @@ let NERDTreeIgnore=['\~$', '\.o', '__pycache__', '.cache']
 " ansible-vim
 let g:ansible_attribute_highlight = 'ab'    " bright highlighting of all key=value pairs
 let g:ansible_name_highlight = 'b'          " bright highlighting of name: instances
+autocmd FileType yaml.ansible setlocal indentkeys-=<:>  " disable automatic indenting when entering colon
 
 " snipmate
 let g:snippets_dir="~/.vim/mysnippets/"
