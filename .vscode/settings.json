@@ -80,6 +80,8 @@
         },
     },
     "terminal.integrated.tabs.enabled": true,
+    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.shellIntegration.showWelcome": false,
     "telemetry.telemetryLevel": "off",
     "todohighlight.isEnable": true,
     "todohighlight.isCaseSensitive": true,
