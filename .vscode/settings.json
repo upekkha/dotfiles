@@ -1,4 +1,7 @@
 {
+    "black-formatter.args": [
+        "--line-length=100"
+    ],
     "breadcrumbs.enabled": true,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.autoClosingBrackets": "never",
@@ -42,12 +45,8 @@
         "editor.formatOnSave": false
     },
     "[python]": {
-        "editor.defaultFormatter": "ms-python.python"
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "python.formatting.provider": "black",
-    "python.formatting.blackArgs": [
-        "--line-length=100"
-    ],
     "python.pythonPath": "/opt/homebrew/bin/python3",
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Args": [
