@@ -1,4 +1,5 @@
 {
+    "ansible.ansible.useFullyQualifiedCollectionNames": false,
     "black-formatter.args": [
         "--line-length=100"
     ],
@@ -17,7 +18,12 @@
     "files.trimTrailingWhitespace": true,
     "files.associations": {
         "*.wsgi": "python",
+        "**/defaults/*.yml": "ansible",
+        "**/handlers/*.yml": "ansible",
+        "**/meta/*.yml": "ansible",
+        "**/playbooks/**/*.yml": "ansible",
         "**/tasks/**/*.yml": "ansible",
+        "**/vars/*.yml": "ansible",
         "Vagrantfile": "ruby",
     },
     "files.exclude": {
