@@ -23,16 +23,8 @@
     editor = vim
     excludesfile = ~/.dotfiles/.gitignore.global
     attributesfile = ~/.dotfiles/.gitattributes.global
-    pager = less -LRc --mouse
+    pager = LESS='RF --redraw-on-quit' delta
     #pager = diff-so-fancy | less --tabs=4 -RFX
-
-[pager]
-    # https://github.com/dandavison/delta/issues/630#issuecomment-860046929
-    diff = LESS='LRc --mouse' delta
-    show = LESS='LRc --mouse' delta
-    stash = LESS='LRc --mouse' delta
-    log = LESS='LRc --mouse' delta
-    reflog = LESS='LRc --mouse' delta
 
 [color]
     ui = auto
