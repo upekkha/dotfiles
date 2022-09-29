@@ -197,6 +197,7 @@ augroup END
 " ------  GUI options  ---------------{{{
 if has("gui_running")
     set guioptions-=T       " disable toolbar, -=m disables menubar
+    "set guioptions+=k      " keep window size when toggling gui components
     "set guioptions+=a      " copy selected text to clipboard
     set fuopt=maxvert       " only maximize window vertically in MacVim
     winpos 1100 0           " window in top right corner
