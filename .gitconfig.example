@@ -11,16 +11,28 @@
     dark = true
     highligh-removed = true
     navigate = true
+    side-by-side = false
     plus-style = "syntax #004200"
     minus-style = "syntax #420000"
     theme = "DarkNeon"
+    grep-file-style = yellow
+    grep-line-number-style = orange
+    grep-match-word-style = red bold
 
 [core]
     editor = vim
     excludesfile = ~/.dotfiles/.gitignore.global
     attributesfile = ~/.dotfiles/.gitattributes.global
-    pager = delta
+    pager = less -LRc --mouse
     #pager = diff-so-fancy | less --tabs=4 -RFX
+
+[pager]
+    # https://github.com/dandavison/delta/issues/630#issuecomment-860046929
+    diff = LESS='LRc --mouse' delta
+    show = LESS='LRc --mouse' delta
+    stash = LESS='LRc --mouse' delta
+    log = LESS='LRc --mouse' delta
+    reflog = LESS='LRc --mouse' delta
 
 [color]
     ui = auto
@@ -70,6 +82,7 @@
 
 [merge]
     tool = vimdiff
+    conflictstyle = zdiff3
 
 [instaweb]
     httpd = webrick
@@ -80,7 +93,7 @@
     diffFilter = delta --color-only
 
 [fetch]
-	prune = true
+    prune = true
 
 [push]
     default = simple
