@@ -67,8 +67,11 @@ fi
 # ------  history hacks  -------------{{{
 # Use common history file for bash and zsh
 export HISTFILE=$HOME/.bash_history
-# Let history ignore sequential duplicate commands
-export HISTCONTROL=ignoredups
+# Let history ignore certain commands
+#  - ignoreboth = ignorespace:ignoredups
+#  - ignorespace = ignore cmds starting with space
+#  - ignoredups = ignore sequential duplicate cmds
+export HISTCONTROL=ignoreboth
 # Number of commands to keep in history
 export HISTFILESIZE=10000
 export SAVEHIST=$HISTFILESIZE
