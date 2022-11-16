@@ -218,8 +218,8 @@ au FileType * setl fo-=c fo-=r fo-=o
 " Create new file from template if it exists for given file extension
 au BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
 
-" Display json files using javascript filetype
-au BufNewFile,BufRead *.json set ft=javascript
+" Enable folding of json files, but open folds by default
+au FileType json set foldmethod=syntax | set nofoldenable
 
 " Fix editing crontab
 au BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
