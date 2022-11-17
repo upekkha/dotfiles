@@ -53,7 +53,7 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "python.pythonPath": "/opt/homebrew/bin/python3",
+    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Args": [
         "--max-line-length=100"
