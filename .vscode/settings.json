@@ -20,6 +20,7 @@
         "*.wsgi": "python",
         "**/defaults/*.yml": "ansible",
         "**/handlers/*.yml": "ansible",
+        "**/inventories/**/*.yml": "ansible",
         "**/meta/*.yml": "ansible",
         "**/playbooks/**/*.yml": "ansible",
         "**/tasks/**/*.yml": "ansible",
