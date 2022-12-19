@@ -130,8 +130,9 @@ complete -cf mangv
 complete -F _scp -o nospace gvimscp
 
 # Bash_completion
-if [ -f ~/.dotfiles/.bash_completion ]; then
-    . ~/.dotfiles/.bash_completion
+if [ -r /opt/homebrew/etc/profile.d/bash_completion.sh ]; then
+    export BASH_COMPLETION_USER_DIR=~/.dotfiles/.bash-completion
+    . /opt/homebrew/etc/profile.d/bash_completion.sh
 fi
 
 # iTerm shell integration
