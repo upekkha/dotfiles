@@ -42,7 +42,6 @@ $link ../../../../.dotfiles/.vscode/snippets snippets
 #$link ../.dotfiles/.irssi/config .irssi/config
 #$link ../.dotfiles/.irssi/startup .irssi/startup
 #$link .dotfiles/.latexmkrc .latexmkrc
-#$link .dotfiles/.matplotlib .matplotlib
 #$link ../../.dotfiles/.mc/ini .config/mc/ini
 #$link ../../../.dotfiles/.mc/mc.ext .local/share/mc/mc.ext
 #$link ../../../.dotfiles/.mc/skins .local/share/mc/skins
