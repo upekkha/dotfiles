@@ -37,8 +37,10 @@
         ".vscode": true,
         "**/.venv": true,
     },
+    "git.openRepositoryInParentFolders": "never",
     "jupyter.alwaysTrustNotebooks": true,
     "jupyter.askForKernelRestart": false,
+    "jupyter.interactiveWindow.creationMode": "perFile",
     "markdown.extension.theming.decoration.renderCodeSpan": false,
     "prettier.printWidth": 120,
     "prettier.tabWidth": 4,
@@ -100,6 +102,7 @@
     "todohighlight.include": [
         "**/*.markdown",
     ],
+    "update.mode": "none",
     "vim.foldfix": true,
     "vim.useSystemClipboard": true,
     "vim.visualstar": true,
@@ -130,5 +133,6 @@
     ],
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Default Dark+ Experimental",
     "workbench.iconTheme": "vscode-icons",
 }
