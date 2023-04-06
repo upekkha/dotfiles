@@ -11,7 +11,6 @@ $link .dotfiles/.dir_colors .dir_colors
 $link .dotfiles/.gitconfig .gitconfig
 $link .dotfiles/.gnupg .gnupg
 $link .dotfiles/.hushlogin .hushlogin
-$link .dotfiles/.netrc .netrc
 $link .dotfiles/Scripts Scripts
 $link .dotfiles/.ssh .ssh
 $link .dotfiles/.tmux.conf .tmux.conf
