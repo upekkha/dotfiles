@@ -133,6 +133,5 @@
     ],
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "Default Dark+ Experimental",
     "workbench.iconTheme": "vscode-icons",
 }
