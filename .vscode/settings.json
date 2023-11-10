@@ -3,6 +3,9 @@
     "black-formatter.args": [
         "--line-length=100"
     ],
+    "black-formatter.path": [
+        "/opt/homebrew/bin/black"
+    ],
     "breadcrumbs.enabled": true,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.autoClosingBrackets": "never",
@@ -28,15 +31,19 @@
         "Vagrantfile": "ruby",
     },
     "files.exclude": {
-        "**/__pycache__": true,
-        "**/*.pyc": true,
         "**/*.egg-info": true,
+        "**/*.pyc": true,
         "**/.pytest_cache": true,
+        "**/.ruff_cache": true,
+        "**/.venv": true,
+        "**/__pycache__": true,
         "*.code-workspace": true,
         ".vagrant": true,
         ".vscode": true,
-        "**/.venv": true,
     },
+    "flake8.args": [
+        "--max-line-length=100"
+    ],
     "git.openRepositoryInParentFolders": "never",
     "jupyter.alwaysTrustNotebooks": true,
     "jupyter.askForKernelRestart": false,
@@ -51,16 +58,13 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[markdown]": {
-        "editor.formatOnSave": false
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        "editor.defaultFormatter": "charliermarsh.ruff"
     },
     "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Args": [
-        "--max-line-length=100"
-    ],
     "redhat.telemetry.enabled": false,
     "scm.defaultViewMode": "tree",
     "search.exclude": {
@@ -132,6 +136,7 @@
         { "icon": "html", "extensions": ["html.j2"], "format": "svg" }
     ],
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.startupEditor": "newUntitledFile",
+    "workbench.activityBar.location": "top",
     "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "newUntitledFile",
 }
