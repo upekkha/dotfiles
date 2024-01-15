@@ -32,3 +32,11 @@ echo "$(_PIPENV_COMPLETE=bash_source pipenv)" > pipenv
 ```sh
 activate-global-python-argcomplete --dest=- > python-argcomplete
 ```
+
+### vagrant-completion
+
+[GitHub](https://github.com/hashicorp/vagrant/blob/main/contrib/bash/completion.sh)
+
+```sh
+curl https://raw.githubusercontent.com/hashicorp/vagrant/main/contrib/bash/completion.sh -i vagrant
+```
