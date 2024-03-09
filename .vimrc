@@ -84,10 +84,6 @@ let &keywordprg=':help'
 " Customize :TOhtml
 let html_number_lines=1
 let html_use_css=1
-
-" Custom python path
-" https://github.com/macvim-dev/macvim/issues/1351
-set pythonthreedll=/opt/homebrew/Frameworks/Python.framework/Versions/3.11/Python
 "}}}
 
 " ------  Colorscheme  ---------------{{{
