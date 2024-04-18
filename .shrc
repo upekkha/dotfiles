@@ -47,7 +47,7 @@ alias rbenv_init='export PATH="$HOME/.rbenv/bin:$PATH";eval "$(rbenv init -)";ex
 alias exa='exa -l --git --color-scale --group'
 alias rg='rg -S --colors "line:fg:yellow" --colors "path:fg:green"'
 alias ncdu='ncdu --color dark'
-alias ccat='bat --plain --paging=never'
+alias ccat='bat -pp'
 alias tree='tree -F -I ".git|.venv"'
 
 # use colordiff if it exists
