@@ -49,6 +49,7 @@
     "jupyter.askForKernelRestart": false,
     "jupyter.interactiveWindow.creationMode": "perFile",
     "markdown.extension.theming.decoration.renderCodeSpan": false,
+    "notebook.output.minimalErrorRendering": true,
     "prettier.printWidth": 120,
     "prettier.tabWidth": 4,
     "[html]": {
