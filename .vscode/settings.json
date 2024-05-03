@@ -1,5 +1,6 @@
 {
     "ansible.ansible.useFullyQualifiedCollectionNames": false,
+    "ansible.python.interpreterPath": "python3",
     "black-formatter.args": [
         "--line-length=100"
     ],
