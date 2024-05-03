@@ -35,6 +35,8 @@ fi
 export PIPENV_VENV_IN_PROJECT=1
 # Bat
 export BAT_THEME='DarkNeon'
+# Lazygit
+export LG_CONFIG_FILE="$HOME/.dotfiles/lazygit.yml"
 #}}}
 
 # ------  alias commands  ------------{{{
