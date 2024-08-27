@@ -40,3 +40,11 @@ activate-global-python-argcomplete --dest=- > python-argcomplete
 ```sh
 curl https://raw.githubusercontent.com/hashicorp/vagrant/main/contrib/bash/completion.sh -i vagrant
 ```
+
+### uv
+
+[Documentation](https://docs.astral.sh/uv/reference/cli/#uv-generate-shell-completion)
+
+```sh
+uv generate-shell-completion bash > uv
+```
