@@ -299,6 +299,8 @@ au filetype markdown syn region markdownAutomaticLink matchgroup=markdownUrlDeli
 au filetype markdown syn match markdownError "\w\@<=\w\@="
 
 "Custom markdown folding
+"The default `:verbose function MarkdownFold` erroneously
+"folds on lines starting with `#` inside code blocks.
 au filetype markdown setlocal foldexpr=MyMarkdownFold()
 au filetype markdown setlocal foldtext=MyFold()
 au filetype markdown setlocal foldmethod=expr
