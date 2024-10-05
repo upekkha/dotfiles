@@ -1,0 +1,8 @@
+# Neovide config
+# https://neovide.dev/config-file.html
+fork = true
+frame = "transparent"
+neovim-bin = "/opt/homebrew/bin/nvim"
+no-multigrid = true
+tabs = true
+title-hidden = false
