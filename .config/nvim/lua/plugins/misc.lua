@@ -44,19 +44,6 @@ return {
     },
   },
   {
-    "lukas-reineke/headlines.nvim",
-    enabled = true,
-    opts = function(_, opts)
-      opts.markdown = {
-        bullets = {},
-        fat_headlines = true,
-        fat_headline_upper_string = "▃",
-        fat_headline_lower_string = "▀",
-      }
-      return opts
-    end,
-  },
-  {
     "folke/todo-comments.nvim",
     opts = {
       highlight = {
