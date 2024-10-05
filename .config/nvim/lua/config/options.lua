@@ -27,10 +27,12 @@ if vim.g.neovide then
   vim.keymap.set("n", "<D-s>", ":w<CR>")
   vim.keymap.set("n", "<D-w>", ":q<CR>")
   vim.keymap.set("v", "<D-c>", '"+y')
-  vim.keymap.set("n", "<D-v>", '"+P')
-  vim.keymap.set("v", "<D-v>", '"+P')
-  vim.keymap.set("c", "<D-v>", "<C-R>+")
-  vim.keymap.set("i", "<D-v>", '<ESC>l"+Pa')
+  vim.keymap.set(                       -- Paste https://github.com/neovide/neovide/issues/1263#issuecomment-1972013043
+    {'n', 'v', 's', 'x', 'o', 'i', 'l', 'c', 't'},
+    '<D-v>',
+    function() vim.api.nvim_paste(vim.fn.getreg('+'), true, -1) end,
+    { noremap = true, silent = true }
+  )
   vim.keymap.set({"n", "v", "i"}, "<D-Left>", "<Home>")
   vim.keymap.set({"n", "v", "i"}, "<D-Right>", "<End>")
   vim.keymap.set("n", "<D-=>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.05<CR>")
