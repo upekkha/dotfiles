@@ -38,7 +38,7 @@ export BAT_THEME='DarkNeon'
 # Lazygit
 export LG_CONFIG_FILE="$HOME/.dotfiles/lazygit.yml"
 # less options
-export LESS='--ignore-case'
+export LESS='--ignore-case --jump-target=.5'
 #}}}
 
 # ------  alias commands  ------------{{{
