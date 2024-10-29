@@ -9,6 +9,16 @@ return {
         find_files = { follow = true }, -- follow symlinks when finding files
       },
     },
+    keys = {
+      {
+        --Custom keymap to pick from all files (incl hidden and listed in gitignore).
+        "<leader>fa",
+        function()
+          require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
+        end,
+        desc = "Find Files (all)",
+      },
+    },
   },
   {
     "mfussenegger/nvim-lint",
