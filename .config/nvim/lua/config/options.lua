@@ -9,6 +9,7 @@ vim.opt.foldmethod = "expr"
 
 -- Other
 vim.opt.tabstop = 4                     -- One tab is 4 spaces
+vim.opt.softtabstop = 4                 -- One tab while editing is 4 spaces
 vim.opt.shiftwidth = 4                  -- One indent is 4 spaces
 vim.opt.number = true                   -- Toggle line numbers
 vim.opt.relativenumber = false          -- Toggle relative line numbers
