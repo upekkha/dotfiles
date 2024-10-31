@@ -46,6 +46,7 @@
         "--max-line-length=100"
     ],
     "git.openRepositoryInParentFolders": "never",
+    "git.detectSubmodulesLimit": 50,
     "jupyter.alwaysTrustNotebooks": true,
     "jupyter.askForKernelRestart": false,
     "jupyter.interactiveWindow.creationMode": "perFile",
