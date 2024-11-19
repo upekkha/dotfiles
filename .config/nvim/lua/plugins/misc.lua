@@ -109,20 +109,21 @@ return {
     },
   },
   {
-   "nvimdev/dashboard-nvim",
-   -- Custom dashboard logo
-   -- https://github.com/LazyVim/LazyVim/discussions/742
-   opts = function(_, opts)
-       local logo = [[
+    "folke/snacks.nvim",
+    -- Customize dashboard.
+    opts = {
+      dashboard = {
+        preset = {
+          header = [[
   ███╗   ██╗ ███████╗  ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗
   ████╗  ██║ ██╔════╝ ██╔═══██╗ ██║   ██║ ██║ ████╗ ████║
   ██╔██╗ ██║ █████╗   ██║   ██║ ██║   ██║ ██║ ██╔████╔██║
   ██║╚██╗██║ ██╔══╝   ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║
   ██║ ╚████║ ███████╗ ╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║
   ╚═╝  ╚═══╝ ╚══════╝  ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝
-      ]]
-      logo = string.rep("\n", 5) .. logo .. string.rep("\n", 3)
-      opts.config.header = vim.split(logo, "\n")
-    end,
+          ]],
+        },
+      },
+    },
   },
 }
