@@ -30,13 +30,16 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
-    opts = function(_, opts)
+    opts = function()
       local cmp = require("cmp")
 
-      -- Only complete filenames in markdown
+      -- Disable cmp-buffer in markdown
       cmp.setup.filetype("markdown", {
         sources = cmp.config.sources({
+          { name = "nvim_lsp" },
           { name = "path" },
+        }, {
+          -- { name = "buffer" },
         }),
       })
     end,
