@@ -52,7 +52,7 @@ alias exa='exa -l --git --color-scale --group'
 alias rg='rg -S --colors "line:fg:yellow" --colors "path:fg:green"'
 alias ncdu='ncdu --color dark'
 alias ccat='bat -pp'
-alias tree='tree -F -I ".git|.venv"'
+alias tree='tree -F -I ".git|.venv" --hyperlink'
 
 # use colordiff if it exists
 if [ $(which colordiff) ]; then
