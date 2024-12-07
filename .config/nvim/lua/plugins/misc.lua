@@ -3,7 +3,13 @@ return {
     "nvim-telescope/telescope.nvim",
     opts = {
       defaults = {
-        vimgrep_arguments = { "rg", "--vimgrep", "--no-hidden", "--follow" }, -- follow symlinks when grepping
+        vimgrep_arguments = {
+          "rg",
+          "--vimgrep",
+          "--no-hidden", -- do not include hidden files
+          "--ignore", -- do not include ignored files
+          "--follow", -- follow symlinks
+        },
       },
       pickers = {
         find_files = { follow = true }, -- follow symlinks when finding files
@@ -90,7 +96,7 @@ return {
     -- https://github.com/MeanderingProgrammer/render-markdown.nvim
     opts = {
       code = {
-        style = "normal",  -- disable lang icons
+        style = "normal", -- disable lang icons
       },
       -- Multi-line quotes
       quote = {
