@@ -1,8 +1,8 @@
 # Neovide config
 # https://neovide.dev/config-file.html
-fork = true
-frame = "transparent"
-neovim-bin = "/opt/homebrew/bin/nvim"
-no-multigrid = true
-tabs = true
-title-hidden = false
+fork = true  # detach from terminal on launch
+frame = "transparent"  # transparent window bar
+neovim-bin = "/opt/homebrew/bin/nvim"  # path to neovim binary
+no-multigrid = true  # disable smooth scrolling and window animation
+tabs = false  # open multiple files as normal buffers
+title-hidden = false  # keep window title with file name
