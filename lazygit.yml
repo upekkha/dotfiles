@@ -6,7 +6,6 @@ gui:
 git:
   commit:
     autoWrapCommitMessage: false
-git:
   paging:
     # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md
     colorArg: always
