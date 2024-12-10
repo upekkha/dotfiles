@@ -2,11 +2,6 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
--- Folding defined by treesitter expressions
--- https://github.com/LazyVim/LazyVim/issues/1319
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldmethod = "expr"
-
 -- Other
 vim.opt.tabstop = 4 -- One tab is 4 spaces
 vim.opt.softtabstop = 4 -- One tab while editing is 4 spaces
