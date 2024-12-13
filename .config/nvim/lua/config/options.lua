@@ -22,7 +22,7 @@ if vim.g.neovide then
 
   -- Keyboard shortcuts
   vim.keymap.set("n", "<D-s>", ":w<CR>")
-  vim.keymap.set("n", "<D-w>", ":q<CR>")
+  vim.keymap.set("n", "<D-w>", ":BufDel<CR>")
   vim.keymap.set("v", "<D-c>", '"+y')
   vim.keymap.set( -- Paste https://github.com/neovide/neovide/issues/1263#issuecomment-1972013043
     { "n", "v", "s", "x", "o", "i", "l", "c", "t" },
