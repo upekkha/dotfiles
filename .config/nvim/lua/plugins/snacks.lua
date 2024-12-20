@@ -1,8 +1,10 @@
 return {
   {
     "folke/snacks.nvim",
-    -- Customize dashboard.
     opts = {
+      -- Disable indent guides
+      indent = { enabled = false },
+      -- Customize dashboard
       dashboard = {
         preset = {
           header = [[
