@@ -1,0 +1,24 @@
+[manager]
+ratio = [1, 2, 5]  # aspect ratio of columns
+
+[preview]
+wrap = "yes"  # wrap lines
+
+[opener]
+edit = [
+	{ run = '$EDITOR "$@"', block = true, desc = "Edit" },
+]
+opengui = [
+	{ run = 'open "$@"', desc = "Open (GUI)" },
+]
+neovide = [
+	{ run = 'open -a Neovide "$@"', desc = "Neovide" },
+]
+quicklook = [
+	{ run = 'qlmanage -p "$@"', desc = "Quicklook" },
+]
+
+[open]
+prepend_rules = [
+    { name = "*", use = ["edit", "opengui", "neovide", "quicklook", "reveal"] },
+]
