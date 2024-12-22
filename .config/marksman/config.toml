@@ -1,0 +1,8 @@
+# Marksman config must be symlinked to ~/Library/Application\ Support/marksman/.
+# https://github.com/artempyanykh/marksman/blob/main/docs/configuration.md
+[core]
+markdown.file_extensions = ["md", "markdown"]
+title_from_heading = false
+
+[completion]
+wiki.style = "file-path-stem"
