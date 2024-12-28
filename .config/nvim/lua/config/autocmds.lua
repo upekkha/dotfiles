@@ -14,3 +14,12 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.spell = false
   end,
 })
+
+-- Disable json autoformat on save.
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("lazyvim_user_json", { clear = true }),
+  pattern = { "json" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})
