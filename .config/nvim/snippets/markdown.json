@@ -1,0 +1,9 @@
+{
+  "timestamp": {
+    "prefix": "tsnow",
+    "body": [
+      "[${CURRENT_DATE}/${CURRENT_MONTH} ${CURRENT_HOUR}:${CURRENT_MINUTE}]"
+    ],
+    "description": "Timestamp now [dd/mm HH:MM]"
+  }
+}
