@@ -1,4 +1,4 @@
-# lazygit --config
+# Lazygit config must be symlinked to ~/Library/Application\ Support/lazygit/.
 # https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
 gui:
   nerdFontsVersion: "3"
