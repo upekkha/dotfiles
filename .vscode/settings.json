@@ -8,6 +8,7 @@
         "/opt/homebrew/bin/black"
     ],
     "breadcrumbs.enabled": true,
+    "chat.commandCenter.enabled": false,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingQuotes": "never",
