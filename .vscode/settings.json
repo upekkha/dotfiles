@@ -141,7 +141,6 @@
     ],
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.activityBar.location": "top",
-    "workbench.colorTheme": "Tokyo Night",
     "workbench.iconTheme": "vscode-icons",
     "workbench.startupEditor": "newUntitledFile",
 }
