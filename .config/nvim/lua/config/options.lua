@@ -11,6 +11,8 @@ vim.opt.relativenumber = false -- Toggle relative line numbers
 vim.opt.mousescroll = "ver:3,hor:1" -- Reduce horziontal scroll speed
 vim.opt.cursorline = false -- Toggle highlight of line under cursor
 vim.opt.shell = "bash_login_shell" -- Open terminal with `bash -l` wrapper
+vim.opt.listchars = { eol = "¬", tab = ">-", trail = "~", space = "·" } -- Replacement chars for `set invlist`
+vim.opt.list = false -- Disable invisible chars by default
 --vim.g.mapleader = "\\"                -- Use backslash as leader
 
 -- Neovide
