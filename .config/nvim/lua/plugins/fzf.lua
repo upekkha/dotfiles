@@ -7,6 +7,13 @@ return {
       local actions = require("fzf-lua.actions")
       config.defaults.actions.files["ctrl-i"] = { actions.toggle_ignore }
       config.defaults.actions.files["ctrl-h"] = { actions.toggle_hidden }
+
+      return {
+        "default-title",
+        files = {
+          follow = true, -- follow symlinks
+        },
+      }
     end,
   },
 }
