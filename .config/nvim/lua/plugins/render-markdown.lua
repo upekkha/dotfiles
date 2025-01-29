@@ -6,9 +6,11 @@ return {
       code = {
         style = "normal", -- disable lang icons
       },
-      -- Multi-line quotes
       quote = {
-        repeat_linebreak = true,
+        repeat_linebreak = true, -- multi-line quotes
+      },
+      pipe_table = {
+        style = "normal", -- no horizontal lines above/below table
       },
       win_options = {
         showbreak = { default = "", rendered = "  " },
