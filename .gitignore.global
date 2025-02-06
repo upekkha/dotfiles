@@ -9,4 +9,5 @@ vendor/bundle/*
 .ipynb_checkpoints/
 __pycache__
 .cache
+.ansible
 tags
