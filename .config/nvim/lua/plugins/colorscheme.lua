@@ -10,6 +10,10 @@ return {
           bg = "#1c1f30",
           fg = "#82aaff",
         }
+        -- increase visibility of split windows
+        hl["WinSeparator"] = {
+          fg = c.comment,
+        }
       end,
     },
   },
