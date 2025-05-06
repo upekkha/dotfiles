@@ -1,5 +1,7 @@
 {
     "ansible.ansible.useFullyQualifiedCollectionNames": false,
+    "ansible.lightspeed.enabled": false,
+    "ansible.lightspeed.suggestions.enabled": false,
     "ansible.python.interpreterPath": "python3",
     "black-formatter.args": [
         "--line-length=100"
