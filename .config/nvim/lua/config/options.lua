@@ -21,6 +21,7 @@ if vim.g.neovide then
   vim.g.neovide_cursor_animation_length = 0 -- Disable cursor animation
   vim.opt.title = true -- Enable title
   vim.opt.titlestring = "%t" -- Show filename as title
+  vim.env.PATH = vim.fn.expand("$HOME/Scripts:/opt/homebrew/bin:") .. vim.env.PATH -- Enforce $PATH
 
   -- Keyboard shortcuts
   vim.keymap.set("n", "<D-s>", ":w<CR>")
