@@ -1,20 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
 if [ $# -eq 0 ]; then
-    echo "Run git command on all subfolders with repos."
-    echo ""
-    echo "Example: git-all grep -i pattern"
+    echo 'Run git command on all subfolders with repos.'
+    echo ''
+    echo 'Example: git-all grep -i pattern'
     exit 1
 fi
 
 GITALLCMD="$*"
 GITREPOS=$(find . -maxdepth 2 -type d -name .git | awk -F'/' '{ print $2 }' | sort)
 
-for GITREPO in ${GITREPOS}
-do
-    cd ${GITREPO}
+for GITREPO in ${GITREPOS}; do
+    cd "${GITREPO}" || return
 
-    if [[ $1 == 'grep' ]] ; then
-        if $(git grep --quiet "${@:2:$#}"); then
+    if [[ $1 == 'grep' ]]; then
+        if git grep --quiet "${@:2:$#}"; then
             echo -e "\033[1;34m ===== ${GITREPO} ===== \033[0;37m"
             git --no-pager ${GITALLCMD}
         fi
@@ -23,5 +22,5 @@ do
         git ${GITALLCMD}
     fi
 
-    cd - > /dev/null
+    cd - >/dev/null || exit
 done
