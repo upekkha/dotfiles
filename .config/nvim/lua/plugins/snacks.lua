@@ -15,6 +15,7 @@ return {
         win = {
           input = {
             keys = {
+              ["<c-l>"] = { "toggle_follow", mode = { "i", "n" } },
               ["<c-h>"] = { "toggle_hidden", mode = { "i", "n" } },
               ["<c-i>"] = { "toggle_ignore", mode = { "i", "n" } },
               ["<Esc>"] = { "close", mode = { "n", "i" } },
