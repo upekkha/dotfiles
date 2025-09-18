@@ -1,6 +1,6 @@
 return {
   {
-    "echasnovski/mini.trailspace",
+    "nvim-mini/mini.trailspace",
     -- Highlight trailing whitespace and clean with `MiniTrailspace.trim()`.
     config = function()
       require("mini.trailspace").setup()
