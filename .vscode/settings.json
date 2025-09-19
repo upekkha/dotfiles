@@ -11,6 +11,7 @@
     ],
     "breadcrumbs.enabled": true,
     "chat.commandCenter.enabled": false,
+    "chat.disableAIFeatures": true,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingQuotes": "never",
