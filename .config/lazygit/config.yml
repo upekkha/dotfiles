@@ -6,10 +6,10 @@ gui:
 git:
   commit:
     autoWrapCommitMessage: false
-  paging:
+  pagers:
     # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md
-    colorArg: always
-    pager: delta --dark --paging=never
+    - pager: delta --dark --paging=never
+      colorArg: always
 os:
   editPreset: 'vscode'
 update:
