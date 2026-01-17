@@ -4,6 +4,7 @@ return {
     -- additional treesitter languages
     opts = {
       ensure_installed = {
+        "ini",
         "perl",
         "sql",
       },
