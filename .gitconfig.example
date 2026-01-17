@@ -18,6 +18,9 @@
     grep-file-style = yellow
     grep-line-number-style = orange
     grep-match-word-style = red bold
+    max-line-length = 20000
+    max-syntax-highlighting-length = 20000
+    side-by-side = false
 
 [core]
     editor = vim
@@ -72,13 +75,21 @@
     textconv = ansible-vault view
     cachetextconv = false
 
+[diff "gpg"]
+    # Custom command to diff GPG encrypted files.
+    # Requires a .gitattributes file with the following line:
+    # *.gpg  diff=gpg  merge=gpg
+    textconv = gpg --decrypt --quiet --batch --no-tty
+    cachetextconv = false
+
+[merge "gpg"]
+    # Custom merge driver for GPG encrypted files.
+    name = gpg merge driver
+    driver = git-merge-gpg-driver %O %A %B %P
+
 [merge]
     tool = vimdiff
     conflictstyle = zdiff3
-
-[instaweb]
-    httpd = webrick
-    port = 1234
 
 [interactive]
     singlekey = true
