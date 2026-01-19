@@ -12,6 +12,7 @@ $link .dotfiles/.gitconfig .gitconfig
 $link .dotfiles/.gnupg .gnupg
 $link .dotfiles/.hushlogin .hushlogin
 $link .dotfiles/Scripts Scripts
+$link .dotfiles/.shellcheckrc .shellcheckrc
 $link .dotfiles/.ssh .ssh
 $link .dotfiles/.tmux.conf .tmux.conf
 $link .dotfiles/.vim .vim
