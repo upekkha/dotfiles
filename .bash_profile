@@ -92,13 +92,13 @@ function git_status_prompt #{{{
     elif [[ ${GITSTATUS} =~ "working tree clean" ]]; then
         # Clean repo
         GITSTAT="[${GITBRANCH}]"
-        # Display only if not on master branch
-        test "$GITBRANCH" != master || GITSTAT=""
+        # Display only if not on master/main branch
+        [[ "$GITBRANCH" =~ ^(master|main)$ ]] && GITSTAT=""
     else
         # Dirty repo
         GITSTAT="[${GITBRANCH} ±]"
-        # Display only if not on master branch
-        test "$GITBRANCH" != master || GITSTAT="[±]"
+        # Display only if not on master/main branch
+        [[ "$GITBRANCH" =~ ^(master|main)$ ]] && GITSTAT="[±]"
     fi
 }
 #}}}
