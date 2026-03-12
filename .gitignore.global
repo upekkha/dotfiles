@@ -1,13 +1,12 @@
 .DS_Store
 *.sw?
 *~
-vendor/bundle/*
 .venv
-.ruby-version
 .vagrant
-.ropeproject
 .ipynb_checkpoints/
 __pycache__
 .cache
 .ansible
-tags
+.pytest_cache
+.rumdl_cache
+.ruff_cache
