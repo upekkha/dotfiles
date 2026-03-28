@@ -3,12 +3,6 @@
     "ansible.lightspeed.enabled": false,
     "ansible.lightspeed.suggestions.enabled": false,
     "ansible.python.interpreterPath": "python3",
-    "black-formatter.args": [
-        "--line-length=100"
-    ],
-    "black-formatter.path": [
-        "/opt/homebrew/bin/black"
-    ],
     "breadcrumbs.enabled": true,
     "chat.commandCenter.enabled": false,
     "chat.disableAIFeatures": true,
@@ -46,9 +40,6 @@
         ".vagrant": true,
         ".vscode": true,
     },
-    "flake8.args": [
-        "--max-line-length=100"
-    ],
     "git.openRepositoryInParentFolders": "never",
     "git.detectSubmodulesLimit": 50,
     "jupyter.alwaysTrustNotebooks": true,
