@@ -15,7 +15,7 @@ export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
 #export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 #export MANPATH=/opt/local/share/man:$MANPATH
 # Scripts
-export PATH=~/Scripts:/opt/homebrew/bin:$PATH
+export PATH=~/Scripts:~/.uv/.venv/bin:/opt/homebrew/bin:$PATH
 # gnu screen sockets directory
 export SCREENDIR=$HOME/.sessions
 # path for cd commands

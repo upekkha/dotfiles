@@ -62,7 +62,7 @@
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff"
     },
-    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+    "python.defaultInterpreterPath": "${userHome}/.uv/.venv/bin/python3",
     "redhat.telemetry.enabled": false,
     "scm.defaultViewMode": "tree",
     "search.exclude": {
