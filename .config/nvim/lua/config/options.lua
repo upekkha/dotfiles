@@ -17,7 +17,7 @@ vim.opt.list = false -- Disable invisible chars by default
 
 -- Neovide
 if vim.g.neovide then
-  vim.opt.guifont = "MesloLGS NF:h12" -- Use 12pt Meslo Nerdfont
+  vim.opt.guifont = "MesloLGS Nerd Font:h12" -- Use 12pt Meslo Nerdfont
   vim.g.neovide_cursor_animation_length = 0 -- Disable cursor animation
   vim.opt.title = true -- Enable title
   vim.opt.titlestring = "%t" -- Show filename as title
