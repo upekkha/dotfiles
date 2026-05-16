@@ -28,13 +28,15 @@ if vim.g.neovide then
   vim.keymap.set("n", "<D-w>", ":BufDel<CR>")
   vim.keymap.set("v", "<D-c>", '"+y')
   vim.keymap.set( -- Paste https://github.com/neovide/neovide/issues/1263#issuecomment-1972013043
-    { "n", "v", "s", "x", "o", "i", "l", "c", "t" },
+    { "n", "s", "x", "o", "i", "l", "c", "t" },
     "<D-v>",
     function()
       vim.api.nvim_paste(vim.fn.getreg("+"), true, -1)
     end,
     { noremap = true, silent = true }
   )
+  -- Paste in visual mode puts the selection in the black hole buffer to preserve the yanked text.
+  vim.keymap.set("v", "<D-v>", '"_dP')
   vim.keymap.set({ "n", "v", "i" }, "<D-Left>", "<Home>")
   vim.keymap.set({ "n", "v", "i" }, "<D-Right>", "<End>")
   vim.keymap.set("n", "<D-=>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.05<CR>")
