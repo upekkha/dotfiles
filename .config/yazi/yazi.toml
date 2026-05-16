@@ -12,7 +12,7 @@ opengui = [
 	{ run = 'open "$@"', desc = "Open (GUI)" },
 ]
 neovide = [
-	{ run = 'open -a Neovide "$@"', desc = "Neovide" },
+	{ run = 'neovide "$@"', desc = "Neovide" },
 ]
 quicklook = [
 	{ run = 'qlmanage -p "$@"', desc = "Quicklook" },
@@ -20,5 +20,5 @@ quicklook = [
 
 [open]
 prepend_rules = [
-    { name = "*", use = ["edit", "opengui", "neovide", "quicklook", "reveal"] },
+    { url = "*", use = ["edit", "opengui", "neovide", "quicklook", "reveal"] },
 ]
