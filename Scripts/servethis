@@ -1,79 +1,57 @@
 #!/usr/bin/env python3
-
-manpage = """
-Start webserver with the contents of this folder and open it in a browser.
-Files ending in .cgi, .pl, .rb or .py will be executed as cgi scripts.
-"""
+"""Serve this folder with a http server and open it in a browser."""
 
 import http.server
-import argparse
-import os
+import signal
+import subprocess
 import sys
 
-cgi_extensions = ('.cgi', '.pl', '.rb', '.py')
-colorize_log = True
+PORT = 8765
 
 
-class CGIExtHTTPRequestHandler(http.server.CGIHTTPRequestHandler):
-    def is_cgi(self):
-        query = ''
-        base = self.path
-        i = base.find('?')
-        if i != -1:
-            query = base[i:]
-            base = base[:i]
-        if not base.lower().endswith(cgi_extensions):
-            return False
-        [parentDirs, script] = base.rsplit('/', 1)
-        self.cgi_info = (parentDirs, script+query)
-        return True
+class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
+    """Wrapper class to customize the http server."""
 
     def log_message(self, format, *args):
-        msg = "%s - - [%s] %s"
+        """Colorized log."""
+        ansi_blue = "\033[0;34m"
+        ansi_cyan = "\033[0;36m"
+        ansi_green = "\033[0;32m"
+        ansi_white = "\033[0;37m"
+        ansi_red = "\033[0;31m"
 
-        if colorize_log:
-            red = "\033[0;31m"
-            green = "\033[0;32m"
-            blue = "\033[0;34m"
-            cyan = "\033[0;36m"
-            white = "\033[0;37m"
-            msg = blue + "%s - - [%s] " + cyan + "%s" + white
-            if format == '"%s" %s %s':
-                if args[1] == '200':
-                    status_col = green
-                else:
-                    status_col = red
-                format = '"%s" ' + status_col + '%s ' + cyan + '%s'
-            if format == 'code %d, message %s':
-                format = red + format
+        if format == '"%s" %s %s':
+            http_action = args[0]
+            http_code = args[1]
+            http_size = args[2]
 
-        print(msg %
-              (self.address_string(),
-               self.log_date_time_string(),
-               format % args))
+            # Highlight http 4xx client and 5xx server errors.
+            if http_code.startswith(("4", "5")):
+                ansi_status = ansi_red
+            else:
+                ansi_status = ansi_green
+
+            msg = f'{ansi_status}"{http_action}" {http_code} {ansi_white}{http_size}'
+
+        elif format == "code %d, message %s":
+            err_code = args[0]
+            err_msg = args[1]
+            msg = f"{ansi_red}code {err_code}, message '{err_msg}'"
+
+        print(
+            f"{ansi_blue}{self.address_string()} - -",
+            f"{ansi_cyan}[{self.log_date_time_string()}]",
+            msg,
+        )
 
 
-def run_server(bind, port):
-    dirName = os.getcwd()
-    blanks = dirName.count(' ')
-    if blanks > 0:
-        print("Error: The path to this directory contains spaces")
-        return
+# Handle ctrl-c signal to exit cleanly.
+signal.signal(signal.SIGINT, lambda signum, frame: (signum, frame) and sys.exit(0))
 
-    server_addr = (bind, port)
-    cgiServer = http.server.HTTPServer(server_addr, CGIExtHTTPRequestHandler)
-    cgiServer.serve_forever()
+# Open web browser
+subprocess.run(f"open http://127.0.0.1:{PORT}", shell=True)
 
-parser = argparse.ArgumentParser(description=manpage)
-parser.add_argument('-p', '--port', default=8765, type=int,
-                    help='http port (default 8765)')
-parser.add_argument('-b', '--bind', default='localhost', type=str,
-                    help='bind IP or hostname (default localhost)')
-args = parser.parse_args()
-
-os.system("open http://127.0.0.1:%s" % args.port)
-
-try:
-    run_server(args.bind, args.port)
-except KeyboardInterrupt:
-    sys.exit(0)
+# Start web server
+server_address = ("localhost", PORT)
+httpd = http.server.ThreadingHTTPServer(server_address, CustomHTTPRequestHandler)
+httpd.serve_forever()
