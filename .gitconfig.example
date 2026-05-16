@@ -91,6 +91,9 @@
     tool = vimdiff
     conflictstyle = zdiff3
 
+[init]
+    defaultBranch = main
+
 [interactive]
     singlekey = true
     diffFilter = delta --color-only
