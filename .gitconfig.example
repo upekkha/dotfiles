@@ -82,6 +82,12 @@
     textconv = gpg --decrypt --quiet --batch --no-tty
     cachetextconv = false
 
+[diff "uv-lock"]
+    # Custom command to summarize git diff of uv.lock files.
+    # Requires a .gitattributes file with the following line:
+    # uv.lock  diff=uv-lock
+    textconv = jaq --from toml -r '.package[] | \"\\(.name)==\\(.version)\"'
+
 [merge "gpg"]
     # Custom merge driver for GPG encrypted files.
     name = gpg merge driver
