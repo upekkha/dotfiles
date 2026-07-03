@@ -12,5 +12,5 @@
 -nolc       # keep indentation of long comments
 -nolq       # keep indentation of long quotes
 -nola       # keep indentation of loop labels
--st         # output to stdout
--se         # errors to stderr, use -nse to write to file.ERR
+#-st        # output to stdout
+#-se        # errors to stderr, use -nse to write to file.ERR
