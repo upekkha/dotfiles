@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """Serve this folder with a http server and open it in a browser."""
 
+import argparse
 import http.server
 import signal
 import subprocess
 import sys
-
-PORT = 8765
 
 
 class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
@@ -38,6 +37,9 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             err_msg = args[1]
             msg = f"{ansi_red}code {err_code}, message '{err_msg}'"
 
+        if LOG_HEADERS:
+            print(self.headers)
+
         print(
             f"{ansi_blue}{self.address_string()} - -",
             f"{ansi_cyan}[{self.log_date_time_string()}]",
@@ -48,8 +50,24 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
 # Handle ctrl-c signal to exit cleanly.
 signal.signal(signal.SIGINT, lambda signum, frame: (signum, frame) and sys.exit(0))
 
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument(
+    "-p", "--port", default=8765, type=int, help="http port (default 8765)"
+)
+parser.add_argument(
+    "--headers", action="store_true", help="enable logging of http headers"
+)
+parser.add_argument(
+    "--no-browser", action="store_true", help="skip opening of web browser"
+)
+args = parser.parse_args()
+PORT = args.port
+LOG_HEADERS = args.headers
+NO_BROWSER = args.no_browser
+
 # Open web browser
-subprocess.run(f"open http://127.0.0.1:{PORT}", shell=True)
+if not NO_BROWSER:
+    subprocess.run(f"open http://127.0.0.1:{PORT}", shell=True)
 
 # Start web server
 server_address = ("localhost", PORT)
