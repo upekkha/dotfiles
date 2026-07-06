@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Wrapper script for ansible-vault to also work inside a project subdirectory.
+# To be placed in your $PATH before the actual ansible-vault.
+#
+# This acts as work-around for two independent problems:
+# 1) Ansible does not discover ansible.cfg from upper git root directory.
+# 2) vault_identity_list paths are not re-evaluated relative to ansible.cfg.
+
+if [ ! -e ansible.cfg ]; then
+    git_root=$(git rev-parse --show-toplevel)
+    if [ -e $git_root/ansible.cfg ]; then
+        vaults_rel=$(grep -Po '^vault_identity_list = (\K.*)' $git_root/ansible.cfg | tr -d ' ')
+        vaults_abs=$(echo $vaults_rel | sed -e "s|@|@$git_root/|g")
+        export ANSIBLE_VAULT_IDENTITY_LIST=$vaults_abs
+        export ANSIBLE_VAULT_ID_MATCH=true
+    fi
+fi
+
+# Call original ansible-vault, which is now returned as second option in `which -a`.
+ansible_vault_cmd="$(which -a ansible-vault | sed -n 2p)"
+$ansible_vault_cmd $@
