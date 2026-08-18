@@ -6,12 +6,12 @@ gui:
 git:
   commit:
     autoWrapCommitMessage: false
-  pagers:
+  diffRenderers:
     # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md
-    - pager: delta --dark --paging=never
+    - command: delta --dark --paging=never
       colorArg: always
 os:
   editPreset: 'vscode'
 update:
-  method: 'never'  # disable auto-update
-promptToReturnFromSubprocess: false  # directly return to lazygit
+  method: 'never' # disable auto-update
+promptToReturnFromSubprocess: false # directly return to lazygit
