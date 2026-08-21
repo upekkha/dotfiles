@@ -3,8 +3,17 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        ansiblels = {},
+        ansiblels = {
+          mason = false,
+        },
+        marksman = {
+          mason = false,
+        },
+        lua_ls = {
+          mason = false,
+        },
         pyright = {
+          mason = false,
           settings = {
             python = {
               analysis = {
@@ -12,6 +21,9 @@ return {
               },
             },
           },
+        },
+        ruff = {
+          mason = false,
         },
       },
     },
